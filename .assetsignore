@@ -1,0 +1,18 @@
+# Git 元数据，不应部署为静态资源
+.git
+.gitignore
+
+# Wrangler 本地缓存与临时文件
+.wrangler
+.dev.vars*
+.env*
+
+# 系统文件
+.DS_Store
+
+# 依赖目录
+node_modules
+
+# Wrangler 配置本身不需要作为网页资源
+wrangler.jsonc
+wrangler.toml
