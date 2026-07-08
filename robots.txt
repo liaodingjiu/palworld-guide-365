@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://palguide.pages.dev/sitemap.xml
