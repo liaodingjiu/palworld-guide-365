@@ -3,7 +3,7 @@
   'use strict';
 
   var SITE_URL = 'palworldguides.com';
-  var GA_ID = 'G-XXXXXXXXXX'; // Replace with your real GA4 Measurement ID
+  var GA_ID = 'G-8T3TKL3W4T';
 
   function getCookie(name) {
     var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
@@ -17,7 +17,7 @@
   }
 
   function loadAnalytics() {
-    if (!GA_ID || GA_ID === 'G-XXXXXXXXXX') return;
+    if (!GA_ID) return;
     var s = document.createElement('script');
     s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
     s.async = true;
