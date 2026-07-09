@@ -213,6 +213,163 @@
   <h2>2. Best Ore Base Locations</h2>
   <p>The key to ore automation is base placement. You need a spot where 4&ndash;8 ore nodes are clustered inside your base radius, so your mining Pals can reach them all without wandering. You unlock a second base at Base Level 10 (player Level 14) and a third at Base Level 15 &mdash; that's when ore automation truly begins.</p>
 
+<div class="map-container">
+  <h3>Ore &amp; Mining Locations Map</h3>
+  <p class="map-caption">Approximate positions on the Palpagos Islands. Numbers match the list below.</p>
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" class="map-svg" role="img" aria-label="Palpagos Islands map showing key locations">
+  <defs>
+    <filter id="ms" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.35"/>
+    </filter>
+    <filter id="ls" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Ocean -->
+  <rect width="800" height="600" fill="#7BAED4" rx="8"/>
+
+  <!-- Water depth shading -->
+  <rect width="800" height="600" fill="url(#wg)" rx="8" opacity="0.15"/>
+  <defs>
+    <linearGradient id="wg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5A9BC4"/>
+      <stop offset="100%" stop-color="#9BCEE8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ── Feybreak (far NW) ── -->
+  <path d="M 30,95 C 18,75 28,52 52,48 C 78,50 92,70 82,92 C 72,108 48,108 30,95 Z"
+        fill="#D4C4ED" stroke="#B4A4CD" stroke-width="1.5" filter="url(#ls)"/>
+
+  <!-- ── Sakurajima (NW) ── -->
+  <path d="M 88,205 C 62,178 72,142 105,128 C 142,122 178,148 182,178 C 188,212 162,232 128,235 C 105,232 90,222 88,205 Z"
+        fill="#F0CDD8" stroke="#D0A8B8" stroke-width="1.5" filter="url(#ls)"/>
+
+  <!-- ── Snow Peaks (N) ── -->
+  <path d="M 320,295 C 295,245 305,185 345,145 C 390,108 465,105 515,130 C 555,160 565,215 545,265 C 515,290 470,295 435,295 L 320,295 Z"
+        fill="#D8E8F2" stroke="#B4C8D8" stroke-width="1.5" filter="url(#ls)"/>
+
+  <!-- ── Grassland (center-south, main body) ── -->
+  <path d="M 275,535 C 245,495 250,440 278,400 C 288,348 308,308 358,298 L 460,293 C 520,298 552,328 562,378 C 572,432 542,480 492,512 C 442,538 378,542 318,537 Z"
+        fill="#C5E69C" stroke="#A5C67C" stroke-width="1.5" filter="url(#ls)"/>
+
+  <!-- ── Desert (E, connected) ── -->
+  <path d="M 512,300 C 550,268 605,262 642,278 C 682,298 698,340 688,385 C 672,418 618,418 568,402 C 552,372 530,335 512,300 Z"
+        fill="#EDD5A0" stroke="#CDB580" stroke-width="1.5" filter="url(#ls)"/>
+
+  <!-- ── Volcanic Islands (SW) ── -->
+  <path d="M 135,485 C 112,465 122,438 150,432 C 182,430 198,452 192,478 C 180,500 155,505 135,485 Z"
+        fill="#D49878" stroke="#B47858" stroke-width="1.5" filter="url(#ls)"/>
+  <path d="M 102,512 C 88,502 93,485 115,482 C 138,484 148,500 136,516 C 122,524 110,522 102,512 Z"
+        fill="#D49878" stroke="#B47858" stroke-width="1.5" filter="url(#ls)"/>
+
+  <!-- ── Small islands ── -->
+  <ellipse cx="540" cy="400" rx="22" ry="16" fill="#C5E69C" stroke="#A5C67C" stroke-width="1" filter="url(#ls)"/>
+  <ellipse cx="470" cy="395" rx="16" ry="12" fill="#C5E69C" stroke="#A5C67C" stroke-width="1" filter="url(#ls)"/>
+
+  <!-- ── Region labels ── -->
+  <text x="400" y="420" text-anchor="middle" font-size="14" fill="#4A6A2A" font-weight="700" font-family="system-ui,sans-serif" opacity="0.6">GRASSLAND</text>
+  <text x="615" y="345" text-anchor="middle" font-size="12" fill="#8A6A2A" font-weight="700" font-family="system-ui,sans-serif" opacity="0.6">DESERT</text>
+  <text x="165" y="468" text-anchor="middle" font-size="10" fill="#8A4A2A" font-weight="700" font-family="system-ui,sans-serif" opacity="0.6">VOLCANIC</text>
+  <text x="430" y="185" text-anchor="middle" font-size="12" fill="#3A5A7A" font-weight="700" font-family="system-ui,sans-serif" opacity="0.6">SNOW PEAKS</text>
+  <text x="132" y="185" text-anchor="middle" font-size="9" fill="#8A4A5A" font-weight="700" font-family="system-ui,sans-serif" opacity="0.6">SAKURAJIMA</text>
+  <text x="55" y="78" text-anchor="middle" font-size="8" fill="#5A4A7A" font-weight="700" font-family="system-ui,sans-serif" opacity="0.6">FEYBREAK</text>
+
+  <!-- ── Compass ── -->
+  <g transform="translate(740, 45)">
+    <circle cx="0" cy="0" r="24" fill="white" opacity="0.85"/>
+    <polygon points="0,-16 -5,-2 5,-2" fill="#A32D2D"/>
+    <polygon points="0,16 -5,2 5,2" fill="#5A5A5A"/>
+    <text x="0" y="-20" text-anchor="middle" font-size="9" font-weight="700" fill="#333" font-family="sans-serif">N</text>
+  </g>
+
+  <!-- ── Scale bar ── -->
+  <g transform="translate(60, 565)">
+    <line x1="0" y1="0" x2="80" y2="0" stroke="white" stroke-width="3" opacity="0.8"/>
+    <line x1="0" y1="-4" x2="0" y2="4" stroke="white" stroke-width="2" opacity="0.8"/>
+    <line x1="80" y1="-4" x2="80" y2="4" stroke="white" stroke-width="2" opacity="0.8"/>
+    <text x="40" y="18" text-anchor="middle" font-size="9" fill="white" opacity="0.9" font-family="sans-serif">~500m</text>
+  </g>
+
+    <g filter="url(#ms)">
+    <circle cx="556" cy="476" r="15" fill="#D4760A" stroke="white" stroke-width="2.5"/>
+    <text x="556" y="476" text-anchor="middle" dy=".35em" font-size="12" font-weight="700" fill="white" font-family="sans-serif">1</text>
+  </g>
+  <text x="556" y="454" text-anchor="middle" font-size="9.5" fill="#2c2820" font-weight="600" font-family="sans-serif" style="paint-order:stroke;stroke:white;stroke-width:3px;stroke-linejoin:round">Fort Ruins</text>
+  <g filter="url(#ms)">
+    <circle cx="517" cy="480" r="15" fill="#D4760A" stroke="white" stroke-width="2.5"/>
+    <text x="517" y="480" text-anchor="middle" dy=".35em" font-size="12" font-weight="700" fill="white" font-family="sans-serif">2</text>
+  </g>
+  <text x="517" y="458" text-anchor="middle" font-size="9.5" fill="#2c2820" font-weight="600" font-family="sans-serif" style="paint-order:stroke;stroke:white;stroke-width:3px;stroke-linejoin:round">Desolate Church</text>
+  <g filter="url(#ms)">
+    <circle cx="492" cy="537" r="15" fill="#D4760A" stroke="white" stroke-width="2.5"/>
+    <text x="492" y="537" text-anchor="middle" dy=".35em" font-size="12" font-weight="700" fill="white" font-family="sans-serif">3</text>
+  </g>
+  <text x="492" y="515" text-anchor="middle" font-size="9.5" fill="#2c2820" font-weight="600" font-family="sans-serif" style="paint-order:stroke;stroke:white;stroke-width:3px;stroke-linejoin:round">Small Settlement</text>
+  <g filter="url(#ms)">
+    <circle cx="600" cy="460" r="15" fill="#D4760A" stroke="white" stroke-width="2.5"/>
+    <text x="600" y="460" text-anchor="middle" dy=".35em" font-size="12" font-weight="700" fill="white" font-family="sans-serif">4</text>
+  </g>
+  <text x="600" y="438" text-anchor="middle" font-size="9.5" fill="#2c2820" font-weight="600" font-family="sans-serif" style="paint-order:stroke;stroke:white;stroke-width:3px;stroke-linejoin:round">Thundergod</text>
+  <g filter="url(#ms)">
+    <circle cx="453" cy="440" r="15" fill="#D4760A" stroke="white" stroke-width="2.5"/>
+    <text x="453" y="440" text-anchor="middle" dy=".35em" font-size="12" font-weight="700" fill="white" font-family="sans-serif">5</text>
+  </g>
+  <text x="453" y="418" text-anchor="middle" font-size="9.5" fill="#2c2820" font-weight="600" font-family="sans-serif" style="paint-order:stroke;stroke:white;stroke-width:3px;stroke-linejoin:round">Ice Wind Is.</text>
+  <g filter="url(#ms)">
+    <circle cx="55" cy="78" r="15" fill="#D4760A" stroke="white" stroke-width="2.5"/>
+    <text x="55" y="78" text-anchor="middle" dy=".35em" font-size="12" font-weight="700" fill="white" font-family="sans-serif">6</text>
+  </g>
+  <text x="55" y="56" text-anchor="middle" font-size="9.5" fill="#2c2820" font-weight="600" font-family="sans-serif" style="paint-order:stroke;stroke:white;stroke-width:3px;stroke-linejoin:round">Loess Plains</text>
+  <g filter="url(#ms)">
+    <circle cx="531" cy="193" r="15" fill="#D4760A" stroke="white" stroke-width="2.5"/>
+    <text x="531" y="193" text-anchor="middle" dy=".35em" font-size="12" font-weight="700" fill="white" font-family="sans-serif">7</text>
+  </g>
+  <text x="531" y="171" text-anchor="middle" font-size="9.5" fill="#2c2820" font-weight="600" font-family="sans-serif" style="paint-order:stroke;stroke:white;stroke-width:3px;stroke-linejoin:round">Icy Weald</text>
+  <g filter="url(#ms)">
+    <circle cx="526" cy="514" r="15" fill="#D4760A" stroke="white" stroke-width="2.5"/>
+    <text x="526" y="514" text-anchor="middle" dy=".35em" font-size="12" font-weight="700" fill="white" font-family="sans-serif">8</text>
+  </g>
+  <text x="526" y="492" text-anchor="middle" font-size="9.5" fill="#2c2820" font-weight="600" font-family="sans-serif" style="paint-order:stroke;stroke:white;stroke-width:3px;stroke-linejoin:round">Mt. Obsidian</text>
+
+</svg>
+  <div class="map-legend">
+    <div class="map-legend-item">
+      <span class="map-legend-num" style="background:#D4760A">1</span>
+      <span><strong>Fort Ruins</strong> &mdash; 8 ore nodes, early game (156, -394)</span>
+    </div>
+    <div class="map-legend-item">
+      <span class="map-legend-num" style="background:#D4760A">2</span>
+      <span><strong>Desolate Church</strong> &mdash; 5+ nodes, mid game (67, -402)</span>
+    </div>
+    <div class="map-legend-item">
+      <span class="map-legend-num" style="background:#D4760A">3</span>
+      <span><strong>Small Settlement</strong> &mdash; 8 nodes, best main base (11, -523)</span>
+    </div>
+    <div class="map-legend-item">
+      <span class="map-legend-num" style="background:#D4760A">4</span>
+      <span><strong>Thundergod</strong> &mdash; endgame ore (256, -361)</span>
+    </div>
+    <div class="map-legend-item">
+      <span class="map-legend-num" style="background:#D4760A">5</span>
+      <span><strong>Ice Wind Is.</strong> &mdash; multi-resource (-79, -318)</span>
+    </div>
+    <div class="map-legend-item">
+      <span class="map-legend-num" style="background:#D4760A">6</span>
+      <span><strong>Loess Plains</strong> &mdash; Hexolite Quartz (Feybreak)</span>
+    </div>
+    <div class="map-legend-item">
+      <span class="map-legend-num" style="background:#D4760A">7</span>
+      <span><strong>Icy Weald</strong> &mdash; Coal & Quartz</span>
+    </div>
+    <div class="map-legend-item">
+      <span class="map-legend-num" style="background:#D4760A">8</span>
+      <span><strong>Mt. Obsidian</strong> &mdash; Coal & Ore overlap (87, -475)</span>
+    </div>
+  </div>
+</div>
+
   <table class="data-table">
     <thead>
       <tr>
