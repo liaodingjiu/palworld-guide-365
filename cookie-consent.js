@@ -2,7 +2,7 @@
 (function() {
   'use strict';
 
-  var SITE_URL = 'palguide.pages.dev';
+  var SITE_URL = 'palworldguides.com';
   var GA_ID = 'G-XXXXXXXXXX'; // Replace with your real GA4 Measurement ID
 
   function getCookie(name) {

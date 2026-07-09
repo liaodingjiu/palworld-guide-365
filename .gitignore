@@ -6,3 +6,10 @@
 !.dev.vars.example
 .env*
 !.env.example
+
+# WorkBuddy 内部文件
+.workbuddy/
+
+# 方案文档（非网站页面，不需要推到仓库）
+全球英文网站盈利方案.html
+新手网站盈利落地方案.html
