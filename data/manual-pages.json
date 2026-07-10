@@ -1,0 +1,21 @@
+{
+  "description": "Hand-written pages that exist outside the build pipeline. Merged into sitemap automatically.",
+  "pages": [
+    { "url": "https://palworldguides.com/", "lastmod": "2026-07-10", "changefreq": "weekly", "priority": "1.0" },
+    { "url": "https://palworldguides.com/palworld-1.0-update.html", "lastmod": "2026-07-10", "changefreq": "daily", "priority": "1.0" },
+    { "url": "https://palworldguides.com/best-pals.html", "lastmod": "2026-07-08", "changefreq": "weekly", "priority": "0.9" },
+    { "url": "https://palworldguides.com/best-weapons.html", "lastmod": "2026-07-09", "changefreq": "weekly", "priority": "0.9" },
+    { "url": "https://palworldguides.com/best-mounts.html", "lastmod": "2026-07-09", "changefreq": "weekly", "priority": "0.8" },
+    { "url": "https://palworldguides.com/base-locations.html", "lastmod": "2026-07-09", "changefreq": "weekly", "priority": "0.8" },
+    { "url": "https://palworldguides.com/ore-farming.html", "lastmod": "2026-07-09", "changefreq": "weekly", "priority": "0.9" },
+    { "url": "https://palworldguides.com/breeding-guide.html", "lastmod": "2026-07-08", "changefreq": "weekly", "priority": "0.9" },
+    { "url": "https://palworldguides.com/tower-bosses.html", "lastmod": "2026-07-08", "changefreq": "weekly", "priority": "0.8" },
+    { "url": "https://palworldguides.com/fast-leveling.html", "lastmod": "2026-07-09", "changefreq": "weekly", "priority": "0.9" },
+    { "url": "https://palworldguides.com/beginner-guide.html", "lastmod": "2026-07-08", "changefreq": "monthly", "priority": "0.7" },
+    { "url": "https://palworldguides.com/server-setup.html", "lastmod": "2026-07-10", "changefreq": "weekly", "priority": "0.9" },
+    { "url": "https://palworldguides.com/privacy.html", "lastmod": "2026-07-09", "changefreq": "monthly", "priority": "0.3" },
+    { "url": "https://palworldguides.com/terms.html", "lastmod": "2026-07-09", "changefreq": "monthly", "priority": "0.3" },
+    { "url": "https://palworldguides.com/about.html", "lastmod": "2026-07-09", "changefreq": "monthly", "priority": "0.3" },
+    { "url": "https://palworldguides.com/contact.html", "lastmod": "2026-07-09", "changefreq": "monthly", "priority": "0.3" }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "mining",
+  "gameId": "palworld",
+  "type": "ranking",
+
+  "question": {
+    "zh": "我的基地缺矿工，应该用哪个帕鲁？",
+    "en": "What is the best Pal for mining?"
+  },
+
+  "logic": {
+    "primarySort": "scores.mining",
+    "secondarySort": "workSuitability.mining",
+    "filters": [
+      { "field": "workSuitability.mining", "operator": "gte", "value": 2 }
+    ],
+    "weightings": {
+      "workEfficiency": 0.5,
+      "speed": 0.15,
+      "foodConsumption": 0.1,
+      "accessibility": 0.25
+    }
+  },
+
+  "content": {
+    "heroTitle": {
+      "zh": "帕鲁采矿能力排行榜 2026",
+      "en": "Best Mining Pals in Palworld 2026"
+    },
+    "heroDescription": {
+      "zh": "采矿是基地自动化最关键的环节。选对采矿帕鲁，矿石和金属锭的产量能差 3-5 倍。以下排名综合考虑了采矿等级、工作效率、移动速度和获取难度。",
+      "en": "Mining is the most critical part of base automation. The right mining Pal can increase your ore and ingot output by 3-5x. This ranking considers mining level, work efficiency, movement speed, and accessibility."
+    }
+  },
+
+  "seo": {
+    "title": "Best Mining Pals in Palworld 2026 — Palworld Mining Tier List",
+    "description": "Ranked list of the best Pals for mining in Palworld 1.0. Compare mining levels, efficiency, and how to get each Pal — from early game to endgame.",
+    "keywords": ["palworld best mining pal", "mining pal tier list", "best pal for ore mining", "palworld mining guide"],
+    "slug": "mining",
+    "canonical": "https://palworldguides.com/best-pals/mining/"
+  }
+}

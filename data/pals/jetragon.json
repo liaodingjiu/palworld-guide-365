@@ -1,0 +1,107 @@
+{
+  "id": "jetragon",
+  "gameId": "palworld",
+  "number": 111,
+
+  "name": {
+    "zh": "捷龙",
+    "en": "Jetragon"
+  },
+  "slug": "jetragon",
+  "image": "/images/pals/jetragon.png",
+
+  "classification": {
+    "elements": ["Dragon"],
+    "rarity": "Legendary",
+    "role": ["Mount", "Combat"],
+    "size": "Huge",
+    "isRideable": true,
+    "isFlyable": true
+  },
+
+  "stats": {
+    "hp": 175,
+    "attack": 140,
+    "defense": 120,
+    "rangedAttack": 0,
+    "speed": 170,
+    "stamina": 120
+  },
+
+  "workSuitability": {
+    "kindling": 0,
+    "watering": 0,
+    "planting": 0,
+    "generating": 0,
+    "handiwork": 0,
+    "gathering": 3,
+    "lumbering": 0,
+    "mining": 0,
+    "medicine": 0,
+    "cooling": 0,
+    "transporting": 0,
+    "farming": 0
+  },
+
+  "skills": [
+    { "name": "Dragon Cannon", "element": "Dragon", "power": 80, "cooldown": 5, "level": 1 },
+    { "name": "Dragon Burst", "element": "Dragon", "power": 100, "cooldown": 10, "level": 7 },
+    { "name": "Dragon Meteor", "element": "Dragon", "power": 150, "cooldown": 45, "level": 15 },
+    { "name": "Fire Ball", "element": "Fire", "power": 150, "cooldown": 55, "level": 22 },
+    { "name": "Beam Comet", "element": "Dragon", "power": 130, "cooldown": 25, "level": 30 },
+    { "name": "Flare Storm", "element": "Fire", "power": 100, "cooldown": 18, "level": 40 },
+    { "name": "Dragon God's Wrath", "element": "Dragon", "power": 180, "cooldown": 60, "level": 50 }
+  ],
+
+  "partnerSkill": {
+    "name": "Aerial Missile",
+    "description": "可作为飞行坐骑骑乘。骑乘时，捷龙会持续发射追踪导弹攻击敌人。",
+    "descriptionEn": "Can be ridden as a flying mount. While riding, Jetragon continuously fires homing missiles at enemies."
+  },
+
+  "acquisition": {
+    "habitats": ["mount_obsidian"],
+    "isBreedable": true,
+    "isCatchable": true,
+    "isBossEncounter": true,
+    "bossLocation": "Mount Obsidian Summit",
+    "bossLevel": 50,
+    "dungeonBoss": false
+  },
+
+  "breeding": {
+    "breedingPower": 999,
+    "specialCombinations": []
+  },
+
+  "drops": [
+    { "itemId": "pure_quartz", "dropRate": "100%", "quantity": [5, 10] },
+    { "itemId": "polymer", "dropRate": "100%", "quantity": [3, 8] },
+    { "itemId": "carbon_fiber", "dropRate": "50%", "quantity": [2, 5] },
+    { "itemId": "diamond", "dropRate": "20%", "quantity": [1, 2] }
+  ],
+
+  "decision": {
+    "bestFor": ["mount-flying", "combat"],
+    "gameStage": {
+      "early": false,
+      "mid": false,
+      "late": true
+    },
+    "scores": {
+      "mining": 0,
+      "base-worker": 0,
+      "combat": 95,
+      "handiwork": 0,
+      "transport": 0,
+      "farming": 0,
+      "gathering": 0,
+      "mount-flying": 99,
+      "mount-ground": 0
+    },
+    "reasons": {
+      "mount-flying": ["全游戏最快飞行速度 170", "Legendary 级别耐力", "可空中悬停，探索最佳选择", "追踪导弹可边飞边清怪"],
+      "combat": ["Legendary 级别属性，HP 175", "Dragon + Fire 双元素覆盖广", "伙伴技能在骑乘时提供额外 DPS", "克制 Dark、Grass、Ice 等多种元素"]
+    }
+  }
+}

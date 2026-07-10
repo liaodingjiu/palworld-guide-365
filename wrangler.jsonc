@@ -5,6 +5,10 @@
   "observability": {
     "enabled": true
   },
+  "build": {
+    "command": "node scripts/build.js",
+    "output_directory": "."
+  },
   "assets": {
     "directory": "."
   },
