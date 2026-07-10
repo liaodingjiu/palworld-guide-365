@@ -100,10 +100,10 @@
       "mount-ground": 0
     },
     "reasons": {
-      "mining": ["Mining 工作适应性 3 级", "手工 4 级，挖完还能精炼", "可夜间工作不睡觉", "中期通过配种即可获得"],
-      "base-worker": ["手工 4 级 + 采矿 3 级组合无可替代", "搬运 2 级保证物资流转", "AI 行为优良，很少卡住"],
-      "combat": ["攻击 130，输出可观", "Ground 元素克制 Electric", "伙伴技能提供额外火力"],
-      "handiwork": ["全游戏最高手工等级 4 级", "建造和制作速度极快", "配合采矿能力，从原料到成品一条龙"]
+      "mining": ["Mining Lv 3 — top-tier ore output", "Handiwork Lv 4 handles refining too", "Nocturnal — works through the night", "Obtainable mid-game via breeding"],
+      "base-worker": ["Handiwork 4 + Mining 3 combo is unmatched", "Transporting 2 keeps resources flowing", "Excellent AI pathing, rarely gets stuck"],
+      "combat": ["130 Attack — strong offensive presence", "Ground element counters Electric types", "Partner skill adds bonus machine-gun DPS"],
+      "handiwork": ["Highest Handiwork Lv 4 in the game", "Extremely fast building and crafting speed", "Mining ability means raw materials → finished product in one Pal"]
     }
   }
 }

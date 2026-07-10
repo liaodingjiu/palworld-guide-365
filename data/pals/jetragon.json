@@ -100,8 +100,8 @@
       "mount-ground": 0
     },
     "reasons": {
-      "mount-flying": ["全游戏最快飞行速度 170", "Legendary 级别耐力", "可空中悬停，探索最佳选择", "追踪导弹可边飞边清怪"],
-      "combat": ["Legendary 级别属性，HP 175", "Dragon + Fire 双元素覆盖广", "伙伴技能在骑乘时提供额外 DPS", "克制 Dark、Grass、Ice 等多种元素"]
+      "mount-flying": ["Fastest flying speed in the game (170)", "Legendary stamina — cross the map non-stop", "Hover mode for precise exploration", "Homing missiles clear enemies while flying"],
+      "combat": ["Legendary stats — 175 HP, 140 ATK", "Dragon + Fire dual element coverage", "Partner skill adds missile DPS while mounted", "Counters Dark, Grass, Ice, and more"]
     }
   }
 }
