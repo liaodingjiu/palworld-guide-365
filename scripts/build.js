@@ -1,21 +1,21 @@
 #!/usr/bin/env node
 /**
- * PalGuide Build Script
+ * PalGuide Build Script — Data-Driven Page Generator
  *
  * Reads structured game data → renders templates → writes static HTML pages.
  * Zero dependencies. Pure Node.js.
+ * Site-specific values live in config.{game}.js — this file is game-agnostic.
  *
  * Usage: node scripts/build.js
  */
 
 const fs = require('fs');
 const path = require('path');
+const C = require('./config.palworld.js');
 
 // ─── Configuration ───────────────────────────────────────────
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const OUTPUT_DIR = path.join(__dirname, '..');
-const DOMAIN = 'https://palworldguides.com';
-const CLARITY_ID = 'xk4e29fx10';
 const BUILD_DATE = new Date().toISOString().split('T')[0];
 
 // ─── Data Loaders ────────────────────────────────────────────
@@ -60,7 +60,7 @@ function renderPalEntityPage(pal, game) {
 
   const elementTags = pal.classification.elements.map(e => `<span class="tag tag-element">${e}</span>`).join('\n    ');
   const roleTags = pal.classification.role.map(r => `<span class="tag tag-role">${r}</span>`).join('\n    ');
-  const bestForTags = pal.decision.bestFor.map(bf => `<a href="/best-pals/${bf}/" class="tag tag-bestfor">${bf.replace(/-/g, ' ')}</a>`).join('\n      ');
+  const bestForTags = pal.decision.bestFor.map(bf => `<a href="/${C.decisionUrlPrefix}/${bf}/" class="tag tag-bestfor">${bf.replace(/-/g, ' ')}</a>`).join('\n      ');
 
   // Game stage
   const stages = [];
@@ -142,7 +142,7 @@ function renderPalEntityPage(pal, game) {
   <h2>How to Breed ${pal.name.en}</h2>
   <p class="section-intro">${pal.name.en} has a breeding power of <b>${pal.breeding.breedingPower}</b>.${specialCount > 0 ? ` There ${specialCount > 1 ? 'are' : 'is'} <b>${specialCount}</b> special combination${specialCount > 1 ? 's' : ''} that guarantee${specialCount === 1 ? 's' : ''} ${pal.name.en}:` : ' No special combinations exist — use the standard breeding power formula.'}</p>
   ${comboRows ? `<table class="breeding-table"><thead><tr><th>Parent A</th><th>Parent B</th><th>Result</th><th>Chance</th></tr></thead><tbody>${comboRows}</tbody></table>` : ''}
-  <p style="margin-top:1rem;">🧬 Find all breeding paths to ${pal.name.en} with the <a href="/breeding-guide.html">Breeding Calculator</a>.</p>
+  <p style="margin-top:1rem;">🧬 Find all breeding paths to ${pal.name.en} with the <a href="${C.toolCards[1].href}">${C.toolCards[1].title}</a>.</p>
 </section>`;
   }
 
@@ -166,18 +166,13 @@ function renderPalEntityPage(pal, game) {
       .sort((a, b) => b.score - a.score);
 
     if (usesWithScores.length > 0) {
-      const scenarioLabels = {
-        'mining': 'Mining', 'base-worker': 'Base Worker', 'combat': 'Combat',
-        'handiwork': 'Handiwork', 'transport': 'Transport', 'farming': 'Farming',
-        'gathering': 'Gathering', 'mount-flying': 'Flying Mount', 'mount-ground': 'Ground Mount'
-      };
       bestUsesHTML = `<section class="best-uses">
   <h2>Best Uses for ${pal.name.en}</h2>
   <p class="section-intro">Based on our decision scoring system, ${pal.name.en} excels at:</p>
   <div class="use-cards">
     ${usesWithScores.map(u => `<div class="use-card">
         <div class="use-header">
-          <h3><a href="/best-pals/${u.scenario}/">${scenarioLabels[u.scenario] || u.scenario}</a></h3>
+          <h3><a href="/${C.decisionUrlPrefix}/${u.scenario}/">${C.getScenarioLabel(u.scenario)}</a></h3>
           <span class="use-score">${u.score}/100</span>
         </div>
         ${u.reasons.length > 0 ? `<ul class="use-reasons">${u.reasons.map(r => `<li>${r}</li>`).join('')}</ul>` : ''}
@@ -187,8 +182,9 @@ function renderPalEntityPage(pal, game) {
     }
   }
 
-  const title = `${pal.name.en} — ${pal.name.zh} | Palworld Guide ${game.version} | PalGuide`;
-  const description = `${pal.name.en} (${pal.name.zh}) — ${pal.classification.elements.join('/')} Pal. Mining Lv ${pal.workSuitability.mining}, Handiwork Lv ${pal.workSuitability.handiwork}. Stats, skills, how to get, breeding combos, and best uses in Palworld ${game.version}.`;
+  const title = C.buildTitle(pal, game);
+  const description = C.buildDescription(pal, game);
+  const keywords = C.buildKeywords(pal);
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -198,51 +194,42 @@ function renderPalEntityPage(pal, game) {
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <title>${title}</title>
 <meta name="description" content="${description}">
-<meta name="keywords" content="${pal.name.en.toLowerCase()}, ${pal.name.zh}, ${pal.classification.elements.join(' ')}, palworld pal, palworld guide">
+<meta name="keywords" content="${keywords}">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="${DOMAIN}/pal/${pal.slug}/">
+<link rel="canonical" href="${C.domain}/${C.entityUrlPrefix}/${pal.slug}/">
 <meta property="og:title" content="${title}">
 <meta property="og:description" content="${description}">
 <meta property="og:type" content="article">
-<meta property="og:url" content="${DOMAIN}/pal/${pal.slug}/">
+<meta property="og:url" content="${C.domain}/${C.entityUrlPrefix}/${pal.slug}/">
 <link rel="stylesheet" href="/shared.css">
 ${COMPONENT_CSS_LINK}
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebContent",
-  "name": "${pal.name.en} — Palworld ${game.version} Guide",
-  "description": "${pal.classification.elements.join('/')} element Pal in Palworld ${game.version}. Stats, skills, breeding, and best uses.",
-  "about": { "@type": "VideoGame", "name": "${game.name}", "version": "${game.version}" }
-}
+${JSON.stringify(C.schemaOrgEntity(pal, game), null, 2)}
 </script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "${DOMAIN}/" },
-    { "@type": "ListItem", "position": 2, "name": "Pal Finder", "item": "${DOMAIN}/best-pals.html" },
-    { "@type": "ListItem", "position": 3, "name": "${pal.name.en}", "item": "${DOMAIN}/pal/${pal.slug}/" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "${C.domain}/" },
+    { "@type": "ListItem", "position": 2, "name": "${C.nav.breadcrumbEntityLabel}", "item": "${C.domain}${C.nav.breadcrumbEntityHref}" },
+    { "@type": "ListItem", "position": 3, "name": "${pal.name.en}", "item": "${C.domain}/${C.entityUrlPrefix}/${pal.slug}/" }
   ]
 }
 </script>
-<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "${CLARITY_ID}");</script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "${C.clarityId}");</script>
 </head>
 <body>
 
 <div class="top-bar">
-  📊 Data-driven Pal guide. Updated for Palworld ${game.version} — <time datetime="${game.lastUpdated}">${game.lastUpdated}</time>.
+  ${C.ui.topBar(game)} — <time datetime="${game.lastUpdated}">${game.lastUpdated}</time>.
 </div>
 
 <nav aria-label="Main navigation">
   <div class="nav-inner">
-    <a href="/" class="logo">Pal<span>Guide</span></a>
+    <a href="${C.nav.logoHref}" class="logo">${C.nav.logoHTML}</a>
     <div class="nav-links">
-      <a href="/best-pals.html">Pal Finder</a>
-      <a href="/best-pals/mining/">Best Pals</a>
-      <a href="/breeding-guide.html">Breeding</a>
-      <a href="/about.html">About</a>
+      ${C.nav.links.map(l => `<a href="${l.href}">${l.label}</a>`).join('\n      ')}
     </div>
   </div>
 </nav>
@@ -250,7 +237,7 @@ ${COMPONENT_CSS_LINK}
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <ol>
     <li><a href="/">Home</a></li>
-    <li><a href="/best-pals.html">Pal Finder</a></li>
+    <li><a href="${C.nav.breadcrumbEntityHref}">${C.nav.breadcrumbEntityLabel}</a></li>
     <li>${pal.name.en}</li>
   </ol>
 </nav>
@@ -323,23 +310,19 @@ ${COMPONENT_CSS_LINK}
   <section class="related-tools">
     <h2>Related Tools</h2>
     <div class="tool-links">
-      <a href="/best-pals.html" class="tool-card">
-        <span class="tool-icon">🔍</span>
-        <strong>Pal Finder</strong>
-        <span>Filter Pals by stats, work ability, and element</span>
-      </a>
-      <a href="/breeding-guide.html" class="tool-card">
-        <span class="tool-icon">🧬</span>
-        <strong>Breeding Calculator</strong>
-        <span>Calculate breeding results for any Pal combination</span>
-      </a>
+      ${C.toolCards.map(tc => `
+      <a href="${tc.href}" class="tool-card">
+        <span class="tool-icon">${tc.icon}</span>
+        <strong>${tc.title}</strong>
+        <span>${tc.desc}</span>
+      </a>`).join('')}
     </div>
   </section>
 </main>
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <p>© ${new Date().getFullYear()} PalGuide. Data-driven Palworld companion.</p>
+    <p>© ${new Date().getFullYear()} ${C.ui.footer}</p>
     <div class="footer-links">
       <a href="/privacy.html">Privacy</a>
       <a href="/terms.html">Terms</a>
@@ -353,27 +336,10 @@ ${COMPONENT_CSS_LINK}
 }
 
 function renderDecisionPage(decision, rankedPals, game) {
-  const scenarioLabels = {
-    'mining': 'Mining', 'base-worker': 'Base Worker', 'combat': 'Combat',
-    'handiwork': 'Handiwork', 'transport': 'Transport', 'farming': 'Farming',
-    'gathering': 'Gathering', 'mount-flying': 'Flying Mount', 'mount-ground': 'Ground Mount'
-  };
-  const scenarioLabel = scenarioLabels[decision.id] || decision.id;
+  const scenarioLabel = C.getScenarioLabel(decision.id);
 
-  // Related decisions
-  const relatedMap = {
-    'mining': [{ slug: 'base-worker', label: 'Best Base Workers' }, { slug: 'transport', label: 'Best Transport Pals' }],
-    'base-worker': [{ slug: 'mining', label: 'Best Mining Pals' }, { slug: 'transport', label: 'Best Transport Pals' }],
-  };
-  const related = relatedMap[decision.id] || [];
-
-  // Icon map per decision type
-  const iconMap = {
-    'mining': '⛏️', 'base-worker': '🏭', 'combat': '⚔️',
-    'handiwork': '🔧', 'transport': '📦', 'farming': '🌾',
-    'gathering': '🌿', 'mount-flying': '🪽', 'mount-ground': '🏇'
-  };
-  const icon = iconMap[decision.id] || '⭐';
+  const related = C.getRelatedDecisions(decision.id);
+  const icon = C.getDecisionIcon(decision.id);
 
   // Ranking table
   const tableRows = rankedPals.map((p, i) => {
@@ -423,7 +389,7 @@ function renderDecisionPage(decision, rankedPals, game) {
           ${p.decision.gameStage.mid ? '✅ Mid' : '❌ Mid'}
           ${p.decision.gameStage.late ? '✅ Late' : '❌ Late'}
         </div>
-        <a href="/breeding-guide.html" class="card-cta">🧬 Breed this Pal →</a>
+        <a href="/breeding-guide.html" class="card-cta">${C.ui.decisionCTA}</a>
       </div>
     </article>`;
   }).join('\n  ');
@@ -463,27 +429,24 @@ ${COMPONENT_CSS_LINK}
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "${DOMAIN}/" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "${C.domain}/" },
     { "@type": "ListItem", "position": 2, "name": "${decision.content.heroTitle.en}", "item": "${decision.seo.canonical}" }
   ]
 }
 </script>
-<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "${CLARITY_ID}");</script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "${C.clarityId}");</script>
 </head>
 <body>
 
 <div class="top-bar">
-  📊 Updated for Palworld ${game.version}. Data-driven rankings — <time datetime="${game.lastUpdated}">${game.lastUpdated}</time>.
+  ${C.ui.decisionTopBar(game)} — <time datetime="${game.lastUpdated}">${game.lastUpdated}</time>.
 </div>
 
 <nav aria-label="Main navigation">
   <div class="nav-inner">
-    <a href="/" class="logo">Pal<span>Guide</span></a>
+    <a href="${C.nav.logoHref}" class="logo">${C.nav.logoHTML}</a>
     <div class="nav-links">
-      <a href="/best-pals.html">Pal Finder</a>
-      <a href="/best-pals/mining/">Best Pals</a>
-      <a href="/breeding-guide.html">Breeding</a>
-      <a href="/about.html">About</a>
+      ${C.nav.links.map(l => `<a href="${l.href}">${l.label}</a>`).join('\n      ')}
     </div>
   </div>
 </nav>
@@ -503,14 +466,14 @@ ${COMPONENT_CSS_LINK}
 
   <section class="ranking-methodology">
     <h2>How We Rank</h2>
-    <p>Our rankings combine in-game data with hands-on gameplay experience. Each Pal is evaluated on:</p>
+    <p>${C.ui.rankMethodology}</p>
     <ul>
       ${decision.logic.weightings.workEfficiency > 0 ? `<li><strong>Work Efficiency</strong> — work suitability level (higher = faster resource output)</li>` : ''}
       ${decision.logic.weightings.speed > 0 ? `<li><strong>Movement Speed</strong> — affects actual work rate (less time walking = more time working)</li>` : ''}
       ${decision.logic.weightings.accessibility > 0 ? `<li><strong>Accessibility</strong> — how early and easily you can obtain this Pal</li>` : ''}
       ${decision.logic.weightings.foodConsumption > 0 ? `<li><strong>Food Efficiency</strong> — lower food drain means more uptime</li>` : ''}
     </ul>
-    <p>Scores are expert-assessed based on actual gameplay testing. Only Pals with ${decision.logic.filters[0]?.field?.split('.').pop() || ''} ≥ ${decision.logic.filters[0]?.value || ''} are included.</p>
+    <p>${C.ui.rankDisclaimer} Only Pals with${decision.logic.filters[0]?.field?.split('.').pop() || ''} ≥ ${decision.logic.filters[0]?.value || ''} are included.</p>
   </section>
 
   <section class="ranking-table-section">
@@ -533,30 +496,26 @@ ${COMPONENT_CSS_LINK}
   <section class="related-tools">
     <h2>Related Tools</h2>
     <div class="tool-links">
-      <a href="/best-pals.html" class="tool-card">
-        <span class="tool-icon">🔍</span>
-        <strong>Pal Finder</strong>
-        <span>Filter by work ability, element, and game stage</span>
-      </a>
-      <a href="/breeding-guide.html" class="tool-card">
-        <span class="tool-icon">🧬</span>
-        <strong>Breeding Calculator</strong>
-        <span>Calculate breeding results and paths</span>
-      </a>
+      ${C.toolCards.map(tc => `
+      <a href="${tc.href}" class="tool-card">
+        <span class="tool-icon">${tc.icon}</span>
+        <strong>${tc.title}</strong>
+        <span>${tc.desc}</span>
+      </a>`).join('')}
     </div>
   </section>
 
   ${related.length > 0 ? `<section class="related-decisions">
     <h2>Related Rankings</h2>
     <div class="decision-links">
-      ${related.map(r => `<a href="/best-pals/${r.slug}/" class="decision-link-card">${r.label}</a>`).join('\n      ')}
+      ${related.map(r => `<a href="/${C.decisionUrlPrefix}/${r.slug}/" class="decision-link-card">${r.label}</a>`).join('\n      ')}
     </div>
   </section>` : ''}
 </main>
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <p>© ${new Date().getFullYear()} PalGuide. Data-driven Palworld companion.</p>
+    <p>© ${new Date().getFullYear()} ${C.ui.footer}</p>
     <div class="footer-links">
       <a href="/privacy.html">Privacy</a>
       <a href="/terms.html">Terms</a>
@@ -590,8 +549,14 @@ function build() {
 
   // 2. Load all Pals
   console.log('\n📦 Loading Pal data...');
-  const pals = loadAllJSON('pals');
-  console.log(`  → ${pals.length} Pals loaded`);
+  // Load entities from all configured entity directories
+  const pals = [];
+  C.entityDirs.forEach(dir => {
+    const loaded = loadAllJSON(dir);
+    console.log(`  → ${loaded.length} entities from data/${dir}/`);
+    pals.push(...loaded);
+  });
+  console.log(`  → ${pals.length} total entities loaded`);
 
   // 3. Load all Decisions
   console.log('\n📦 Loading Decision data...');
@@ -609,18 +574,18 @@ function build() {
 
   pals.forEach(pal => {
     const html = renderPalEntityPage(pal, game);
-    const outDir = path.join(OUTPUT_DIR, 'pal', pal.slug);
+    const outDir = path.join(OUTPUT_DIR, C.entityUrlPrefix, pal.slug);
     ensureDir(outDir);
     fs.writeFileSync(path.join(outDir, 'index.html'), html);
     pageList.push({
-      url: `${DOMAIN}/pal/${pal.slug}/`,
+      url: `${C.domain}/${C.entityUrlPrefix}/${pal.slug}/`,
       lastmod: game.lastUpdated,
       changefreq: 'weekly',
       priority: '0.8'
     });
     entityCount++;
   });
-  console.log(`  ✓ Generated ${entityCount} entity pages → /pal/{slug}/`);
+  console.log(`  ✓ Generated ${entityCount} entity pages → /${C.entityUrlPrefix}/{slug}/`);
 
   // 6. Generate Decision pages
   console.log('\n📄 Generating Decision pages...');
@@ -666,18 +631,18 @@ function build() {
     }
 
     const html = renderDecisionPage(decision, matching, game);
-    const outDir = path.join(OUTPUT_DIR, 'best-pals', decision.id);
+    const outDir = path.join(OUTPUT_DIR, C.decisionUrlPrefix, decision.id);
     ensureDir(outDir);
     fs.writeFileSync(path.join(outDir, 'index.html'), html);
     pageList.push({
-      url: `${DOMAIN}/best-pals/${decision.id}/`,
+      url: `${C.domain}/${C.decisionUrlPrefix}/${decision.id}/`,
       lastmod: game.lastUpdated,
       changefreq: 'weekly',
       priority: '0.9'
     });
     decisionCount++;
   });
-  console.log(`  ✓ Generated ${decisionCount} decision pages → /best-pals/{scenario}/`);
+  console.log(`  ✓ Generated ${decisionCount} decision pages → /${C.decisionUrlPrefix}/{scenario}/`);
 
   // 7. Load manual pages (hand-written pages outside build pipeline)
   console.log('\n📄 Loading manual page list...');
