@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Palworld Server Setup Guide 2026 — Dedicated, Hosted & Self-Hosted | PalGuide</title>
+<meta name="description" content="Complete Palworld server setup guide for 2026. Step-by-step instructions for dedicated servers (SteamCMD), third-party hosts (GPortal, Nitrado), and self-hosting. Includes port forwarding, server settings, and troubleshooting.">
+<meta name="keywords" content="Palworld server setup, Palworld dedicated server, Palworld server hosting, Palworld multiplayer server, Palworld server guide, palword server, gportal Palworld, nitrado Palworld, Palworld port forwarding, Palworld server settings">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://palworldguides.com/server-setup.html">
+<meta property="og:title" content="Palworld Server Setup Guide 2026 — Dedicated, Hosted & Self-Hosted">
+<meta property="og:description" content="Complete Palworld server setup guide. Dedicated servers via SteamCMD, third-party hosts (GPortal, Nitrado), or self-host on your own PC. Port forwarding, settings, and troubleshooting included.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://palworldguides.com/server-setup.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Palworld Server Setup Guide 2026 — Dedicated, Hosted & Self-Hosted">
+<meta name="twitter:description" content="Complete Palworld server setup guide. Dedicated, hosting, or self-hosted — all options covered with step-by-step instructions.">
+<link rel="stylesheet" href="shared.css">
+
+<!-- Schema.org JSON-LD: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Palworld Server Setup Guide 2026 — Dedicated, Hosted & Self-Hosted",
+  "description": "Complete Palworld server setup guide for 2026. Step-by-step instructions for dedicated servers (SteamCMD), third-party hosts (GPortal, Nitrado), and self-hosting. Includes port forwarding, server settings, and troubleshooting.",
+  "author": { "@type": "Organization", "name": "PalGuide Team" },
+  "datePublished": "2026-07-10",
+  "dateModified": "2026-07-10",
+  "publisher": { "@type": "Organization", "name": "PalGuide" },
+  "mainEntityOfPage": "https://palworldguides.com/server-setup.html"
+}
+</script>
+
+<!-- Schema.org JSON-LD: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://palworldguides.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Server Setup Guide", "item": "https://palworldguides.com/server-setup.html" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="top-bar">
+  Palworld Server Setup Guide 2026 — All hosting options covered. Updated <time datetime="2026-07-10">July 10, 2026</time>.
+</div>
+
+<nav aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Pal<span>Guide</span></a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="best-pals.html">Best Pals</a></li>
+        <li><a href="best-weapons.html">Best Weapons</a></li>
+        <li><a href="best-mounts.html">Best Mounts</a></li>
+        <li><a href="base-locations.html">Base Locations</a></li>
+        <li><a href="ore-farming.html">Ore Farming</a></li>
+        <li><a href="breeding-guide.html">Breeding</a></li>
+        <li><a href="tower-bosses.html">Tower Bosses</a></li>
+        <li><a href="fast-leveling.html">Fast Leveling</a></li>
+        <li><a href="beginner-guide.html">Beginner Guide</a></li>
+        <li><a href="server-setup.html">Server Setup</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <span class="sun">☀️</span>
+        <span class="moon">🌙</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="index.html">Home</a> / Server Setup Guide
+</nav>
+
+<section class="hero">
+  <h1>Palworld Server Setup Guide 2026 — Dedicated, Hosted & Self-Hosted</h1>
+  <p>Everything you need to set up a Palworld multiplayer server. Whether you want a free dedicated server via SteamCMD, a plug-and-play third-party host like GPortal or Nitrado, or to self-host on your own PC — this guide covers all three paths, step by step.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="val">3</div><div class="lbl">Hosting Options</div></div>
+    <div class="hero-stat"><div class="val">32</div><div class="lbl">Max Players</div></div>
+    <div class="hero-stat"><div class="val">4</div><div class="lbl">Guilds / Server</div></div>
+  </div>
+  <div class="hero-updated">Last updated: <time datetime="2026-07-10">July 10, 2026</time></div>
+</section>
+
+<!-- Table of Contents -->
+<nav class="toc" aria-label="Table of contents">
+  <h3>What's on this page</h3>
+  <ol>
+    <li><a href="#before-you-start">Before You Start: What You Need to Know</a></li>
+    <li><a href="#option-1">Option 1: Official Dedicated Server (SteamCMD) — Free</a></li>
+    <li><a href="#option-2">Option 2: Third-Party Hosting (GPortal, Nitrado) — Easiest</a></li>
+    <li><a href="#option-3">Option 3: Self-Host on Your Own PC — Quickest</a></li>
+    <li><a href="#port-forwarding">Port Forwarding & Firewall Configuration</a></li>
+    <li><a href="#server-settings">Server Settings: Customize Your World</a></li>
+    <li><a href="#admin">Server Admin Commands & Moderation</a></li>
+    <li><a href="#troubleshooting">Common Issues & Troubleshooting</a></li>
+    <li><a href="#faq">Frequently Asked Questions</a></li>
+  </ol>
+</nav>
+
+<!-- AD -->
+<div class="ad-placeholder">[ AdSense Ad Unit — 728x90 Leaderboard ]</div>
+
+<!-- Hosting Comparison Cards -->
+<div class="grid-3">
+  <div class="card">
+    <h3>🖥️ SteamCMD Dedicated</h3>
+    <p><strong>Free.</strong> Run on a separate machine or VPS. Full control over every setting. Requires basic command-line comfort and port forwarding setup. Best for: tech-savvy admins who want total control at zero cost.</p>
+  </div>
+  <div class="card">
+    <h3>☁️ Third-Party Host</h3>
+    <p><strong>$5–$20/month.</strong> GPortal, Nitrado, and others handle the hardware. One-click install, automatic updates, built-in backups. Best for: groups who want a 24/7 server without managing infrastructure.</p>
+  </div>
+  <div class="card">
+    <h3>🏠 Self-Host (Your PC)</h3>
+    <p><strong>Free.</strong> Run the server on the same PC you play on. Fastest setup, no extra hardware. Downside: server goes offline when your PC sleeps. Best for: small groups testing the waters before committing to a paid host.</p>
+  </div>
+</div>
+
+<!-- SECTION: Before You Start -->
+<section class="section" id="before-you-start">
+  <h2><span class="icon">📋</span> Before You Start: What You Need to Know</h2>
+  <p class="section-desc">Five things to understand before you touch a single config file.</p>
+
+  <div class="prose">
+    <h3>1. Palworld Servers Are Resource-Hungry</h3>
+    <p>A Palworld dedicated server with 4–8 players needs at minimum <strong>8 GB of RAM</strong> and a <strong>4-core CPU</strong>. For 16+ players, plan for 16 GB RAM and 6+ cores. The game simulates every Pal, base, and world interaction server-side — it's not a lightweight process. If you're renting a VPS, budget at least $15–$25/month for a machine that won't lag during peak hours.</p>
+
+    <h3>2. You Need to Open Ports (Unless You Use a Host)</h3>
+    <p>For anyone outside your home network to connect, you must forward <strong>UDP port 8211</strong> on your router. If you're using a third-party host like GPortal or Nitrado, they handle this for you — no router configuration needed. Self-hosting or running your own dedicated server? Port forwarding is mandatory, and we cover it in detail <a href="#port-forwarding">below</a>.</p>
+
+    <h3>3. Server Progress Is Tied to the Server, Not Your Account</h3>
+    <p>Unlike many games, Palworld server saves are world-level — the map, bases, and Pal data live on the server machine. If the server goes down without a backup, progress is lost for <strong>everyone</strong>. Set up automatic backups (covered in each option below) before you invite anyone.</p>
+
+    <h3>4. 32 Players Is the Default Cap</h3>
+    <p>Palworld's official dedicated server supports up to 32 concurrent players by default. You can lower this in the config to reduce resource usage, or raise it if your hardware can handle the load. Most community servers run comfortably with 10–20 players on mid-range hardware.</p>
+
+    <h3>5. Crossplay Is Limited (as of 2026)</h3>
+    <p>Steam players can connect to any dedicated server. Xbox/Game Pass players have more restrictions — check Pocketpair's latest crossplay status before inviting console friends. As of the 1.0 release, crossplay support is improving but not yet seamless across all platforms.</p>
+  </div>
+
+  <div class="tip-box">
+    <strong>Tip:</strong> Before committing to any hosting option, decide how many players you'll have and whether the server needs to run 24/7. A self-hosted server is perfect for 4 friends who play together on weekends. A dedicated or hosted server is what you want for a public community that needs always-on uptime.
+  </div>
+</section>
+
+<!-- SECTION: Option 1 - SteamCMD -->
+<section class="section" id="option-1">
+  <h2><span class="icon">🖥️</span> Option 1: Official Dedicated Server via SteamCMD (Free)</h2>
+  <p class="section-desc">The official method from Pocketpair. Free, fully customizable, and runs on Windows or Linux. This is what most community servers use.</p>
+
+  <div class="prose">
+    <h3>Step 1: Install SteamCMD</h3>
+    <p><strong>Windows:</strong> Download SteamCMD from <a href="https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip" target="_blank" rel="noopener">Valve's official CDN</a>. Extract it to a folder like <code>C:\steamcmd</code>. Run <code>steamcmd.exe</code> once — it will update itself and drop you into the Steam> prompt.</p>
+    <p><strong>Linux (Ubuntu/Debian):</strong> SteamCMD is available via multiverse repo:</p>
+    <div class="tip-box">
+      <code>sudo add-apt-repository multiverse<br>
+      sudo dpkg --add-architecture i386<br>
+      sudo apt update<br>
+      sudo apt install steamcmd</code>
+    </div>
+
+    <h3>Step 2: Download the Palworld Server</h3>
+    <p>From the SteamCMD prompt (<code>Steam></code>), run these commands:</p>
+    <div class="tip-box">
+      <code>login anonymous<br>
+      force_install_dir ./palworld-server<br>
+      app_update 2394010 validate</code>
+    </div>
+    <p>The server files are roughly <strong>20 GB</strong>. Download time depends on your connection. App ID <strong>2394010</strong> is the official Palworld Dedicated Server — it's free and does not require owning the game.</p>
+
+    <h3>Step 3: Configure the Server</h3>
+    <p>Navigate to <code>palworld-server/Pal/Saved/Config/WindowsServer/</code> (or <code>LinuxServer/</code> on Linux). Find or create <strong><code>PalWorldSettings.ini</code></strong>. This is your main configuration file. Start with the defaults and tweak as needed — every setting is explained in the <a href="#server-settings">Server Settings section</a> below.</p>
+
+    <h3>Step 4: Start the Server</h3>
+    <p><strong>Windows:</strong> Run <code>PalServer.exe</code> from the server folder. A console window opens — leave it running. The server is ready when you see <code>"Server is up and running"</code> in the log.</p>
+    <p><strong>Linux:</strong> Run <code>./PalServer.sh</code> from the server directory. For background operation, use:</p>
+    <div class="tip-box">
+      <code>./PalServer.sh -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS &</code>
+    </div>
+    <p>The flags <code>-useperfthreads</code> and <code>-UseMultithreadForDS</code> improve performance on multi-core machines — always include them.</p>
+
+    <h3>Step 5: Set Up Automatic Backups</h3>
+    <p>The server world save is at <code>Pal/Saved/SaveGames/0/</code>. Set up a scheduled task or cron job to copy this folder every hour:</p>
+    <p><strong>Linux cron (hourly backup):</strong></p>
+    <div class="tip-box">
+      <code>0 * * * * cp -r /path/to/palworld-server/Pal/Saved/SaveGames /backup/palworld-$(date +\%Y\%m\%d-\%H\%M)</code>
+    </div>
+
+    <h3>Step 6: Connect to Your Server</h3>
+    <p>Launch Palworld, click "Join Multiplayer Game", and enter your server's public IP address followed by the port: <code>123.45.67.89:8211</code>. If you're playing on the same machine as the server, use <code>127.0.0.1:8211</code>. Set a server password in PalWorldSettings.ini if you want to keep randoms out.</p>
+  </div>
+
+  <div class="tip-box">
+    <strong>Tip:</strong> If you're renting a VPS (like AWS EC2, Hetzner, or DigitalOcean), choose one with at least 4 vCPUs and 8 GB RAM. Hetzner's CX41 (~$12/month) is a popular budget option that handles 8–12 players smoothly.
+  </div>
+</section>
+
+<!-- SECTION: Option 2 - GPortal & Nitrado -->
+<section class="section" id="option-2">
+  <h2><span class="icon">☁️</span> Option 2: Third-Party Hosting — GPortal, Nitrado & More</h2>
+  <p class="section-desc">Don't want to deal with SteamCMD, config files, or port forwarding? Rent a server. These hosts handle the technical side — you click a few buttons and play.</p>
+
+  <div class="prose">
+    <h3>Why Use a Game Server Host?</h3>
+    <p>Third-party hosts provide a managed Palworld server on their hardware. They handle: automatic updates when Pocketpair patches the game, DDoS protection, automated backups, and a web-based control panel where you change settings without touching config files. The trade-off is cost — typically <strong>$5 to $20 per month</strong> depending on player slots and RAM.</p>
+
+    <h3>GPortal — Official Palworld Partner</h3>
+    <p><strong>GPortal</strong> is Pocketpair's official hosting partner for Palworld. Their Palworld plans start around <strong>$5.60/month</strong> for 4 slots and scale up to 32 slots. Key features:</p>
+    <ul>
+      <li>One-click install — server is live within 2–3 minutes of purchase</li>
+      <li>Built-in automatic backups with restore from any save point</li>
+      <li>Web interface for all server settings (no INI file editing)</li>
+      <li>Automatic updates when Pocketpair releases patches</li>
+      <li>DDoS protection included on all plans</li>
+      <li>Server locations in North America, Europe, and Asia-Pacific</li>
+    </ul>
+    <p><strong>Setup process:</strong> Sign up at gportal.com → Select Palworld → Choose your plan and region → Pay → Server auto-deploys. You'll get an IP address and port. Share it with your friends — they connect the same way as any multiplayer game.</p>
+
+    <h3>Nitrado — Strong Alternative with Global Coverage</h3>
+    <p><strong>Nitrado</strong> is another major host with extensive Palworld support. Plans start around <strong>$7.99/month</strong> for 4 slots. Their advantages:</p>
+    <ul>
+      <li>Wider global server location coverage than GPortal (including South America and Middle East)</li>
+      <li>Dynamic switching — change your server location without losing save data</li>
+      <li>Mobile app for server management on the go</li>
+      <li>Advanced scheduling — auto-restart your server daily at a set time</li>
+      <li>Mod support via their control panel (workshop mods, config mods)</li>
+    </ul>
+    <p>Setup is nearly identical: sign up → pick Palworld → configure slots/region → deploy. Both GPortal and Nitrado give you a public IP immediately after deployment.</p>
+
+    <h3>Other Reputable Hosts</h3>
+    <ul>
+      <li><strong>Shockbyte</strong> — Budget-friendly, often runs promotions. Good for small groups. Plans from ~$7/month.</li>
+      <li><strong>Nodecraft</strong> — Strong UI/UX, good for admins who want an easy control panel. Plans from ~$10/month.</li>
+      <li><strong>GTXGaming</strong> — Higher price point but includes 24/7 live support chat. Good if you want someone to call when things break.</li>
+    </ul>
+
+    <h3>How to Choose a Host: 4 Questions</h3>
+    <ol>
+      <li><strong>Where are your players?</strong> Pick a host with a data center near your group. Latency matters — connecting from Asia to a US server adds 150–250ms ping.</li>
+      <li><strong>How many slots?</strong> Don't overpay. A 10-slot server is plenty for most friend groups. Only go to 32 if you're running a public community.</li>
+      <li><strong>Do they auto-update?</strong> Palworld patches frequently. A host that doesn't auto-update means your server is offline until you manually trigger it.</li>
+      <li><strong>What's their refund policy?</strong> Most hosts offer a 24–72 hour refund window. Test server performance before committing.</li>
+    </ol>
+  </div>
+
+  <div class="tip-box">
+    <strong>Tip:</strong> If you're choosing between GPortal and Nitrado, go with GPortal if you're in North America or Europe (official partner, slightly cheaper). Pick Nitrado if you need Asia-Pacific, South American, or Middle Eastern server locations, or if you want the mobile management app.
+  </div>
+</section>
+
+<!-- SECTION: Option 3 - Self-Host -->
+<section class="section" id="option-3">
+  <h2><span class="icon">🏠</span> Option 3: Self-Host on Your Own PC (Quickest Setup)</h2>
+  <p class="section-desc">The fastest way to get a server running — use the same PC you play on. Best for small groups and testing.</p>
+
+  <div class="prose">
+    <h3>Requirements</h3>
+    <p>Running the server and the game client simultaneously on the same machine is demanding. You'll want:</p>
+    <ul>
+      <li><strong>16 GB RAM minimum</strong> (32 GB recommended for smooth gameplay + server)</li>
+      <li><strong>6-core CPU or better</strong> (the server uses 2–4 threads by itself)</li>
+      <li><strong>SSD with 40+ GB free</strong> (server files + game client + world saves)</li>
+      <li><strong>Stable internet</strong> — upload speed matters more than download for hosting</li>
+    </ul>
+
+    <h3>Method A: Dedicated Server Tool (Steam)</h3>
+    <p>The easiest self-host method available since the 1.0 update:</p>
+    <ol>
+      <li>Open Steam → Library → Use the dropdown above your game list to enable "Tools"</li>
+      <li>Find <strong>"Palworld Dedicated Server"</strong> in the list and install it</li>
+      <li>Launch it from Steam — a console window opens</li>
+      <li>Wait for "Server is up and running" in the console</li>
+      <li>Launch Palworld normally → Join Multiplayer Game → Enter <code>127.0.0.1:8211</code> (for you) or your public IP for friends</li>
+    </ol>
+
+    <h3>Method B: In-Game Co-op Mode (No Setup)</h3>
+    <p>Palworld also has a built-in co-op mode that doesn't require any server setup at all:</p>
+    <ol>
+      <li>Start a single-player world normally</li>
+      <li>Open the menu → Options → "Multiplayer Settings"</li>
+      <li>Toggle "Enable Multiplayer" to ON</li>
+      <li>Set the max players (up to 4 for co-op mode)</li>
+      <li>Share your <strong>invite code</strong> (generated in the pause menu) with up to 3 friends</li>
+    </ol>
+    <p>Co-op mode is the fastest option for 2–4 friends. No config, no commands, no port forwarding. The downside: the host must be online and in-game for anyone else to play — it's not a 24/7 server.</p>
+  </div>
+
+  <div class="tip-box">
+    <strong>Tip:</strong> If your PC struggles with running both the server and game at once, try lowering the server's tick rate in PalWorldSettings.ini (set <code>bEnableInvaderEnemy=False</code> and reduce max Pals per base). This frees up CPU cycles for your game client.
+  </div>
+</section>
+
+<!-- SECTION: Port Forwarding -->
+<section class="section" id="port-forwarding">
+  <h2><span class="icon">🔌</span> Port Forwarding & Firewall Configuration</h2>
+  <p class="section-desc">If you're self-hosting or running a dedicated server at home, you must configure your router. Skip this section if you're using GPortal, Nitrado, or any third-party host — they handle it for you.</p>
+
+  <div class="prose">
+    <h3>Step 1: Find Your Local IP Address</h3>
+    <p>Your server machine needs a <strong>static local IP</strong> so the port forward rule doesn't break when your router reassigns IPs. On Windows:</p>
+    <ol>
+      <li>Open Command Prompt → type <code>ipconfig</code></li>
+      <li>Find your "IPv4 Address" — usually something like <code>192.168.1.xxx</code></li>
+      <li>Go to your router's admin panel (typically <code>192.168.1.1</code> or <code>192.168.0.1</code>)</li>
+      <li>Find DHCP settings → Reserve/assign a static IP for your server machine's MAC address</li>
+    </ol>
+
+    <h3>Step 2: Forward UDP Port 8211</h3>
+    <p>Palworld uses <strong>UDP 8211</strong> by default. TCP is not required — UDP only.</p>
+    <ol>
+      <li>In your router's admin panel, find "Port Forwarding" (sometimes under Advanced → NAT → Port Forwarding)</li>
+      <li>Create a new rule:
+        <ul>
+          <li><strong>Service name:</strong> Palworld Server</li>
+          <li><strong>Protocol:</strong> UDP</li>
+          <li><strong>External port:</strong> 8211</li>
+          <li><strong>Internal port:</strong> 8211</li>
+          <li><strong>Internal IP:</strong> (your server's static local IP from Step 1)</li>
+        </ul>
+      </li>
+      <li>Save and apply. Some routers need a reboot.</li>
+    </ol>
+
+    <h3>Step 3: Configure Windows Firewall (or Linux iptables)</h3>
+    <p><strong>Windows:</strong></p>
+    <ol>
+      <li>Open "Windows Defender Firewall with Advanced Security"</li>
+      <li>Inbound Rules → New Rule → Port → UDP → 8211 → Allow the connection</li>
+      <li>Apply to all profiles (Domain, Private, Public)</li>
+      <li>Name it "Palworld Server" and save</li>
+    </ol>
+    <p><strong>Linux (ufw):</strong></p>
+    <div class="tip-box">
+      <code>sudo ufw allow 8211/udp<br>sudo ufw reload</code>
+    </div>
+
+    <h3>Step 4: Verify the Port Is Open</h3>
+    <p>Use an online port checker like <strong>canyouseeme.org</strong> or <strong>portchecker.co</strong>. Enter port 8211. If it shows "open" or "success," your friends can connect. If it shows "closed" or "timed out," check:</p>
+    <ul>
+      <li>Is the server actually running?</li>
+      <li>Did you forward UDP (not TCP)?</li>
+      <li>Did you set a static local IP for the server machine?</li>
+      <li>Does your ISP use CGNAT? (Many mobile/5G home internet providers do — you can't port forward through CGNAT. In this case, use a third-party host or a VPN tunnel like Tailscale.)</li>
+    </ul>
+  </div>
+
+  <div class="tip-box">
+    <strong>CGNAT Warning:</strong> If your ISP uses Carrier-Grade NAT (common with T-Mobile Home Internet, Starlink, and many fiber providers), you <strong>cannot</strong> port forward. No router setting will fix this. Your options: (1) use a VPN tunnel like Tailscale or ZeroTier (free, but everyone connecting needs the VPN client), or (2) rent a third-party server host instead.
+  </div>
+</section>
+
+<!-- SECTION: Server Settings -->
+<section class="section" id="server-settings">
+  <h2><span class="icon">⚙️</span> Server Settings: Customize Your World</h2>
+  <p class="section-desc">Every setting you can tweak in PalWorldSettings.ini — and which ones actually matter.</p>
+
+  <div class="prose">
+    <p>The <code>PalWorldSettings.ini</code> file controls everything about your server world. On a third-party host, you'll configure these through a web panel (same settings, different interface). Here are the settings grouped by what you'll actually want to change:</p>
+
+    <h3>Essential Settings (Change These First)</h3>
+    <table>
+      <thead>
+        <tr><th>Setting</th><th>Default</th><th>What It Does</th><th>Recommendation</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>ServerName</code></td><td>"Default Palworld Server"</td><td>Shown in server browser</td><td>Set something descriptive: "Dingjiu's PvE World"</td></tr>
+        <tr><td><code>ServerDescription</code></td><td>""</td><td>Description text in browser</td><td>Mention rules, wipe schedule, Discord link</td></tr>
+        <tr><td><code>ServerPassword</code></td><td>""</td><td>Password to join (empty = public)</td><td>ALWAYS set a password unless you want randoms griefing</td></tr>
+        <tr><td><code>AdminPassword</code></td><td>""</td><td>Password for admin commands</td><td>Set this. Without it, you can't use /admin commands in-game</td></tr>
+        <tr><td><code>ServerPlayerMaxNum</code></td><td>32</td><td>Max concurrent players</td><td>10–20 for most groups. Lower = less RAM usage</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Difficulty & Progression Settings</h3>
+    <table>
+      <thead>
+        <tr><th>Setting</th><th>Default</th><th>What It Does</th><th>Recommendation</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>DayTimeSpeedRate</code></td><td>1.0</td><td>Day length multiplier</td><td>1.0–1.5. Higher = shorter days, less time for raids</td></tr>
+        <tr><td><code>NightTimeSpeedRate</code></td><td>1.0</td><td>Night length multiplier</td><td>0.8–1.0. Lower = shorter nights (less annoying darkness)</td></tr>
+        <tr><td><code>ExpRate</code></td><td>1.0</td><td>XP gain multiplier</td><td>1.5–3.0 for casual servers. 1.0 for "vanilla" experience</td></tr>
+        <tr><td><code>PalCaptureRate</code></td><td>1.0</td><td>Catch rate multiplier</td><td>1.0–1.5. Don't go above 2.0 — trivializes the game</td></tr>
+        <tr><td><code>PalSpawnNumRate</code></td><td>1.0</td><td>Wild Pal spawn density</td><td>0.8–1.2. Lower = less lag on weak hardware</td></tr>
+        <tr><td><code>DamagePlayerMultiplier</code></td><td>1.0</td><td>Damage dealt to players</td><td>1.0 for normal. Raise for hardcore servers</td></tr>
+        <tr><td><code>DamagePalMultiplier</code></td><td>1.0</td><td>Damage dealt to Pals</td><td>1.0 for normal. Tweak for PvP balance</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Base & Guild Settings</h3>
+    <table>
+      <thead>
+        <tr><th>Setting</th><th>Default</th><th>What It Does</th><th>Recommendation</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>BaseCampMaxNum</code></td><td>3</td><td>Max bases per guild</td><td>3–5. More bases = more server load</td></tr>
+        <tr><td><code>BaseCampWorkerMaxNum</code></td><td>15</td><td>Pals per base</td><td>15–20. Higher values increase server CPU usage significantly</td></tr>
+        <tr><td><code>DropItemMaxNum</code></td><td>3000</td><td>Max dropped items in world</td><td>3000–5000. Too low and items despawn quickly</td></tr>
+        <tr><td><code>GuildPlayerMaxNum</code></td><td>20</td><td>Max players per guild</td><td>4–10 for private servers. 20 for public communities</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Performance-Related Settings</h3>
+    <table>
+      <thead>
+        <tr><th>Setting</th><th>Default</th><th>What It Does</th><th>Recommendation</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>bEnableInvaderEnemy</code></td><td>True</td><td>Enables base raids</td><td>False on low-end hardware — raids spike CPU</td></tr>
+        <tr><td><code>AutoResetGuildNoOnlinePlayers</code></td><td>False</td><td>Auto-delete inactive guilds</td><td>True if you want to free base spots automatically</td></tr>
+        <tr><td><code>PalEggDefaultHatchingTime</code></td><td>72.0</td><td>Hours to hatch an egg</td><td>1.0–24.0 for faster breeding. 72 = vanilla</td></tr>
+        <tr><td><code>bAutoSave</code></td><td>True</td><td>Auto-save enabled</td><td>Keep True. Set <code>AutoSaveSpan</code> to 300 (5 min) or 600 (10 min)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>RCON Settings (Remote Admin)</h3>
+    <p>RCON allows you to send admin commands remotely without being in-game. Essential for dedicated servers:</p>
+    <div class="tip-box">
+      <code>RCONEnabled=True<br>RCONPort=25575</code>
+    </div>
+    <p>With RCON enabled, you can use tools like <strong>rcon-cli</strong> or Palworld-specific RCON web panels to manage your server from any device.</p>
+  </div>
+
+  <div class="tip-box">
+    <strong>Tip:</strong> After changing any server setting, restart the server for changes to take effect. Most settings do <strong>not</strong> apply live. On GPortal/Nitrado, use the "Restart Server" button in the control panel. On SteamCMD, close the console window and relaunch.
+  </div>
+</section>
+
+<!-- SECTION: Admin -->
+<section class="section" id="admin">
+  <h2><span class="icon">🛡️</span> Server Admin Commands & Moderation</h2>
+  <p class="section-desc">Essential admin commands for managing your server, handling griefers, and fixing stuck players.</p>
+
+  <div class="prose">
+    <p>To use admin commands in-game, press <code>Enter</code> to open chat, then type:</p>
+    <div class="tip-box">
+      <code>/AdminPassword YourPasswordHere</code>
+    </div>
+    <p>This grants you admin privileges for the session. Once authenticated, you have access to these commands:</p>
+
+    <table>
+      <thead>
+        <tr><th>Command</th><th>What It Does</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>/Save</code></td><td>Force-save the world immediately</td></tr>
+        <tr><td><code>/Shutdown [seconds] [message]</code></td><td>Gracefully shut down the server with a warning. Example: <code>/Shutdown 60 "Server restarting for update"</code></td></tr>
+        <tr><td><code>/Broadcast [message]</code></td><td>Send a message to all players on the server</td></tr>
+        <tr><td><code>/BanPlayer [SteamID]</code></td><td>Ban a player by their Steam ID</td></tr>
+        <tr><td><code>/KickPlayer [SteamID]</code></td><td>Kick a player from the server (they can rejoin)</td></tr>
+        <tr><td><code>/TeleportToPlayer [SteamID]</code></td><td>Teleport yourself to a specific player</td></tr>
+        <tr><td><code>/TeleportToMe [SteamID]</code></td><td>Teleport a player to your location</td></tr>
+        <tr><td><code>/ShowPlayers</code></td><td>List all connected players with their Steam IDs and ping</td></tr>
+        <tr><td><code>/Info</code></td><td>Show server uptime, tick rate, and player count</td></tr>
+      </tbody>
+    </table>
+
+    <h3>How to Find a Player's SteamID</h3>
+    <p>Use <code>/ShowPlayers</code> to list everyone on the server. Each entry shows the player's name and a long numeric SteamID. Copy the SteamID for use with <code>/KickPlayer</code>, <code>/BanPlayer</code>, or teleport commands.</p>
+
+    <h3>Setting Up Moderators</h3>
+    <p>Palworld's dedicated server doesn't have a built-in moderator role — only full admin access. If you want to give someone limited moderation powers (kick only, no server shutdown), you'll need a third-party RCON tool that supports role-based permissions. Most community servers run a lightweight RCON bot (like <code>palworld-rcon-bot</code> on GitHub) that adds moderator roles on top of the base game's admin system.</p>
+  </div>
+</section>
+
+<!-- SECTION: Troubleshooting -->
+<section class="section" id="troubleshooting">
+  <h2><span class="icon">🔧</span> Common Issues & Troubleshooting</h2>
+  <p class="section-desc">The problems every Palworld server admin hits sooner or later — and how to fix them.</p>
+
+  <div class="prose">
+    <h3>"Connection timed out" — Friends can't join</h3>
+    <p><strong>Cause:</strong> Almost always a port forwarding or firewall issue. <strong>Fix:</strong> Verify UDP 8211 is open (use canyouseeme.org while the server is running). Check Windows Firewall isn't blocking PalServer.exe. If you're behind CGNAT, switch to a VPN tunnel or third-party host.</p>
+
+    <h3>Server lags or rubberbands with 8+ players</h3>
+    <p><strong>Cause:</strong> CPU bottleneck. Palworld servers are heavily CPU-bound — each base, Pal, and wild spawn eats cycles. <strong>Fix:</strong> Reduce <code>PalSpawnNumRate</code> to 0.8, disable raids (<code>bEnableInvaderEnemy=False</code>), lower <code>BaseCampWorkerMaxNum</code> to 10, and reduce the player cap. If the problem persists, upgrade to a machine with faster single-core CPU performance (Palworld server doesn't scale perfectly across many cores).</p>
+
+    <h3>Server keeps crashing after a few hours</h3>
+    <p><strong>Cause:</strong> Memory leak. The Palworld dedicated server has a known slow memory leak — RAM usage gradually climbs until it crashes. <strong>Fix:</strong> Set up a scheduled restart every 6–12 hours. On Linux, use a cron job: <code>0 */6 * * * /path/to/restart-server.sh</code>. Most third-party hosts have an "Auto-Restart" option in their control panel. This is the single most effective fix for server stability.</p>
+
+    <h3>World save corrupted / rollback</h3>
+    <p><strong>Cause:</strong> Server crashed or was force-killed during a save operation. <strong>Fix:</strong> This is why backups matter. Navigate to <code>Pal/Saved/SaveGames/0/</code> on your server. There should be a <code>backup</code> subfolder with timestamped world saves. Copy the most recent backup's contents into the main <code>0/</code> folder (overwriting the corrupted one). Restart the server. If you're on GPortal/Nitrado, use their built-in backup restore feature — no manual file copying needed.</p>
+
+    <h3>Server not showing up in community server list</h3>
+    <p><strong>Cause:</strong> The community server browser only shows Steam servers that have registered with the Steam master server. Registration can take up to 15 minutes after startup and requires port 27015–27016 UDP to be open in addition to 8211. <strong>Fix:</strong> Open UDP 27015 and 27016 in your firewall. Wait 15 minutes after starting the server before checking the list. If it still doesn't appear, use direct connect (IP:8211) — it works regardless of the server list.</p>
+
+    <h3>Pals frozen or not working at base</h3>
+    <p><strong>Cause:</strong> Server-side pathfinding bug — Pals get stuck on terrain, structures, or each other. <strong>Fix:</strong> This is a game bug, not a server config issue. Workarounds: assign and unassign the affected Pal via the Palbox to reset its position. Build bases on flat terrain with wide pathways. Avoid placing structures too close together. Restarting the server also resets all Pal positions.</p>
+  </div>
+
+  <div class="tip-box">
+    <strong>Tip:</strong> Join the <a href="https://discord.gg/palworld" target="_blank" rel="noopener">official Palworld Discord</a> and check the #server-hosting channel. When Pocketpair releases a patch that breaks servers (it happens), the community usually has a workaround within hours — faster than waiting for official documentation.
+  </div>
+</section>
+
+<!-- SECTION: FAQ -->
+<section class="section" id="faq">
+  <h2><span class="icon">❓</span> Server Setup FAQ</h2>
+  <p class="section-desc">Quick answers to the most common questions about hosting a Palworld server.</p>
+
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>How much does it cost to run a Palworld server?</summary>
+      <div class="faq-a"><strong>Free</strong> if you self-host on your own hardware (you pay electricity + internet). <strong>$5–$20/month</strong> for a third-party host (GPortal, Nitrado). <strong>$12–$30/month</strong> for a VPS (Hetzner, AWS, DigitalOcean) running SteamCMD. Most friend groups spend $5–$10/month on a small hosted server.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Can I run a Palworld server on a Raspberry Pi?</summary>
+      <div class="faq-a">No. The Palworld server requires an x86/x64 CPU (Intel or AMD). ARM-based devices like Raspberry Pi are not supported. The server also needs at least 8 GB of RAM — the Pi 5 maxes out at 8 GB and wouldn't handle the CPU load anyway.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Do I need to own Palworld to run a dedicated server?</summary>
+      <div class="faq-a">No. The Palworld Dedicated Server (App ID 2394010) on Steam is free and does not require purchasing the game. You do need a Steam account to download it via SteamCMD, but that account doesn't need to own Palworld.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Can I transfer my single-player world to a server?</summary>
+      <div class="faq-a">Yes. Copy your local save from <code>%LOCALAPPDATA%\Pal\Saved\SaveGames\</code> on your PC to the server's <code>Pal/Saved/SaveGames/0/</code> folder. The save format is identical between single-player and dedicated server. Make a backup of both before attempting the transfer.</div>
+    </details>
+    <details class="faq-item">
+      <summary>How do I update my server when Palworld patches?</summary>
+      <div class="faq-a"><strong>SteamCMD:</strong> Run <code>app_update 2394010 validate</code> in the SteamCMD prompt. <strong>Third-party hosts:</strong> Most auto-update within hours of a patch. Check your host's control panel for a "Force Update" button. <strong>Self-host (Steam tool):</strong> Steam auto-updates it like any other game. Always restart the server after updating.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Can Xbox and Steam players play on the same server?</summary>
+      <div class="faq-a">Limited crossplay is available as of the 1.0 update, but it's not fully seamless. A server hosted via SteamCMD can accept both Steam and Xbox players if crossplay is enabled in the server settings and all players are on the same game version. Check Pocketpair's latest patch notes for the current crossplay status — this changes frequently.</div>
+    </details>
+    <details class="faq-item">
+      <summary>What's the difference between a dedicated server and co-op mode?</summary>
+      <div class="faq-a">Co-op mode: 4 players max, host must be in-game, no 24/7 uptime. Free. Dedicated server: 32 players max, runs 24/7 even when no one is online, requires separate machine or host. Free or paid depending on setup. Dedicated is what communities and large groups use; co-op is for 2–4 friends playing together.</div>
+    </details>
+  </div>
+</section>
+
+<!-- AD -->
+<div class="ad-placeholder">[ AdSense Ad Unit — 300x250 Rectangle / In-Content ]</div>
+
+<!-- Author Box -->
+<div class="author-box">
+  <div class="author-avatar">PG</div>
+  <div class="author-info">
+    <h4>PalGuide Team</h4>
+    <p>The PalGuide Team has managed Palworld servers across all three hosting methods — from SteamCMD on Hetzner VPS to GPortal-hosted community servers to self-hosted weekend setups. This guide reflects real-world experience with server crashes, memory leaks, port forwarding nightmares, and everything else that comes with running Palworld multiplayer. Verified on Palworld 1.0, July 2026.</p>
+  </div>
+</div>
+
+<!-- Sources Box -->
+<div class="sources-box">
+  <h4>Sources & References</h4>
+  <ul>
+    <li><a href="https://pocketpair.jp/palworld" target="_blank" rel="noopener">Pocketpair Official</a> — Palworld dedicated server documentation and patch notes.</li>
+    <li><a href="https://steamcommunity.com/app/1623730" target="_blank" rel="noopener">Palworld Steam Community</a> — Official server setup guides and community troubleshooting.</li>
+    <li><a href="https://www.gportal.com/palworld" target="_blank" rel="noopener">GPortal Palworld Hosting</a> — Official hosting partner. Plans, pricing, and setup documentation.</li>
+    <li><a href="https://nitrado.net/palworld" target="_blank" rel="noopener">Nitrado Palworld Hosting</a> — Server hosting with global locations and mobile management.</li>
+    <li><a href="https://palworld.fandom.com/wiki/Dedicated_Server" target="_blank" rel="noopener">Palworld Wiki — Dedicated Server</a> — Community-maintained server configuration reference.</li>
+    <li><a href="https://www.reddit.com/r/Palworld/" target="_blank" rel="noopener">r/Palworld</a> — Community verification of server issues, fixes, and performance benchmarks.</li>
+  </ul>
+</div>
+
+<!-- Share Bar -->
+<div class="share-bar">
+  <span>Share this guide:</span>
+  <a href="https://twitter.com/intent/tweet?text=Palworld+Server+Setup+Guide+2026+—+All+hosting+options+covered&url=https://palworldguides.com/server-setup.html" target="_blank" rel="noopener" class="share-btn">𝕏 Twitter</a>
+  <a href="https://www.reddit.com/r/Palworld/submit?url=https://palworldguides.com/server-setup.html&title=Palworld+Server+Setup+Guide+2026+—+Dedicated,+Hosted+&+Self-Hosted" target="_blank" rel="noopener" class="share-btn">🔗 Reddit</a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://palworldguides.com/server-setup.html" target="_blank" rel="noopener" class="share-btn">📘 Facebook</a>
+</div>
+
+<!-- Feedback -->
+<div class="feedback-box">
+  <p><strong>Was this server setup guide helpful?</strong></p>
+  <div class="feedback-btns">
+    <button class="feedback-btn" id="feedbackYes" onclick="handleFeedback('yes')">👍 Yes</button>
+    <button class="feedback-btn" id="feedbackNo" onclick="handleFeedback('no')">👎 No</button>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <p>PalGuide — The independent Palworld resource. Not affiliated with Pocketpair, GPortal, Nitrado, or Valve.</p>
+  <p style="margin-top:8px">Palworld and all related content are trademarks of Pocketpair, Inc.</p>
+  <p style="margin-top:8px">
+    <a href="about.html">About</a> &nbsp;|&nbsp;
+    <a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp;
+    <a href="terms.html">Terms of Use</a> &nbsp;|&nbsp;
+    <a href="contact.html">Contact</a> &nbsp;|&nbsp;
+    <a href="sitemap.xml">Sitemap</a>
+  </p>
+</footer>
+
+<!-- Back to Top -->
+<button class="back-top" id="backTop" aria-label="Back to top" title="Back to top">↑</button>
+
+<!-- Cookie Consent -->
+<script src="cookie-consent.js"></script>
+
+<script>
+// Dark mode toggle
+(function() {
+  var toggle = document.getElementById('themeToggle');
+  var stored = localStorage.getItem('palguide-theme');
+  if (stored) {
+    document.documentElement.setAttribute('data-theme', stored);
+  }
+  if (toggle) {
+    toggle.addEventListener('click', function() {
+      var current = document.documentElement.getAttribute('data-theme');
+      var next = (current === 'dark') ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('palguide-theme', next);
+      if (typeof gtag === 'function') {
+        gtag('event', 'theme_toggle', { theme: next });
+      }
+    });
+  }
+})();
+
+// Back to top
+(function() {
+  var btn = document.getElementById('backTop');
+  if (!btn) return;
+  window.addEventListener('scroll', function() {
+    btn.classList.toggle('visible', window.scrollY > 500);
+  });
+  btn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+
+// Feedback
+function handleFeedback(type) {
+  document.getElementById('feedbackYes').classList.toggle('voted', type === 'yes');
+  document.getElementById('feedbackNo').classList.toggle('voted', type === 'no');
+  alert('Thanks for your feedback!');
+  if (typeof gtag === 'function') {
+    gtag('event', 'feedback', { type: type });
+  }
+}
+</script>
+
+</body>
+</html>

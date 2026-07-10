@@ -566,6 +566,19 @@ footer a:hover { text-decoration: underline; }
 .prose ul, .prose ol { margin-bottom: 16px; padding-left: 24px; }
 .prose li { margin-bottom: 8px; font-size: 14px; color: var(--text2); }
 .prose strong { color: var(--text); }
+code {
+  background: var(--muted-bg);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 1px 5px;
+  font-size: 0.88em;
+  font-family: "SF Mono", "Fira Code", "Consolas", monospace;
+  color: var(--text);
+}
+.prose code {
+  font-size: 0.9em;
+  white-space: nowrap;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
