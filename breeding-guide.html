@@ -706,7 +706,7 @@
 function handleFeedback(type) {
   document.getElementById('feedbackYes').classList.toggle('voted', type === 'yes');
   document.getElementById('feedbackNo').classList.toggle('voted', type === 'no');
-  alert('Thanks for your feedback!');
+  if(window.clarity){window.clarity("event","feedback",type);}var fb=document.querySelector('.feedback-box p');if(fb)fb.innerHTML='<strong>Thanks! Your feedback helps us improve.</strong>';
   if (typeof gtag === 'function') {
     gtag('event', 'feedback', { type: type });
   }
