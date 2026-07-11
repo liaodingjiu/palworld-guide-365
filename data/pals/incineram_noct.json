@@ -1,0 +1,97 @@
+{
+  "id": "incineram_noct",
+  "gameId": "palworld",
+  "number": "040B",
+  "name": {
+    "zh": "Incineram Noct",
+    "en": "Incineram Noct"
+  },
+  "slug": "incineram_noct",
+  "image": "/images/pals/incineram_noct.webp",
+  "classification": {
+    "elements": [
+      "Dark"
+    ],
+    "rarity": "Rare",
+    "role": [
+      "Combat"
+    ],
+    "size": "Medium",
+    "isRideable": false,
+    "isFlyable": false
+  },
+  "stats": {
+    "hp": 95,
+    "attack": 105,
+    "defense": 85,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
+  },
+  "workSuitability": {
+    "kindling": 0,
+    "watering": 0,
+    "planting": 0,
+    "generating": 0,
+    "handiwork": 2,
+    "gathering": 0,
+    "lumbering": 0,
+    "mining": 1,
+    "medicine": 0,
+    "cooling": 0,
+    "transporting": 2,
+    "farming": 0
+  },
+  "skills": [
+    {
+      "name": "Dark Pulse",
+      "element": "Dark",
+      "power": 80,
+      "cooldown": 10,
+      "level": 1
+    },
+    {
+      "name": "Shadow Ball",
+      "element": "Dark",
+      "power": 100,
+      "cooldown": 14,
+      "level": 12
+    },
+    {
+      "name": "Night Slash",
+      "element": "Dark",
+      "power": 120,
+      "cooldown": 16,
+      "level": 22
+    }
+  ],
+  "partnerSkill": {
+    "name": "Darkclaw Hunter",
+    "descriptionEn": "When activated, attacks targeted enemy with a powerful [[Hellfire Claw]]."
+  },
+  "acquisition": {
+    "habitats": [
+      "various"
+    ],
+    "isBreedable": true,
+    "isCatchable": true,
+    "isBossEncounter": false
+  },
+  "breeding": {
+    "breedingPower": 580
+  },
+  "drops": [],
+  "decision": {
+    "bestFor": [
+      "handiwork",
+      "transporting"
+    ],
+    "gameStage": {
+      "early": false,
+      "mid": true,
+      "late": false
+    },
+    "scores": {},
+    "reasons": {}
+  }
+}

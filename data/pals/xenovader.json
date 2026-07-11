@@ -1,0 +1,97 @@
+{
+  "id": "xenovader",
+  "gameId": "palworld",
+  "number": "125",
+  "name": {
+    "zh": "Xenovader",
+    "en": "Xenovader"
+  },
+  "slug": "xenovader",
+  "image": "/images/pals/xenovader.webp",
+  "classification": {
+    "elements": [
+      "Dark"
+    ],
+    "rarity": "Rare",
+    "role": [
+      "Combat"
+    ],
+    "size": "Medium",
+    "isRideable": false,
+    "isFlyable": false
+  },
+  "stats": {
+    "hp": 90,
+    "attack": 125,
+    "defense": 85,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
+  },
+  "workSuitability": {
+    "kindling": 0,
+    "watering": 0,
+    "planting": 0,
+    "generating": 0,
+    "handiwork": 0,
+    "gathering": 0,
+    "lumbering": 2,
+    "mining": 0,
+    "medicine": 0,
+    "cooling": 0,
+    "transporting": 2,
+    "farming": 0
+  },
+  "skills": [
+    {
+      "name": "Dark Pulse",
+      "element": "Dark",
+      "power": 80,
+      "cooldown": 10,
+      "level": 1
+    },
+    {
+      "name": "Shadow Ball",
+      "element": "Dark",
+      "power": 100,
+      "cooldown": 14,
+      "level": 12
+    },
+    {
+      "name": "Night Slash",
+      "element": "Dark",
+      "power": 120,
+      "cooldown": 16,
+      "level": 22
+    }
+  ],
+  "partnerSkill": {
+    "name": "Meteor Mania",
+    "descriptionEn": "While in the team, increases damage dealt to ores, and it's easier to obtain Meteorite Fragment."
+  },
+  "acquisition": {
+    "habitats": [
+      "various"
+    ],
+    "isBreedable": true,
+    "isCatchable": true,
+    "isBossEncounter": false
+  },
+  "breeding": {
+    "breedingPower": 465
+  },
+  "drops": [],
+  "decision": {
+    "bestFor": [
+      "lumbering",
+      "transporting"
+    ],
+    "gameStage": {
+      "early": false,
+      "mid": true,
+      "late": false
+    },
+    "scores": {},
+    "reasons": {}
+  }
+}

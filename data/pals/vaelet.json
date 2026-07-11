@@ -1,0 +1,98 @@
+{
+  "id": "vaelet",
+  "gameId": "palworld",
+  "number": "078",
+  "name": {
+    "zh": "Vaelet",
+    "en": "Vaelet"
+  },
+  "slug": "vaelet",
+  "image": "/images/pals/vaelet.webp",
+  "classification": {
+    "elements": [
+      "Grass"
+    ],
+    "rarity": "Common",
+    "role": [
+      "Combat"
+    ],
+    "size": "Medium",
+    "isRideable": false,
+    "isFlyable": false
+  },
+  "stats": {
+    "hp": 100,
+    "attack": 100,
+    "defense": 120,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
+  },
+  "workSuitability": {
+    "kindling": 0,
+    "watering": 0,
+    "planting": 2,
+    "generating": 0,
+    "handiwork": 2,
+    "gathering": 2,
+    "lumbering": 0,
+    "mining": 0,
+    "medicine": 3,
+    "cooling": 0,
+    "transporting": 1,
+    "farming": 0
+  },
+  "skills": [
+    {
+      "name": "Wind Cutter",
+      "element": "Grass",
+      "power": 55,
+      "cooldown": 4,
+      "level": 1
+    },
+    {
+      "name": "Seed Bomb",
+      "element": "Grass",
+      "power": 90,
+      "cooldown": 10,
+      "level": 10
+    },
+    {
+      "name": "Grass Tornado",
+      "element": "Grass",
+      "power": 100,
+      "cooldown": 18,
+      "level": 22
+    }
+  ],
+  "partnerSkill": {
+    "name": "Purification of Gaia",
+    "descriptionEn": "While fighting together, Ground Pals drop more items when defeated."
+  },
+  "acquisition": {
+    "habitats": [
+      "various"
+    ],
+    "isBreedable": true,
+    "isCatchable": true,
+    "isBossEncounter": false
+  },
+  "breeding": {
+    "breedingPower": 1050
+  },
+  "drops": [],
+  "decision": {
+    "bestFor": [
+      "medicine",
+      "planting",
+      "handiwork"
+    ],
+    "gameStage": {
+      "early": true,
+      "mid": false,
+      "late": false
+    },
+    "scores": {},
+    "reasons": {}
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "id": "helzephyr",
+  "gameId": "palworld",
+  "number": "097",
+  "name": {
+    "zh": "Helzephyr",
+    "en": "Helzephyr"
+  },
+  "slug": "helzephyr",
+  "image": "/images/pals/helzephyr.webp",
+  "classification": {
+    "elements": [
+      "Dark"
+    ],
+    "rarity": "Legendary",
+    "role": [
+      "Combat"
+    ],
+    "size": "Large",
+    "isRideable": true,
+    "isFlyable": true
+  },
+  "stats": {
+    "hp": 100,
+    "attack": 125,
+    "defense": 100,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
+  },
+  "workSuitability": {
+    "kindling": 0,
+    "watering": 0,
+    "planting": 0,
+    "generating": 0,
+    "handiwork": 0,
+    "gathering": 0,
+    "lumbering": 0,
+    "mining": 0,
+    "medicine": 0,
+    "cooling": 0,
+    "transporting": 3,
+    "farming": 0
+  },
+  "skills": [
+    {
+      "name": "Dark Pulse",
+      "element": "Dark",
+      "power": 80,
+      "cooldown": 10,
+      "level": 1
+    },
+    {
+      "name": "Shadow Ball",
+      "element": "Dark",
+      "power": 100,
+      "cooldown": 14,
+      "level": 12
+    },
+    {
+      "name": "Night Slash",
+      "element": "Dark",
+      "power": 120,
+      "cooldown": 16,
+      "level": 22
+    }
+  ],
+  "partnerSkill": {
+    "name": "Wings of Death",
+    "descriptionEn": "Can be ridden as a flying mount. Changes the player's attack type to Dark while mounted."
+  },
+  "acquisition": {
+    "habitats": [
+      "various"
+    ],
+    "isBreedable": true,
+    "isCatchable": true,
+    "isBossEncounter": true
+  },
+  "breeding": {
+    "breedingPower": 190
+  },
+  "drops": [],
+  "decision": {
+    "bestFor": [
+      "transporting"
+    ],
+    "gameStage": {
+      "early": false,
+      "mid": false,
+      "late": true
+    },
+    "scores": {},
+    "reasons": {}
+  }
+}

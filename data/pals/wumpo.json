@@ -1,0 +1,98 @@
+{
+  "id": "wumpo",
+  "gameId": "palworld",
+  "number": "091",
+  "name": {
+    "zh": "Wumpo",
+    "en": "Wumpo"
+  },
+  "slug": "wumpo",
+  "image": "/images/pals/wumpo.webp",
+  "classification": {
+    "elements": [
+      "Ice"
+    ],
+    "rarity": "Rare",
+    "role": [
+      "Worker"
+    ],
+    "size": "Medium",
+    "isRideable": false,
+    "isFlyable": false
+  },
+  "stats": {
+    "hp": 140,
+    "attack": 80,
+    "defense": 100,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
+  },
+  "workSuitability": {
+    "kindling": 0,
+    "watering": 0,
+    "planting": 0,
+    "generating": 0,
+    "handiwork": 2,
+    "gathering": 0,
+    "lumbering": 3,
+    "mining": 0,
+    "medicine": 0,
+    "cooling": 2,
+    "transporting": 4,
+    "farming": 0
+  },
+  "skills": [
+    {
+      "name": "Ice Shard",
+      "element": "Ice",
+      "power": 55,
+      "cooldown": 4,
+      "level": 1
+    },
+    {
+      "name": "Ice Beam",
+      "element": "Ice",
+      "power": 100,
+      "cooldown": 14,
+      "level": 15
+    },
+    {
+      "name": "Blizzard",
+      "element": "Ice",
+      "power": 140,
+      "cooldown": 24,
+      "level": 30
+    }
+  ],
+  "partnerSkill": {
+    "name": "Wumpo's Partner Skill",
+    "descriptionEn": "Provides unique utility for Wumpo."
+  },
+  "acquisition": {
+    "habitats": [
+      "various"
+    ],
+    "isBreedable": true,
+    "isCatchable": true,
+    "isBossEncounter": false
+  },
+  "breeding": {
+    "breedingPower": 460
+  },
+  "drops": [],
+  "decision": {
+    "bestFor": [
+      "transporting",
+      "lumbering",
+      "handiwork"
+    ],
+    "gameStage": {
+      "early": false,
+      "mid": true,
+      "late": false
+    },
+    "scores": {},
+    "reasons": {}
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "id": "pyrin_noct",
+  "gameId": "palworld",
+  "number": "058B",
+  "name": {
+    "zh": "Pyrin Noct",
+    "en": "Pyrin Noct"
+  },
+  "slug": "pyrin_noct",
+  "image": "/images/pals/pyrin_noct.webp",
+  "classification": {
+    "elements": [
+      "Neutral"
+    ],
+    "rarity": "Epic",
+    "role": [
+      "Worker"
+    ],
+    "size": "Large",
+    "isRideable": true,
+    "isFlyable": false
+  },
+  "stats": {
+    "hp": 100,
+    "attack": 95,
+    "defense": 90,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
+  },
+  "workSuitability": {
+    "kindling": 2,
+    "watering": 0,
+    "planting": 0,
+    "generating": 0,
+    "handiwork": 0,
+    "gathering": 0,
+    "lumbering": 1,
+    "mining": 0,
+    "medicine": 0,
+    "cooling": 0,
+    "transporting": 0,
+    "farming": 0
+  },
+  "skills": [
+    {
+      "name": "Power Shot",
+      "element": "Neutral",
+      "power": 85,
+      "cooldown": 8,
+      "level": 1
+    },
+    {
+      "name": "Air Cannon",
+      "element": "Neutral",
+      "power": 50,
+      "cooldown": 4,
+      "level": 7
+    },
+    {
+      "name": "Body Slam",
+      "element": "Neutral",
+      "power": 80,
+      "cooldown": 12,
+      "level": 15
+    }
+  ],
+  "partnerSkill": {
+    "name": "Black Hare",
+    "descriptionEn": "Can be ridden. Changes the player's attack type to Dark while mounted."
+  },
+  "acquisition": {
+    "habitats": [
+      "various"
+    ],
+    "isBreedable": true,
+    "isCatchable": true,
+    "isBossEncounter": true
+  },
+  "breeding": {
+    "breedingPower": 240
+  },
+  "drops": [],
+  "decision": {
+    "bestFor": [
+      "kindling"
+    ],
+    "gameStage": {
+      "early": false,
+      "mid": false,
+      "late": true
+    },
+    "scores": {},
+    "reasons": {}
+  }
+}

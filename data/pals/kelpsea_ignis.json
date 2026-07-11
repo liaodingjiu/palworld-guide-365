@@ -1,0 +1,96 @@
+{
+  "id": "kelpsea_ignis",
+  "gameId": "palworld",
+  "number": "081B",
+  "name": {
+    "zh": "Kelpsea Ignis",
+    "en": "Kelpsea Ignis"
+  },
+  "slug": "kelpsea_ignis",
+  "image": "/images/pals/kelpsea_ignis.webp",
+  "classification": {
+    "elements": [
+      "Fire"
+    ],
+    "rarity": "Common",
+    "role": [
+      "Worker"
+    ],
+    "size": "Medium",
+    "isRideable": false,
+    "isFlyable": false
+  },
+  "stats": {
+    "hp": 70,
+    "attack": 70,
+    "defense": 70,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
+  },
+  "workSuitability": {
+    "kindling": 1,
+    "watering": 0,
+    "planting": 0,
+    "generating": 0,
+    "handiwork": 0,
+    "gathering": 0,
+    "lumbering": 0,
+    "mining": 0,
+    "medicine": 0,
+    "cooling": 0,
+    "transporting": 0,
+    "farming": 1
+  },
+  "skills": [
+    {
+      "name": "Fire Ball",
+      "element": "Fire",
+      "power": 75,
+      "cooldown": 6,
+      "level": 1
+    },
+    {
+      "name": "Flame Thrower",
+      "element": "Fire",
+      "power": 120,
+      "cooldown": 18,
+      "level": 15
+    },
+    {
+      "name": "Fire Blast",
+      "element": "Fire",
+      "power": 100,
+      "cooldown": 14,
+      "level": 22
+    }
+  ],
+  "partnerSkill": {
+    "name": "Lava Spout",
+    "descriptionEn": "While in team, increases Attack of Fire Pals. Sometimes drops Flame Organ when assigned to the ranch."
+  },
+  "acquisition": {
+    "habitats": [
+      "various"
+    ],
+    "isBreedable": true,
+    "isCatchable": true,
+    "isBossEncounter": false
+  },
+  "breeding": {
+    "breedingPower": 1270
+  },
+  "drops": [],
+  "decision": {
+    "bestFor": [
+      "combat"
+    ],
+    "gameStage": {
+      "early": true,
+      "mid": false,
+      "late": false
+    },
+    "scores": {},
+    "reasons": {}
+  }
+}

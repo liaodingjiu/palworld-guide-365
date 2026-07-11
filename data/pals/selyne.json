@@ -1,0 +1,98 @@
+{
+  "id": "selyne",
+  "gameId": "palworld",
+  "number": "113",
+  "name": {
+    "zh": "Selyne",
+    "en": "Selyne"
+  },
+  "slug": "selyne",
+  "image": "/images/pals/selyne.webp",
+  "classification": {
+    "elements": [
+      "Neutral"
+    ],
+    "rarity": "Epic",
+    "role": [
+      "Combat"
+    ],
+    "size": "Medium",
+    "isRideable": false,
+    "isFlyable": false
+  },
+  "stats": {
+    "hp": 130,
+    "attack": 115,
+    "defense": 110,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
+  },
+  "workSuitability": {
+    "kindling": 0,
+    "watering": 0,
+    "planting": 0,
+    "generating": 0,
+    "handiwork": 4,
+    "gathering": 0,
+    "lumbering": 0,
+    "mining": 0,
+    "medicine": 3,
+    "cooling": 0,
+    "transporting": 3,
+    "farming": 0
+  },
+  "skills": [
+    {
+      "name": "Power Shot",
+      "element": "Neutral",
+      "power": 85,
+      "cooldown": 8,
+      "level": 1
+    },
+    {
+      "name": "Air Cannon",
+      "element": "Neutral",
+      "power": 50,
+      "cooldown": 4,
+      "level": 7
+    },
+    {
+      "name": "Body Slam",
+      "element": "Neutral",
+      "power": 80,
+      "cooldown": 12,
+      "level": 15
+    }
+  ],
+  "partnerSkill": {
+    "name": "Selyne's Partner Skill",
+    "descriptionEn": "Provides unique utility for Selyne."
+  },
+  "acquisition": {
+    "habitats": [
+      "various"
+    ],
+    "isBreedable": true,
+    "isCatchable": true,
+    "isBossEncounter": false
+  },
+  "breeding": {
+    "breedingPower": 345
+  },
+  "drops": [],
+  "decision": {
+    "bestFor": [
+      "handiwork",
+      "medicine",
+      "transporting"
+    ],
+    "gameStage": {
+      "early": false,
+      "mid": false,
+      "late": true
+    },
+    "scores": {},
+    "reasons": {}
+  }
+}

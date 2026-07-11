@@ -1,0 +1,96 @@
+{
+  "id": "suzaku_aqua",
+  "gameId": "palworld",
+  "number": "102B",
+  "name": {
+    "zh": "Suzaku Aqua",
+    "en": "Suzaku Aqua"
+  },
+  "slug": "suzaku_aqua",
+  "image": "/images/pals/suzaku_aqua.webp",
+  "classification": {
+    "elements": [
+      "Water"
+    ],
+    "rarity": "Legendary",
+    "role": [
+      "Combat"
+    ],
+    "size": "Large",
+    "isRideable": true,
+    "isFlyable": true
+  },
+  "stats": {
+    "hp": 125,
+    "attack": 105,
+    "defense": 105,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
+  },
+  "workSuitability": {
+    "kindling": 0,
+    "watering": 3,
+    "planting": 0,
+    "generating": 0,
+    "handiwork": 0,
+    "gathering": 0,
+    "lumbering": 0,
+    "mining": 0,
+    "medicine": 0,
+    "cooling": 0,
+    "transporting": 0,
+    "farming": 0
+  },
+  "skills": [
+    {
+      "name": "Water Gun",
+      "element": "Water",
+      "power": 65,
+      "cooldown": 4,
+      "level": 1
+    },
+    {
+      "name": "Aqua Jet",
+      "element": "Water",
+      "power": 80,
+      "cooldown": 8,
+      "level": 10
+    },
+    {
+      "name": "Hydro Pump",
+      "element": "Water",
+      "power": 130,
+      "cooldown": 20,
+      "level": 22
+    }
+  ],
+  "partnerSkill": {
+    "name": "Wings of Water",
+    "descriptionEn": "Can be [[ridden]] as a flying mount. Enhances Water attacks while mounted."
+  },
+  "acquisition": {
+    "habitats": [
+      "various"
+    ],
+    "isBreedable": true,
+    "isCatchable": true,
+    "isBossEncounter": true
+  },
+  "breeding": {
+    "breedingPower": 30
+  },
+  "drops": [],
+  "decision": {
+    "bestFor": [
+      "watering"
+    ],
+    "gameStage": {
+      "early": false,
+      "mid": false,
+      "late": true
+    },
+    "scores": {},
+    "reasons": {}
+  }
+}

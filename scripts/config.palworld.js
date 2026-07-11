@@ -6,7 +6,7 @@ module.exports = {
   // ── Site identity ──────────────────────────────────────────
   domain: 'https://palworldguides.com',
   clarityId: 'xk4e29fx10',
-  siteName: 'PalGuide',
+  siteName: 'PalDatabase',
 
   // ── Data directories (relative to /data/) ──────────────────
   entityDirs: ['pals'],                    // data/pals/
@@ -19,39 +19,50 @@ module.exports = {
 
   // ── Navigation ─────────────────────────────────────────────
   nav: {
-    logoHTML: 'Pal<span>Guide</span>',
+    logoHTML: 'Pal<span>Database</span>',
     logoHref: '/',
     links: [
-      { href: '/best-pals.html', label: 'Pal Finder' },
-      { href: '/best-pals/mining/', label: 'Best Pals' },
-      { href: '/breeding-guide.html', label: 'Breeding' },
-      { href: '/about.html', label: 'About' }
+      { href: '/pals/', label: 'Pals' },
+      { href: '/breeding-calculator/', label: 'Breeding Calculator', cls: 'nav-highlight' },
+      { href: '/tier-list/', label: 'Tier List' },
+      { href: '/items/', label: 'Database ▾', dropdown: [
+        { href: '/items/', label: 'Items' },
+        { href: '/items/weapons/', label: 'Weapons' },
+        { href: '/items/armor/', label: 'Armor' },
+        { href: '/structures/', label: 'Structures' }
+      ]},
+      { href: '/skills/', label: 'Skills ▾', dropdown: [
+        { href: '/skills/', label: 'Active Skills' },
+        { href: '/skills/#passive', label: 'Passive Skills' },
+        { href: '/skills/#partner', label: 'Partner Skills' }
+      ]},
+      { href: '/map/', label: 'Map' }
     ],
-    breadcrumbEntityLabel: 'Pal Finder',
-    breadcrumbEntityHref: '/best-pals.html'
+    breadcrumbEntityLabel: 'Pal Database',
+    breadcrumbEntityHref: '/pals/'
   },
 
   // ── Tool cards (shown on entity + decision pages) ──────────
   toolCards: [
     {
-      icon: '🔍',
-      title: 'Pal Finder',
-      desc: 'Filter Pals by stats, work ability, and element',
-      href: '/best-pals.html'
+      icon: '📚',
+      title: 'Pal Database',
+      desc: 'Search, filter, and compare all 215 Pals',
+      href: '/pals/'
     },
     {
       icon: '🧬',
       title: 'Breeding Calculator',
       desc: 'Calculate breeding results for any Pal combination',
-      href: '/breeding-guide.html'
+      href: '/breeding-calculator/'
     }
   ],
 
   // ── UI text ────────────────────────────────────────────────
   ui: {
-    topBar: game => `📊 Data-driven Pal guide. Updated for Palworld ${game.version}`,
+    topBar: game => `📊 Palworld Database — ${game.version}. Data-driven, always up to date.`,
     decisionTopBar: game => `📊 Updated for Palworld ${game.version}. Data-driven rankings`,
-    footer: `PalGuide. Data-driven Palworld companion.`,
+    footer: `Palworld Database. Data-driven Palworld companion.`,
     decisionCTA: '🧬 Breed this Pal →',
     entityLabel: 'Pal',
     entityLabels: 'Pals',

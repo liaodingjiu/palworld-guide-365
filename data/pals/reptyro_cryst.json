@@ -1,0 +1,97 @@
+{
+  "id": "reptyro_cryst",
+  "gameId": "palworld",
+  "number": "088B",
+  "name": {
+    "zh": "Reptyro Cryst",
+    "en": "Reptyro Cryst"
+  },
+  "slug": "reptyro_cryst",
+  "image": "/images/pals/reptyro_cryst.webp",
+  "classification": {
+    "elements": [
+      "Neutral"
+    ],
+    "rarity": "Epic",
+    "role": [
+      "Combat"
+    ],
+    "size": "Large",
+    "isRideable": true,
+    "isFlyable": false
+  },
+  "stats": {
+    "hp": 110,
+    "attack": 105,
+    "defense": 130,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
+  },
+  "workSuitability": {
+    "kindling": 0,
+    "watering": 0,
+    "planting": 0,
+    "generating": 0,
+    "handiwork": 0,
+    "gathering": 0,
+    "lumbering": 0,
+    "mining": 3,
+    "medicine": 0,
+    "cooling": 3,
+    "transporting": 0,
+    "farming": 0
+  },
+  "skills": [
+    {
+      "name": "Power Shot",
+      "element": "Neutral",
+      "power": 85,
+      "cooldown": 8,
+      "level": 1
+    },
+    {
+      "name": "Air Cannon",
+      "element": "Neutral",
+      "power": 50,
+      "cooldown": 4,
+      "level": 7
+    },
+    {
+      "name": "Body Slam",
+      "element": "Neutral",
+      "power": 80,
+      "cooldown": 12,
+      "level": 15
+    }
+  ],
+  "partnerSkill": {
+    "name": "Ice-Loving Beast",
+    "descriptionEn": "Can be ridden. Improves efficiency of mining ores while mounted."
+  },
+  "acquisition": {
+    "habitats": [
+      "various"
+    ],
+    "isBreedable": true,
+    "isCatchable": true,
+    "isBossEncounter": true
+  },
+  "breeding": {
+    "breedingPower": 230
+  },
+  "drops": [],
+  "decision": {
+    "bestFor": [
+      "mining",
+      "cooling"
+    ],
+    "gameStage": {
+      "early": false,
+      "mid": false,
+      "late": true
+    },
+    "scores": {},
+    "reasons": {}
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "id": "neptilius",
+  "gameId": "palworld",
+  "number": "155",
+  "name": {
+    "zh": "Neptilius",
+    "en": "Neptilius"
+  },
+  "slug": "neptilius",
+  "image": "/images/pals/neptilius.webp",
+  "classification": {
+    "elements": [
+      "Water"
+    ],
+    "rarity": "Common",
+    "role": [
+      "Combat"
+    ],
+    "size": "Medium",
+    "isRideable": false,
+    "isFlyable": false
+  },
+  "stats": {
+    "hp": 105,
+    "attack": 145,
+    "defense": 125,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
+  },
+  "workSuitability": {
+    "kindling": 0,
+    "watering": 4,
+    "planting": 0,
+    "generating": 0,
+    "handiwork": 0,
+    "gathering": 0,
+    "lumbering": 0,
+    "mining": 0,
+    "medicine": 0,
+    "cooling": 0,
+    "transporting": 0,
+    "farming": 0
+  },
+  "skills": [
+    {
+      "name": "Water Gun",
+      "element": "Water",
+      "power": 65,
+      "cooldown": 4,
+      "level": 1
+    },
+    {
+      "name": "Aqua Jet",
+      "element": "Water",
+      "power": 80,
+      "cooldown": 8,
+      "level": 10
+    },
+    {
+      "name": "Hydro Pump",
+      "element": "Water",
+      "power": 130,
+      "cooldown": 20,
+      "level": 22
+    }
+  ],
+  "partnerSkill": {
+    "name": "Neptilius's Partner Skill",
+    "descriptionEn": "Provides unique utility for Neptilius."
+  },
+  "acquisition": {
+    "habitats": [
+      "various"
+    ],
+    "isBreedable": false,
+    "isCatchable": true,
+    "isBossEncounter": false
+  },
+  "breeding": {
+    "breedingPower": 1000
+  },
+  "drops": [],
+  "decision": {
+    "bestFor": [
+      "watering"
+    ],
+    "gameStage": {
+      "early": false,
+      "mid": true,
+      "late": false
+    },
+    "scores": {},
+    "reasons": {}
+  }
+}

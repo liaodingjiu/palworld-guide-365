@@ -1,0 +1,96 @@
+{
+  "id": "dazzi",
+  "gameId": "palworld",
+  "number": "062",
+  "name": {
+    "zh": "Dazzi",
+    "en": "Dazzi"
+  },
+  "slug": "dazzi",
+  "image": "/images/pals/dazzi.webp",
+  "classification": {
+    "elements": [
+      "Electric"
+    ],
+    "rarity": "Common",
+    "role": [
+      "Worker"
+    ],
+    "size": "Medium",
+    "isRideable": false,
+    "isFlyable": false
+  },
+  "stats": {
+    "hp": 70,
+    "attack": 80,
+    "defense": 70,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
+  },
+  "workSuitability": {
+    "kindling": 0,
+    "watering": 0,
+    "planting": 0,
+    "generating": 1,
+    "handiwork": 1,
+    "gathering": 0,
+    "lumbering": 0,
+    "mining": 0,
+    "medicine": 0,
+    "cooling": 0,
+    "transporting": 1,
+    "farming": 0
+  },
+  "skills": [
+    {
+      "name": "Thunder Shock",
+      "element": "Electric",
+      "power": 50,
+      "cooldown": 3,
+      "level": 1
+    },
+    {
+      "name": "Thunderbolt",
+      "element": "Electric",
+      "power": 100,
+      "cooldown": 12,
+      "level": 12
+    },
+    {
+      "name": "Lightning Strike",
+      "element": "Electric",
+      "power": 130,
+      "cooldown": 20,
+      "level": 25
+    }
+  ],
+  "partnerSkill": {
+    "name": "Lady of Lightning",
+    "descriptionEn": "While in team, appears near the player. Follows up player attacks with lightning bolts."
+  },
+  "acquisition": {
+    "habitats": [
+      "various"
+    ],
+    "isBreedable": true,
+    "isCatchable": true,
+    "isBossEncounter": false
+  },
+  "breeding": {
+    "breedingPower": 1210
+  },
+  "drops": [],
+  "decision": {
+    "bestFor": [
+      "combat"
+    ],
+    "gameStage": {
+      "early": true,
+      "mid": false,
+      "late": false
+    },
+    "scores": {},
+    "reasons": {}
+  }
+}

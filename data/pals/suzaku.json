@@ -1,0 +1,96 @@
+{
+  "id": "suzaku",
+  "gameId": "palworld",
+  "number": "102",
+  "name": {
+    "zh": "Suzaku",
+    "en": "Suzaku"
+  },
+  "slug": "suzaku",
+  "image": "/images/pals/suzaku.webp",
+  "classification": {
+    "elements": [
+      "Fire"
+    ],
+    "rarity": "Legendary",
+    "role": [
+      "Combat"
+    ],
+    "size": "Large",
+    "isRideable": false,
+    "isFlyable": false
+  },
+  "stats": {
+    "hp": 120,
+    "attack": 105,
+    "defense": 105,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
+  },
+  "workSuitability": {
+    "kindling": 3,
+    "watering": 0,
+    "planting": 0,
+    "generating": 0,
+    "handiwork": 0,
+    "gathering": 0,
+    "lumbering": 0,
+    "mining": 0,
+    "medicine": 0,
+    "cooling": 0,
+    "transporting": 0,
+    "farming": 0
+  },
+  "skills": [
+    {
+      "name": "Fire Ball",
+      "element": "Fire",
+      "power": 75,
+      "cooldown": 6,
+      "level": 1
+    },
+    {
+      "name": "Flame Thrower",
+      "element": "Fire",
+      "power": 120,
+      "cooldown": 18,
+      "level": 15
+    },
+    {
+      "name": "Fire Blast",
+      "element": "Fire",
+      "power": 100,
+      "cooldown": 14,
+      "level": 22
+    }
+  ],
+  "partnerSkill": {
+    "name": "Suzaku's Partner Skill",
+    "descriptionEn": "Provides unique utility for Suzaku."
+  },
+  "acquisition": {
+    "habitats": [
+      "various"
+    ],
+    "isBreedable": true,
+    "isCatchable": true,
+    "isBossEncounter": true
+  },
+  "breeding": {
+    "breedingPower": 50
+  },
+  "drops": [],
+  "decision": {
+    "bestFor": [
+      "kindling"
+    ],
+    "gameStage": {
+      "early": false,
+      "mid": false,
+      "late": true
+    },
+    "scores": {},
+    "reasons": {}
+  }
+}

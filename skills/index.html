@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Palworld Skills Database | Palworld Database</title>
+<meta name="description" content="Every skill in Palworld — active combat skills, partner skills for all Pals, and passive abilities. Search, filter, sort.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://palworldguides.com/skills/">
+<meta property="og:title" content="Palworld Skills Database | Palworld Database">
+<meta property="og:description" content="Active skills, partner skills, and passive abilities.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://palworldguides.com/skills/">
+<link rel="stylesheet" href="/shared.css">
+<style>
+.skill-card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:20px; transition:border-color .2s,transform .15s,box-shadow .2s; }
+.skill-card:hover { border-color:var(--green); transform:translateY(-2px); box-shadow:0 4px 16px rgba(0,0,0,.1); }
+.skill-card .sc-header { display:flex; align-items:center; gap:14px; margin-bottom:16px; }
+.skill-card .sc-icon { width:56px;height:56px;border-radius:50%;border:2px solid var(--border);background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0; }
+.skill-card .sc-name { font-size:18px;font-weight:700; }
+.skill-card .sc-type { font-size:13px;color:var(--text2);margin-top:2px; }
+.skill-card .sc-stats { display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px; }
+.skill-card .sc-stat { background:var(--bg);border-radius:8px;padding:12px 8px;text-align:center; }
+.skill-card .sc-stat-val { font-size:22px;font-weight:700; }
+.skill-card .sc-stat-lbl { font-size:11px;color:var(--text3);text-transform:uppercase;margin-top:2px; }
+.sc-stat-val.power { color:#ef4444; }
+.sc-stat-val.cooldown { color:#3b82f6; }
+.sc-stat-val.range { color:var(--text); }
+.skill-card .sc-learn { border-top:1px solid var(--border);padding-top:12px; }
+.skill-card .sc-learn-lbl { font-size:11px;color:var(--text3);text-transform:uppercase;margin-bottom:6px; }
+.skill-card .sc-pals { display:flex;flex-wrap:wrap;gap:6px; }
+.skill-card .sc-pal-tag { display:inline-flex;align-items:center;gap:4px;background:var(--bg);border:1px solid var(--border);border-radius:20px;padding:4px 10px;font-size:12px; }
+.skill-card .sc-pal-tag a { color:var(--green);text-decoration:none; }
+.skill-card .sc-pal-tag a:hover { text-decoration:underline; }
+.skill-card .sc-pal-tag .sc-lv { font-size:10px;color:var(--gold);font-weight:600; }
+
+/* Partner card */
+.skill-card .sc-partner-pal { font-size:15px;font-weight:600;margin-bottom:4px; }
+.skill-card .sc-desc { font-size:14px;color:var(--text2);line-height:1.6; }
+
+/* Passive card */
+.skill-card .sc-rank { display:inline-block;font-size:12px;padding:2px 8px;border-radius:4px;margin-bottom:8px; }
+.sc-rank.r3 { background:#facc1520;color:#facc15; }
+.sc-rank.r2 { background:#60a5fa20;color:#60a5fa; }
+.sc-rank.r1 { background:var(--bg);color:var(--text2); }
+.skill-card .sc-passive-stats { display:flex;gap:16px;flex-wrap:wrap;margin-bottom:8px;font-size:13px;color:var(--text2); }
+
+.skills-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px; }
+@media (max-width:480px) { .skills-grid { grid-template-columns:1fr; } .skill-card .sc-stats { grid-template-columns:repeat(3,1fr); } }
+</style>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xk4e29fx10");</script>
+</head>
+<body>
+<div class="top-bar">📊 Palworld Database — 1.0. Data-driven, always up to date.</div>
+<nav aria-label="Main navigation"><div class="nav-inner"><a href="/" class="logo">Pal<span>Database</span></a><div class="nav-right"><ul class="nav-links"><li><a href="/pals/">Pals</a></li><li><a href="/breeding-calculator/" class="nav-highlight">Breeding Calculator</a></li><li><a href="/tier-list/">Tier List</a></li><li class="nav-dropdown"><a>Database ▾</a><ul class="dropdown-menu"><li><a href="/items/">Items</a></li><li><a href="/items/weapons/">Weapons</a></li><li><a href="/items/armor/">Armor</a></li><li><a href="/structures/">Structures</a></li></ul></li><li class="nav-dropdown"><a>Skills ▾</a><ul class="dropdown-menu"><li><a href="/skills/">Active Skills</a></li><li><a href="/skills/#passive">Passive Skills</a></li><li><a href="/skills/#partner">Partner Skills</a></li></ul></li><li><a href="/map/">Map</a></li></ul><button class="theme-toggle" id="themeToggle">☀️<span>🌙</span></button></div></div></nav>
+<main class="container" style="max-width:1200px">
+<section class="hero" style="padding:20px 0 8px"><h1>Palworld Skills Database</h1><p style="font-size:15px;color:var(--text2)">Active combat skills, partner skills for 215 Pals, and 93 passive abilities. Data from wiki.gg.</p></section>
+
+<div id="tabs" style="display:flex;gap:0;margin:16px 0 0;border-bottom:2px solid var(--border)">
+<button class="tab active" data-tab="active" style="padding:10px 20px;font-size:15px;font-weight:600;cursor:pointer;color:var(--text2);background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px">⚡ Active Skills</button>
+<button class="tab"        data-tab="partner" style="padding:10px 20px;font-size:15px;font-weight:600;cursor:pointer;color:var(--text2);background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px">🤝 Partner Skills</button>
+<button class="tab"        data-tab="passive" style="padding:10px 20px;font-size:15px;font-weight:600;cursor:pointer;color:var(--text2);background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px">📋 Passive Skills</button>
+</div>
+
+<!-- Active meta -->
+<div id="activeMeta" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:12px 0">
+<input type="text" id="as" placeholder="Search active skills..." autocomplete="off" style="flex:1;min-width:150px;max-width:280px;padding:7px 10px;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text);font-size:14px">
+<span id="ac" style="font-size:13px;color:var(--text2)"></span>
+<select id="ae" style="padding:7px 10px;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);font-size:13px">
+<option value="all">All Elements</option><option>Neutral</option><option>Fire</option><option>Water</option><option>Grass</option><option>Electric</option><option>Ice</option><option>Dark</option><option>Ground</option><option>Dragon</option></select>
+<select id="aSort" style="padding:7px 10px;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);font-size:13px"><option value="power">Power</option><option value="cooldown">Cooldown</option><option value="name">Name</option></select>
+<select id="aOrder" style="padding:7px 10px;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);font-size:13px"><option value="desc">↓ Descending</option><option value="asc">↑ Ascending</option></select>
+</div>
+<div id="partnerMeta" style="display:none;align-items:center;gap:8px;flex-wrap:wrap;margin:12px 0">
+<input type="text" id="ps" placeholder="Search partner skills..." autocomplete="off" style="flex:1;min-width:150px;max-width:280px;padding:7px 10px;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text);font-size:14px">
+<span id="pc" style="font-size:13px;color:var(--text2)"></span>
+<select id="pSort" style="padding:7px 10px;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);font-size:13px"><option value="name">Name</option><option value="pal">Pal Name</option></select>
+</div>
+<div id="passiveMeta" style="display:none;align-items:center;gap:8px;flex-wrap:wrap;margin:12px 0">
+<input type="text" id="ns" placeholder="Search passive skills..." autocomplete="off" style="flex:1;min-width:150px;max-width:280px;padding:7px 10px;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text);font-size:14px">
+<span id="nc" style="font-size:13px;color:var(--text2)"></span>
+<select id="nSort" style="padding:7px 10px;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);font-size:13px"><option value="rank">Rank ↓</option><option value="name">Name</option></select>
+</div>
+
+<div style="max-height:600px;overflow-y:auto;border:1px solid var(--border);border-radius:8px;padding:12px;background:var(--bg);margin-bottom:20px">
+<div class="skills-grid" id="g"></div></div>
+</main>
+<footer class="site-footer"><div class="footer-inner"><p>&copy; 2026 Palworld Database.</p><div class="footer-links"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a></div></div><p style="font-size:11px;color:var(--text3);margin-top:8px">Pal data sourced from <a href="https://palworld.wiki.gg" style="color:var(--text3)">Palworld Wiki.gg</a> (CC BY-SA 3.0). Game artwork &amp; assets © Pocketpair, Inc.</p></footer>
+<button class="back-top" id="backTop">↑</button>
+<script src="/cookie-consent.js"></script>
+<script src="/skills/skills-data.js"></script>
+<script>
+(function(){var t=document.getElementById("themeToggle"),s=localStorage.getItem("palguide-theme");if(s)document.documentElement.setAttribute("data-theme",s);t.addEventListener("click",function(){var c=document.documentElement.getAttribute("data-theme"),n=c==="dark"?"light":"dark";document.documentElement.setAttribute("data-theme",n);localStorage.setItem("palguide-theme",n)});var b=document.getElementById("backTop");window.addEventListener("scroll",function(){b.classList.toggle("visible",window.scrollY>500)});b.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})})})();
+
+var ACTIVE=window.__SKILLS_ACTIVE__||[], PARTNER=window.__SKILLS_PARTNER__||[], PASSIVE=window.__SKILLS_PASSIVE__||[];
+var currentTab="active";
+var ELEM_ICONS={Neutral:"⚪",Fire:"🔥",Water:"💧",Grass:"🌿",Electric:"⚡",Ice:"❄️",Dark:"🌑",Ground:"🪨",Dragon:"🐉"};
+var TAG_CLASS={Neutral:"tag-neutral",Fire:"tag-fire",Water:"tag-water",Grass:"tag-grass",Electric:"tag-electric",Ice:"tag-ice",Dark:"tag-dark",Ground:"tag-ground",Dragon:"tag-dragon"};
+
+function renderActive(list){
+  document.getElementById("ac").textContent=list.length+" skills";
+  document.getElementById("g").innerHTML=list.map(function(s){
+    var icon=ELEM_ICONS[s.e]||"⭐",tag=TAG_CLASS[s.e]||"tag-neutral";
+    return '<div class="skill-card">'+
+      '<div class="sc-header"><div class="sc-icon"><img src="/images/skills/'+(s.e||'Neutral')+'.webp" alt="'+s.e+'" style="width:40px;height:40px;object-fit:contain;border-radius:50%" onerror="this.style.display=\'none\'"><span style="display:none">'+icon+'</span></div><div><div class="sc-name">'+s.n+'</div><div class="sc-type"><span class="'+tag+'" style="font-size:10px;padding:1px 6px;border-radius:3px">'+s.e+'</span></div></div></div>'+
+      '<div class="sc-stats"><div class="sc-stat"><div class="sc-stat-val power">'+s.p+'</div><div class="sc-stat-lbl">Power</div></div><div class="sc-stat"><div class="sc-stat-val cooldown">'+s.c+'s</div><div class="sc-stat-lbl">Cooldown</div></div><div class="sc-stat"><div class="sc-stat-val range">Lv '+s.l+'</div><div class="sc-stat-lbl">Learn Lv</div></div></div>'+
+      '<div class="sc-learn"><div class="sc-learn-lbl">Learned By</div><div class="sc-pals">'+(s.pals||[]).slice(0,8).map(function(p){return '<span class="sc-pal-tag">'+p+'</span>'}).join("")+(s.pals&&s.pals.length>8?'<span class="sc-pal-tag">+'+((s.pals.length)-8)+' more</span>':"")+'</div></div></div>';
+  }).join("");
+}
+function renderPartner(list){
+  document.getElementById("pc").textContent=list.length+" skills";
+  document.getElementById("g").innerHTML=list.map(function(s){
+    return '<div class="skill-card">'+
+      '<div class="sc-header"><div class="sc-icon"><img src="/images/pals/'+s.pal.toLowerCase().replace(/ /g,'_')+'.webp" alt="'+s.pal+'" style="width:40px;height:40px;object-fit:contain;border-radius:50%" onerror="this.style.display=\'none\'">🤝</div><div><div class="sc-name">'+s.n+'</div><div style="font-size:14px;color:var(--green);font-weight:600">'+s.pal+'</div></div></div>'+
+      '<div style="font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:8px">'+(s.d||"—")+'</div>'+
+      '<div style="display:flex;gap:6px;flex-wrap:wrap">'+
+      (s.t?'<span style="font-size:11px;padding:2px 8px;border-radius:4px;background:var(--bg);border:1px solid var(--border);color:var(--text2)">Type: '+(s.t||"")+'</span>':'')+
+      '</div></div>';
+  }).join("");
+}
+
+function renderPassive(list){
+  document.getElementById("nc").textContent=list.length+" skills";
+  document.getElementById("g").innerHTML=list.map(function(s){
+    var rankCls="r"+(parseInt(s.rank)>=3?"3":parseInt(s.rank)>=2?"2":"1");
+    var tags=[];
+    if(s.attack)tags.push('<span style="font-size:12px;padding:3px 8px;border-radius:6px;background:#ef444418;color:#ef4444;font-weight:600">⚔ '+s.attack+'</span>');
+    if(s.defense)tags.push('<span style="font-size:12px;padding:3px 8px;border-radius:6px;background:#3b82f618;color:#3b82f6;font-weight:600">🛡 '+s.defense+'</span>');
+    if(s.speed)tags.push('<span style="font-size:12px;padding:3px 8px;border-radius:6px;background:#22c55e18;color:#22c55e;font-weight:600">💨 '+s.speed+'</span>');
+    if(s.workSpeed)tags.push('<span style="font-size:12px;padding:3px 8px;border-radius:6px;background:#facc1518;color:#facc15;font-weight:600">🔧 '+s.workSpeed+'</span>');
+    return '<div class="skill-card">'+
+      '<div class="sc-header"><div class="sc-icon"><img src="/images/skills/Neutral.webp" alt="Passive" style="width:40px;height:40px;object-fit:contain;border-radius:50%">📋</div><div><div class="sc-name">'+s.name+'</div><span class="sc-rank '+rankCls+'">Rank '+s.rank+'</span></div></div>'+
+      (tags.length?'<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">'+tags.join("")+'</div>':"")+
+      '<div style="font-size:14px;color:var(--text2);line-height:1.6">'+(s.desc||"—")+'</div>'+
+      (s.pal?'<div style="margin-top:10px;font-size:13px;color:var(--text3)"><strong>Pal:</strong> '+s.pal+'</div>':"")+'</div>';
+  }).join("");
+}
+function renderPassive(list){
+  document.getElementById("nc").textContent=list.length+" skills";
+  document.getElementById("g").innerHTML=list.map(function(s){
+    var rankCls="r"+(parseInt(s.rank)>=3?"3":parseInt(s.rank)>=2?"2":"1");
+    var stats=[];
+    if(s.attack)stats.push('<div class="sc-stat"><div class="sc-stat-val power">'+s.attack+'</div><div class="sc-stat-lbl">Attack</div></div>');
+    if(s.defense)stats.push('<div class="sc-stat"><div class="sc-stat-val cooldown">'+s.defense+'</div><div class="sc-stat-lbl">Defense</div></div>');
+    if(s.speed)stats.push('<div class="sc-stat"><div class="sc-stat-val range">'+s.speed+'</div><div class="sc-stat-lbl">Speed</div></div>');
+    if(s.workSpeed)stats.push('<div class="sc-stat"><div class="sc-stat-val range">'+s.workSpeed+'</div><div class="sc-stat-lbl">Work</div></div>');
+    return '<div class="skill-card">'+
+      '<div class="sc-header"><div class="sc-icon"><img src="/images/skills/Neutral.webp" alt="Passive" style="width:40px;height:40px;object-fit:contain;border-radius:50%">📋</div><div><div class="sc-name">'+s.name+'</div><span class="sc-rank '+rankCls+'">Rank '+s.rank+'</span></div></div>'+
+      (stats.length?'<div class="sc-stats" style="margin-bottom:12px">'+stats.join("")+'</div>':"")+
+      '<div class="sc-desc">'+(s.desc||"—")+'</div>'+
+      (s.pal?'<div style="margin-top:8px;font-size:13px;color:var(--text2)"><strong>Pal:</strong> '+s.pal+'</div>':"")+'</div>';
+  }).join("");
+}
+
+function filterActive(){
+  var q=document.getElementById("as").value.toLowerCase(),e=document.getElementById("ae").value,s=document.getElementById("aSort").value,o=document.getElementById("aOrder").value;
+  var l=ACTIVE.filter(function(sk){if(q&&sk.n.toLowerCase().indexOf(q)<0)return false;if(e!=="all"&&sk.e!==e)return false;return true});
+  var desc=o==="desc";
+  if(s==="power")l.sort(function(a,b){return desc?b.p-a.p:a.p-b.p});
+  else if(s==="cooldown")l.sort(function(a,b){return desc?b.c-a.c:a.c-b.c});
+  else l.sort(function(a,b){return desc?b.n.localeCompare(a.n):a.n.localeCompare(b.n)});
+  renderActive(l);
+}
+function filterPartner(){
+  var q=document.getElementById("ps").value.toLowerCase(),s=document.getElementById("pSort").value;
+  var l=PARTNER.filter(function(sk){if(q&&sk.n.toLowerCase().indexOf(q)<0)return false;return true});
+  if(s==="pal")l.sort(function(a,b){return a.pal.localeCompare(b.pal)});else l.sort(function(a,b){return a.n.localeCompare(b.n)});
+  renderPartner(l);
+}
+function filterPassive(){
+  var q=document.getElementById("ns").value.toLowerCase(),s=document.getElementById("nSort").value;
+  var l=PASSIVE.filter(function(sk){if(q&&sk.name.toLowerCase().indexOf(q)<0)return false;return true});
+  if(s==="rank")l.sort(function(a,b){return(parseInt(b.rank)||0)-(parseInt(a.rank)||0)});else l.sort(function(a,b){return a.name.localeCompare(b.name)});
+  renderPassive(l);
+}
+
+function switchTab(tab){
+  currentTab=tab;
+  document.querySelectorAll("#tabs .tab").forEach(function(b){b.classList.toggle("active",b.getAttribute("data-tab")===tab);b.style.color=b.classList.contains("active")?"var(--green)":"var(--text2)";b.style.borderBottomColor=b.classList.contains("active")?"var(--green)":"transparent"});
+  document.getElementById("activeMeta").style.display=tab==="active"?"flex":"none";
+  document.getElementById("partnerMeta").style.display=tab==="partner"?"flex":"none";
+  document.getElementById("passiveMeta").style.display=tab==="passive"?"flex":"none";
+  if(tab==="active")filterActive();else if(tab==="partner")filterPartner();else filterPassive();
+  if(window.location.hash!=="#"+tab&&tab!=="active")window.location.hash=tab;else if(tab==="active"&&window.location.hash)history.replaceState(null,"",window.location.pathname);
+}
+document.querySelectorAll("#tabs .tab").forEach(function(b){b.addEventListener("click",function(){switchTab(this.getAttribute("data-tab"))})});
+window.addEventListener("hashchange",function(){var h=window.location.hash.replace("#","");if(h==="passive"||h==="partner")switchTab(h)});
+
+document.getElementById("as").addEventListener("input",filterActive);
+document.getElementById("ae").addEventListener("change",filterActive);
+document.getElementById("aSort").addEventListener("change",filterActive);
+document.getElementById("aOrder").addEventListener("change",filterActive);
+document.getElementById("ps").addEventListener("input",filterPartner);
+document.getElementById("pSort").addEventListener("change",filterPartner);
+document.getElementById("ns").addEventListener("input",filterPassive);
+document.getElementById("nSort").addEventListener("change",filterPassive);
+
+(function(){var h=window.location.hash.replace("#","");switchTab(h==="passive"||h==="partner"?h:"active")})();
+</script>
+</body>
+</html>

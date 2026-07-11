@@ -1,0 +1,98 @@
+{
+  "id": "robinquill",
+  "gameId": "palworld",
+  "number": "048",
+  "name": {
+    "zh": "Robinquill",
+    "en": "Robinquill"
+  },
+  "slug": "robinquill",
+  "image": "/images/pals/robinquill.webp",
+  "classification": {
+    "elements": [
+      "Grass"
+    ],
+    "rarity": "Common",
+    "role": [
+      "Combat"
+    ],
+    "size": "Medium",
+    "isRideable": false,
+    "isFlyable": false
+  },
+  "stats": {
+    "hp": 90,
+    "attack": 105,
+    "defense": 80,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
+  },
+  "workSuitability": {
+    "kindling": 0,
+    "watering": 0,
+    "planting": 1,
+    "generating": 0,
+    "handiwork": 2,
+    "gathering": 2,
+    "lumbering": 1,
+    "mining": 0,
+    "medicine": 1,
+    "cooling": 0,
+    "transporting": 2,
+    "farming": 0
+  },
+  "skills": [
+    {
+      "name": "Wind Cutter",
+      "element": "Grass",
+      "power": 55,
+      "cooldown": 4,
+      "level": 1
+    },
+    {
+      "name": "Seed Bomb",
+      "element": "Grass",
+      "power": 90,
+      "cooldown": 10,
+      "level": 10
+    },
+    {
+      "name": "Grass Tornado",
+      "element": "Grass",
+      "power": 100,
+      "cooldown": 18,
+      "level": 22
+    }
+  ],
+  "partnerSkill": {
+    "name": "Hawk Eye",
+    "descriptionEn": "While fighting together, allows you to deal more damage to weak points."
+  },
+  "acquisition": {
+    "habitats": [
+      "various"
+    ],
+    "isBreedable": true,
+    "isCatchable": true,
+    "isBossEncounter": false
+  },
+  "breeding": {
+    "breedingPower": 1020
+  },
+  "drops": [],
+  "decision": {
+    "bestFor": [
+      "handiwork",
+      "gathering",
+      "transporting"
+    ],
+    "gameStage": {
+      "early": true,
+      "mid": false,
+      "late": false
+    },
+    "scores": {},
+    "reasons": {}
+  }
+}

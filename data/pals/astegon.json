@@ -1,0 +1,96 @@
+{
+  "id": "astegon",
+  "gameId": "palworld",
+  "number": "098",
+  "name": {
+    "zh": "Astegon",
+    "en": "Astegon"
+  },
+  "slug": "astegon",
+  "image": "/images/pals/astegon.webp",
+  "classification": {
+    "elements": [
+      "Neutral"
+    ],
+    "rarity": "Legendary",
+    "role": [
+      "Combat"
+    ],
+    "size": "Large",
+    "isRideable": true,
+    "isFlyable": true
+  },
+  "stats": {
+    "hp": 100,
+    "attack": 125,
+    "defense": 125,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
+  },
+  "workSuitability": {
+    "kindling": 0,
+    "watering": 0,
+    "planting": 0,
+    "generating": 0,
+    "handiwork": 1,
+    "gathering": 0,
+    "lumbering": 0,
+    "mining": 4,
+    "medicine": 0,
+    "cooling": 0,
+    "transporting": 0,
+    "farming": 0
+  },
+  "skills": [
+    {
+      "name": "Power Shot",
+      "element": "Neutral",
+      "power": 85,
+      "cooldown": 8,
+      "level": 1
+    },
+    {
+      "name": "Air Cannon",
+      "element": "Neutral",
+      "power": 50,
+      "cooldown": 4,
+      "level": 7
+    },
+    {
+      "name": "Body Slam",
+      "element": "Neutral",
+      "power": 80,
+      "cooldown": 12,
+      "level": 15
+    }
+  ],
+  "partnerSkill": {
+    "name": "Black Ankylosaur",
+    "descriptionEn": "Can be ridden as a flying mount. Increases the damage dealt to ores, and you can obtain more Ore while mounted."
+  },
+  "acquisition": {
+    "habitats": [
+      "various"
+    ],
+    "isBreedable": true,
+    "isCatchable": true,
+    "isBossEncounter": true
+  },
+  "breeding": {
+    "breedingPower": 150
+  },
+  "drops": [],
+  "decision": {
+    "bestFor": [
+      "mining"
+    ],
+    "gameStage": {
+      "early": false,
+      "mid": false,
+      "late": true
+    },
+    "scores": {},
+    "reasons": {}
+  }
+}

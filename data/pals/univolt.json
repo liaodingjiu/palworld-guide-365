@@ -1,0 +1,96 @@
+{
+  "id": "univolt",
+  "gameId": "palworld",
+  "number": "056",
+  "name": {
+    "zh": "Univolt",
+    "en": "Univolt"
+  },
+  "slug": "univolt",
+  "image": "/images/pals/univolt.webp",
+  "classification": {
+    "elements": [
+      "Electric"
+    ],
+    "rarity": "Rare",
+    "role": [
+      "Combat"
+    ],
+    "size": "Medium",
+    "isRideable": true,
+    "isFlyable": false
+  },
+  "stats": {
+    "hp": 80,
+    "attack": 105,
+    "defense": 105,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
+  },
+  "workSuitability": {
+    "kindling": 0,
+    "watering": 0,
+    "planting": 0,
+    "generating": 2,
+    "handiwork": 0,
+    "gathering": 0,
+    "lumbering": 1,
+    "mining": 0,
+    "medicine": 0,
+    "cooling": 0,
+    "transporting": 0,
+    "farming": 0
+  },
+  "skills": [
+    {
+      "name": "Thunder Shock",
+      "element": "Electric",
+      "power": 50,
+      "cooldown": 3,
+      "level": 1
+    },
+    {
+      "name": "Thunderbolt",
+      "element": "Electric",
+      "power": 100,
+      "cooldown": 12,
+      "level": 12
+    },
+    {
+      "name": "Lightning Strike",
+      "element": "Electric",
+      "power": 130,
+      "cooldown": 20,
+      "level": 25
+    }
+  ],
+  "partnerSkill": {
+    "name": "Swift Deity",
+    "descriptionEn": "Can be ridden. Changes the player's attack type to Electric while mounted."
+  },
+  "acquisition": {
+    "habitats": [
+      "various"
+    ],
+    "isBreedable": true,
+    "isCatchable": true,
+    "isBossEncounter": false
+  },
+  "breeding": {
+    "breedingPower": 680
+  },
+  "drops": [],
+  "decision": {
+    "bestFor": [
+      "generating"
+    ],
+    "gameStage": {
+      "early": false,
+      "mid": true,
+      "late": false
+    },
+    "scores": {},
+    "reasons": {}
+  }
+}

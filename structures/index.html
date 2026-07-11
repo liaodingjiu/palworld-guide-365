@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Palworld Structures Database | Palworld Database</title>
+<meta name="description" content="131 buildable structures in Palworld — workbenches, storage, defenses, infrastructure. Tech levels, material costs.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://palworldguides.com/structures/">
+<meta property="og:title" content="Palworld Structures Database | Palworld Database">
+<meta property="og:description" content="131 structures with full material costs and tech levels.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://palworldguides.com/structures/">
+<link rel="stylesheet" href="/shared.css">
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xk4e29fx10");</script>
+</head>
+<body>
+<div class="top-bar">📊 Palworld Database — 1.0. Data-driven, always up to date.</div>
+<nav aria-label="Main navigation"><div class="nav-inner"><a href="/" class="logo">Pal<span>Database</span></a><div class="nav-right"><ul class="nav-links"><li><a href="/pals/">Pals</a></li><li><a href="/breeding-calculator/" class="nav-highlight">Breeding Calculator</a></li><li><a href="/tier-list/">Tier List</a></li><li class="nav-dropdown"><a>Database ▾</a><ul class="dropdown-menu"><li><a href="/items/">Items</a></li><li><a href="/items/weapons/">Weapons</a></li><li><a href="/items/armor/">Armor</a></li><li><a href="/structures/">Structures</a></li></ul></li><li class="nav-dropdown"><a>Skills ▾</a><ul class="dropdown-menu"><li><a href="/skills/">Active Skills</a></li><li><a href="/skills/#passive">Passive Skills</a></li><li><a href="/skills/#partner">Partner Skills</a></li></ul></li><li><a href="/map/">Map</a></li></ul><button class="theme-toggle" id="themeToggle">☀️<span>🌙</span></button></div></div></nav>
+<main class="container" style="max-width:1200px">
+<section class="hero" style="padding:20px 0 8px"><h1>Palworld Structures Database</h1><p style="font-size:15px;color:var(--text2)">131 buildable structures. Data from wiki.gg.</p></section>
+<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:12px 0">
+<input type="text" id="s" placeholder="Search structures..." autocomplete="off" style="flex:1;min-width:150px;max-width:280px;padding:7px 10px;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text);font-size:15px">
+<span id="c" style="font-size:13px;color:var(--text2)">131/131</span>
+<select id="sort" style="padding:7px 10px;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);font-size:13px"><option value="level">Tech Level ↓</option><option value="name">Name</option><option value="hp">HP ↓</option></select>
+</div>
+<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px" id="f">
+<span class="filter-chip active" data-cat="all" style="padding:4px 10px;border:1px solid var(--border);border-radius:16px;font-size:12px;cursor:pointer">All</span>
+<span class="filter-chip" data-cat="Production" style="padding:4px 10px;border:1px solid var(--border);border-radius:16px;font-size:12px;cursor:pointer">🏭 Production</span>
+<span class="filter-chip" data-cat="Infrastructure" style="padding:4px 10px;border:1px solid var(--border);border-radius:16px;font-size:12px;cursor:pointer">⚡ Infrastructure</span>
+<span class="filter-chip" data-cat="Storage" style="padding:4px 10px;border:1px solid var(--border);border-radius:16px;font-size:12px;cursor:pointer">📦 Storage</span>
+<span class="filter-chip" data-cat="Food" style="padding:4px 10px;border:1px solid var(--border);border-radius:16px;font-size:12px;cursor:pointer">🍳 Food</span>
+<span class="filter-chip" data-cat="Pal" style="padding:4px 10px;border:1px solid var(--border);border-radius:16px;font-size:12px;cursor:pointer">🧬 Pal</span>
+<span class="filter-chip" data-cat="Defenses" style="padding:4px 10px;border:1px solid var(--border);border-radius:16px;font-size:12px;cursor:pointer">🛡 Defenses</span>
+</div>
+<div style="max-height:520px;overflow-y:auto;border:1px solid var(--border);border-radius:8px">
+<table style="width:100%;border-collapse:collapse;font-size:15px" id="tbl">
+<thead><tr><th style="text-align:left;padding:8px 10px;font-size:12px;color:var(--text2);border-bottom:2px solid var(--border);cursor:pointer" data-sort="n">Structure</th><th>Type</th><th data-sort="lvl">Tech Lv</th><th>Cost</th><th>HP</th><th>Materials</th><th>Description</th></tr></thead>
+<tbody id="tb"></tbody>
+</table></div>
+</main>
+<footer class="site-footer"><div class="footer-inner"><p>&copy; 2026 Palworld Database.</p><div class="footer-links"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a></div></div><p style="font-size:11px;color:var(--text3);margin-top:8px">Pal data sourced from <a href="https://palworld.wiki.gg" style="color:var(--text3)">Palworld Wiki.gg</a> (CC BY-SA 3.0). Game artwork &amp; assets © Pocketpair, Inc.</p></footer>
+<button class="back-top" id="backTop">↑</button>
+<script src="/cookie-consent.js"></script>
+<script src="/structures/structures-data.js"></script>
+<script>
+(function(){var t=document.getElementById("themeToggle"),s=localStorage.getItem("palguide-theme");if(s)document.documentElement.setAttribute("data-theme",s);t.addEventListener("click",function(){var c=document.documentElement.getAttribute("data-theme"),n=c==="dark"?"light":"dark";document.documentElement.setAttribute("data-theme",n);localStorage.setItem("palguide-theme",n)});var b=document.getElementById("backTop");window.addEventListener("scroll",function(){b.classList.toggle("visible",window.scrollY>500)});b.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})})})();
+var D=window.__STRUCTURES__||[],A="all";
+function render(list){
+  document.getElementById("c").textContent=list.length+"/"+D.length;
+  document.getElementById("tb").innerHTML=list.map(function(s){
+    var mats=(s.ing||[]).join(", ")||"—";
+    return "<tr>"+
+      "<td style=font-weight:600>"+s.n+"</td>"+
+      "<td style=font-size:12px;color:var(--text3)>"+(s.st||s.t)+"</td>"+
+      "<td style=font-weight:600;color:var(--gold)>"+(s.lvl?"Lv "+s.lvl:"—")+"</td>"+
+      "<td style=font-size:12px>"+(s.cost?s.cost+" pts":"—")+"</td>"+
+      "<td>"+(s.hp||"—")+"</td>"+
+      "<td style=font-size:12px;color:var(--text2);max-width:250px>"+mats+"</td>"+
+      "<td style=font-size:12px;color:var(--text2);max-width:250px>"+(s.d||"")+"</td>"+
+    "</tr>";
+  }).join("");
+}
+function filter(){
+  var q=document.getElementById("s").value.toLowerCase(),s=document.getElementById("sort").value;
+  var l=D.filter(function(x){if(A!=="all"&&x.t!==A&&(A!=="Defenses"||x.t!=="Defense"))return false;if(q&&x.n.toLowerCase().indexOf(q)<0)return false;return true});
+  if(s==="level")l.sort(function(a,b){return(b.lvl||0)-(a.lvl||0)});
+  else if(s==="hp")l.sort(function(a,b){return(b.hp||0)-(a.hp||0)});
+  else l.sort(function(a,b){return a.n.localeCompare(b.n)});
+  render(l);
+}
+document.getElementById("s").addEventListener("input",filter);
+document.getElementById("sort").addEventListener("change",filter);
+document.querySelectorAll("#f .filter-chip").forEach(function(c){c.addEventListener("click",function(){document.querySelectorAll("#f .filter-chip").forEach(function(x){x.classList.remove("active")});this.classList.add("active");A=this.getAttribute("data-cat");filter()})});
+document.getElementById("tbl").querySelector("thead").addEventListener("click",function(e){var th=e.target.closest("th[data-sort]");if(!th)return;document.getElementById("sort").value=th.getAttribute("data-sort");filter()});
+render(D);
+</script>
+</body>
+</html>

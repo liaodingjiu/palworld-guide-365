@@ -1,0 +1,96 @@
+{
+  "id": "surfent",
+  "gameId": "palworld",
+  "number": "065",
+  "name": {
+    "zh": "Surfent",
+    "en": "Surfent"
+  },
+  "slug": "surfent",
+  "image": "/images/pals/surfent.webp",
+  "classification": {
+    "elements": [
+      "Water"
+    ],
+    "rarity": "Rare",
+    "role": [
+      "Worker"
+    ],
+    "size": "Medium",
+    "isRideable": true,
+    "isFlyable": false
+  },
+  "stats": {
+    "hp": 90,
+    "attack": 90,
+    "defense": 80,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
+  },
+  "workSuitability": {
+    "kindling": 0,
+    "watering": 2,
+    "planting": 0,
+    "generating": 0,
+    "handiwork": 0,
+    "gathering": 0,
+    "lumbering": 0,
+    "mining": 0,
+    "medicine": 0,
+    "cooling": 0,
+    "transporting": 0,
+    "farming": 0
+  },
+  "skills": [
+    {
+      "name": "Water Gun",
+      "element": "Water",
+      "power": 65,
+      "cooldown": 4,
+      "level": 1
+    },
+    {
+      "name": "Aqua Jet",
+      "element": "Water",
+      "power": 80,
+      "cooldown": 8,
+      "level": 10
+    },
+    {
+      "name": "Hydro Pump",
+      "element": "Water",
+      "power": 130,
+      "cooldown": 20,
+      "level": 22
+    }
+  ],
+  "partnerSkill": {
+    "name": "Swift Swimmer",
+    "descriptionEn": "Can be ridden to travel on water. While mounted, prevents stamina depletion while moving on water."
+  },
+  "acquisition": {
+    "habitats": [
+      "various"
+    ],
+    "isBreedable": true,
+    "isCatchable": true,
+    "isBossEncounter": false
+  },
+  "breeding": {
+    "breedingPower": 560
+  },
+  "drops": [],
+  "decision": {
+    "bestFor": [
+      "watering"
+    ],
+    "gameStage": {
+      "early": false,
+      "mid": true,
+      "late": false
+    },
+    "scores": {},
+    "reasons": {}
+  }
+}

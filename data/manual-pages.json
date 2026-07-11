@@ -1,21 +1,251 @@
 {
   "description": "Hand-written pages that exist outside the build pipeline. Merged into sitemap automatically.",
   "pages": [
-    { "url": "https://palworldguides.com/", "lastmod": "2026-07-10", "changefreq": "weekly", "priority": "1.0" },
-    { "url": "https://palworldguides.com/palworld-1.0-update.html", "lastmod": "2026-07-10", "changefreq": "daily", "priority": "1.0" },
-    { "url": "https://palworldguides.com/best-pals.html", "lastmod": "2026-07-08", "changefreq": "weekly", "priority": "0.9" },
-    { "url": "https://palworldguides.com/best-weapons.html", "lastmod": "2026-07-09", "changefreq": "weekly", "priority": "0.9" },
-    { "url": "https://palworldguides.com/best-mounts.html", "lastmod": "2026-07-09", "changefreq": "weekly", "priority": "0.8" },
-    { "url": "https://palworldguides.com/base-locations.html", "lastmod": "2026-07-09", "changefreq": "weekly", "priority": "0.8" },
-    { "url": "https://palworldguides.com/ore-farming.html", "lastmod": "2026-07-09", "changefreq": "weekly", "priority": "0.9" },
-    { "url": "https://palworldguides.com/breeding-guide.html", "lastmod": "2026-07-08", "changefreq": "weekly", "priority": "0.9" },
-    { "url": "https://palworldguides.com/tower-bosses.html", "lastmod": "2026-07-08", "changefreq": "weekly", "priority": "0.8" },
-    { "url": "https://palworldguides.com/fast-leveling.html", "lastmod": "2026-07-09", "changefreq": "weekly", "priority": "0.9" },
-    { "url": "https://palworldguides.com/beginner-guide.html", "lastmod": "2026-07-08", "changefreq": "monthly", "priority": "0.7" },
-    { "url": "https://palworldguides.com/server-setup.html", "lastmod": "2026-07-10", "changefreq": "weekly", "priority": "0.9" },
-    { "url": "https://palworldguides.com/privacy.html", "lastmod": "2026-07-09", "changefreq": "monthly", "priority": "0.3" },
-    { "url": "https://palworldguides.com/terms.html", "lastmod": "2026-07-09", "changefreq": "monthly", "priority": "0.3" },
-    { "url": "https://palworldguides.com/about.html", "lastmod": "2026-07-09", "changefreq": "monthly", "priority": "0.3" },
-    { "url": "https://palworldguides.com/contact.html", "lastmod": "2026-07-09", "changefreq": "monthly", "priority": "0.3" }
+    {
+      "url": "https://palworldguides.com/",
+      "lastmod": "2026-07-10",
+      "changefreq": "weekly",
+      "priority": "1.0"
+    },
+    {
+      "url": "https://palworldguides.com/palworld-1.0-update.html",
+      "lastmod": "2026-07-10",
+      "changefreq": "daily",
+      "priority": "1.0"
+    },
+    {
+      "url": "https://palworldguides.com/best-pals.html",
+      "lastmod": "2026-07-08",
+      "changefreq": "weekly",
+      "priority": "0.9"
+    },
+    {
+      "url": "https://palworldguides.com/best-weapons.html",
+      "lastmod": "2026-07-09",
+      "changefreq": "weekly",
+      "priority": "0.9"
+    },
+    {
+      "url": "https://palworldguides.com/best-mounts.html",
+      "lastmod": "2026-07-09",
+      "changefreq": "weekly",
+      "priority": "0.8"
+    },
+    {
+      "url": "https://palworldguides.com/base-locations.html",
+      "lastmod": "2026-07-09",
+      "changefreq": "weekly",
+      "priority": "0.8"
+    },
+    {
+      "url": "https://palworldguides.com/ore-farming.html",
+      "lastmod": "2026-07-09",
+      "changefreq": "weekly",
+      "priority": "0.9"
+    },
+    {
+      "url": "https://palworldguides.com/breeding-guide.html",
+      "lastmod": "2026-07-08",
+      "changefreq": "weekly",
+      "priority": "0.9"
+    },
+    {
+      "url": "https://palworldguides.com/tower-bosses.html",
+      "lastmod": "2026-07-08",
+      "changefreq": "weekly",
+      "priority": "0.8"
+    },
+    {
+      "url": "https://palworldguides.com/fast-leveling.html",
+      "lastmod": "2026-07-09",
+      "changefreq": "weekly",
+      "priority": "0.9"
+    },
+    {
+      "url": "https://palworldguides.com/beginner-guide.html",
+      "lastmod": "2026-07-08",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "url": "https://palworldguides.com/server-setup.html",
+      "lastmod": "2026-07-10",
+      "changefreq": "weekly",
+      "priority": "0.9"
+    },
+    {
+      "url": "https://palworldguides.com/privacy.html",
+      "lastmod": "2026-07-09",
+      "changefreq": "monthly",
+      "priority": "0.3"
+    },
+    {
+      "url": "https://palworldguides.com/terms.html",
+      "lastmod": "2026-07-09",
+      "changefreq": "monthly",
+      "priority": "0.3"
+    },
+    {
+      "url": "https://palworldguides.com/about.html",
+      "lastmod": "2026-07-09",
+      "changefreq": "monthly",
+      "priority": "0.3"
+    },
+    {
+      "url": "https://palworldguides.com/contact.html",
+      "lastmod": "2026-07-09",
+      "changefreq": "monthly",
+      "priority": "0.3"
+    },
+    {
+      "url": "https://palworldguides.com/pals/",
+      "lastmod": "2026-07-11",
+      "changefreq": "weekly",
+      "priority": "0.9"
+    },
+    {
+      "url": "https://palworldguides.com/breeding-calculator/",
+      "lastmod": "2026-07-11",
+      "changefreq": "weekly",
+      "priority": "0.9"
+    },
+    {
+      "url": "https://palworldguides.com/tier-list/",
+      "lastmod": "2026-07-11",
+      "changefreq": "weekly",
+      "priority": "0.7"
+    },
+    {
+      "url": "https://palworldguides.com/items/",
+      "lastmod": "2026-07-11",
+      "changefreq": "weekly",
+      "priority": "0.7"
+    },
+    {
+      "url": "https://palworldguides.com/items/weapons/",
+      "lastmod": "2026-07-11",
+      "changefreq": "weekly",
+      "priority": "0.7"
+    },
+    {
+      "url": "https://palworldguides.com/items/armor/",
+      "lastmod": "2026-07-11",
+      "changefreq": "weekly",
+      "priority": "0.7"
+    },
+    {
+      "url": "https://palworldguides.com/skills/",
+      "lastmod": "2026-07-11",
+      "changefreq": "weekly",
+      "priority": "0.7"
+    },
+    {
+      "url": "https://palworldguides.com/structures/",
+      "lastmod": "2026-07-11",
+      "changefreq": "weekly",
+      "priority": "0.7"
+    },
+    {
+      "url": "https://palworldguides.com/map/",
+      "lastmod": "2026-07-11",
+      "changefreq": "weekly",
+      "priority": "0.7"
+    },
+    {
+      "url": "https://palworldguides.com/capture-rate/",
+      "lastmod": "2026-07-11",
+      "changefreq": "weekly",
+      "priority": "0.7"
+    },
+    {
+      "url": "https://palworldguides.com/best-pals/base-worker/",
+      "lastmod": "2026-07-11",
+      "changefreq": "weekly",
+      "priority": "0.6"
+    },
+    {
+      "url": "https://palworldguides.com/best-pals/combat/",
+      "lastmod": "2026-07-11",
+      "changefreq": "weekly",
+      "priority": "0.6"
+    },
+    {
+      "url": "https://palworldguides.com/best-pals/cooling/",
+      "lastmod": "2026-07-11",
+      "changefreq": "weekly",
+      "priority": "0.6"
+    },
+    {
+      "url": "https://palworldguides.com/best-pals/farming/",
+      "lastmod": "2026-07-11",
+      "changefreq": "weekly",
+      "priority": "0.6"
+    },
+    {
+      "url": "https://palworldguides.com/best-pals/gathering/",
+      "lastmod": "2026-07-11",
+      "changefreq": "weekly",
+      "priority": "0.6"
+    },
+    {
+      "url": "https://palworldguides.com/best-pals/generating/",
+      "lastmod": "2026-07-11",
+      "changefreq": "weekly",
+      "priority": "0.6"
+    },
+    {
+      "url": "https://palworldguides.com/best-pals/handiwork/",
+      "lastmod": "2026-07-11",
+      "changefreq": "weekly",
+      "priority": "0.6"
+    },
+    {
+      "url": "https://palworldguides.com/best-pals/kindling/",
+      "lastmod": "2026-07-11",
+      "changefreq": "weekly",
+      "priority": "0.6"
+    },
+    {
+      "url": "https://palworldguides.com/best-pals/lumbering/",
+      "lastmod": "2026-07-11",
+      "changefreq": "weekly",
+      "priority": "0.6"
+    },
+    {
+      "url": "https://palworldguides.com/best-pals/medicine/",
+      "lastmod": "2026-07-11",
+      "changefreq": "weekly",
+      "priority": "0.6"
+    },
+    {
+      "url": "https://palworldguides.com/best-pals/mount-flying/",
+      "lastmod": "2026-07-11",
+      "changefreq": "weekly",
+      "priority": "0.6"
+    },
+    {
+      "url": "https://palworldguides.com/best-pals/mount-ground/",
+      "lastmod": "2026-07-11",
+      "changefreq": "weekly",
+      "priority": "0.6"
+    },
+    {
+      "url": "https://palworldguides.com/best-pals/planting/",
+      "lastmod": "2026-07-11",
+      "changefreq": "weekly",
+      "priority": "0.6"
+    },
+    {
+      "url": "https://palworldguides.com/best-pals/transport/",
+      "lastmod": "2026-07-11",
+      "changefreq": "weekly",
+      "priority": "0.6"
+    },
+    {
+      "url": "https://palworldguides.com/best-pals/watering/",
+      "lastmod": "2026-07-11",
+      "changefreq": "weekly",
+      "priority": "0.6"
+    }
   ]
 }

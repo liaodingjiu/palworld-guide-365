@@ -1,0 +1,96 @@
+{
+  "id": "bristla",
+  "gameId": "palworld",
+  "number": "030",
+  "name": {
+    "zh": "Bristla",
+    "en": "Bristla"
+  },
+  "slug": "bristla",
+  "image": "/images/pals/bristla.webp",
+  "classification": {
+    "elements": [
+      "Grass"
+    ],
+    "rarity": "Common",
+    "role": [
+      "Worker"
+    ],
+    "size": "Medium",
+    "isRideable": false,
+    "isFlyable": false
+  },
+  "stats": {
+    "hp": 80,
+    "attack": 80,
+    "defense": 80,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
+  },
+  "workSuitability": {
+    "kindling": 0,
+    "watering": 0,
+    "planting": 1,
+    "generating": 0,
+    "handiwork": 1,
+    "gathering": 1,
+    "lumbering": 0,
+    "mining": 0,
+    "medicine": 2,
+    "cooling": 0,
+    "transporting": 1,
+    "farming": 0
+  },
+  "skills": [
+    {
+      "name": "Wind Cutter",
+      "element": "Grass",
+      "power": 55,
+      "cooldown": 4,
+      "level": 1
+    },
+    {
+      "name": "Seed Bomb",
+      "element": "Grass",
+      "power": 90,
+      "cooldown": 10,
+      "level": 10
+    },
+    {
+      "name": "Grass Tornado",
+      "element": "Grass",
+      "power": 100,
+      "cooldown": 18,
+      "level": 22
+    }
+  ],
+  "partnerSkill": {
+    "name": "Princess Gaze",
+    "descriptionEn": "While in team, increases Attack of Grass Pals."
+  },
+  "acquisition": {
+    "habitats": [
+      "various"
+    ],
+    "isBreedable": true,
+    "isCatchable": true,
+    "isBossEncounter": false
+  },
+  "breeding": {
+    "breedingPower": 1320
+  },
+  "drops": [],
+  "decision": {
+    "bestFor": [
+      "medicine"
+    ],
+    "gameStage": {
+      "early": true,
+      "mid": false,
+      "late": false
+    },
+    "scores": {},
+    "reasons": {}
+  }
+}

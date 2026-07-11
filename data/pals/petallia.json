@@ -1,0 +1,98 @@
+{
+  "id": "petallia",
+  "gameId": "palworld",
+  "number": "087",
+  "name": {
+    "zh": "Petallia",
+    "en": "Petallia"
+  },
+  "slug": "petallia",
+  "image": "/images/pals/petallia.webp",
+  "classification": {
+    "elements": [
+      "Grass"
+    ],
+    "rarity": "Uncommon",
+    "role": [
+      "Worker"
+    ],
+    "size": "Medium",
+    "isRideable": false,
+    "isFlyable": false
+  },
+  "stats": {
+    "hp": 100,
+    "attack": 95,
+    "defense": 100,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
+  },
+  "workSuitability": {
+    "kindling": 0,
+    "watering": 0,
+    "planting": 3,
+    "generating": 0,
+    "handiwork": 2,
+    "gathering": 2,
+    "lumbering": 0,
+    "mining": 0,
+    "medicine": 2,
+    "cooling": 0,
+    "transporting": 1,
+    "farming": 0
+  },
+  "skills": [
+    {
+      "name": "Wind Cutter",
+      "element": "Grass",
+      "power": 55,
+      "cooldown": 4,
+      "level": 1
+    },
+    {
+      "name": "Seed Bomb",
+      "element": "Grass",
+      "power": 90,
+      "cooldown": 10,
+      "level": 10
+    },
+    {
+      "name": "Grass Tornado",
+      "element": "Grass",
+      "power": 100,
+      "cooldown": 18,
+      "level": 22
+    }
+  ],
+  "partnerSkill": {
+    "name": "Blessing of the Flower Spirit",
+    "descriptionEn": "When activated, uses medicinal flowers to restore the player's Health."
+  },
+  "acquisition": {
+    "habitats": [
+      "various"
+    ],
+    "isBreedable": true,
+    "isCatchable": true,
+    "isBossEncounter": false
+  },
+  "breeding": {
+    "breedingPower": 780
+  },
+  "drops": [],
+  "decision": {
+    "bestFor": [
+      "planting",
+      "handiwork",
+      "gathering"
+    ],
+    "gameStage": {
+      "early": false,
+      "mid": true,
+      "late": false
+    },
+    "scores": {},
+    "reasons": {}
+  }
+}

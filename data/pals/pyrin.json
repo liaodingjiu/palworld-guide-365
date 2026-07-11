@@ -1,0 +1,96 @@
+{
+  "id": "pyrin",
+  "gameId": "palworld",
+  "number": "058",
+  "name": {
+    "zh": "Pyrin",
+    "en": "Pyrin"
+  },
+  "slug": "pyrin",
+  "image": "/images/pals/pyrin.webp",
+  "classification": {
+    "elements": [
+      "Fire"
+    ],
+    "rarity": "Epic",
+    "role": [
+      "Worker"
+    ],
+    "size": "Medium",
+    "isRideable": true,
+    "isFlyable": false
+  },
+  "stats": {
+    "hp": 100,
+    "attack": 95,
+    "defense": 90,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
+  },
+  "workSuitability": {
+    "kindling": 2,
+    "watering": 0,
+    "planting": 0,
+    "generating": 0,
+    "handiwork": 0,
+    "gathering": 0,
+    "lumbering": 1,
+    "mining": 0,
+    "medicine": 0,
+    "cooling": 0,
+    "transporting": 0,
+    "farming": 0
+  },
+  "skills": [
+    {
+      "name": "Fire Ball",
+      "element": "Fire",
+      "power": 75,
+      "cooldown": 6,
+      "level": 1
+    },
+    {
+      "name": "Flame Thrower",
+      "element": "Fire",
+      "power": 120,
+      "cooldown": 18,
+      "level": 15
+    },
+    {
+      "name": "Fire Blast",
+      "element": "Fire",
+      "power": 100,
+      "cooldown": 14,
+      "level": 22
+    }
+  ],
+  "partnerSkill": {
+    "name": "Red Hare",
+    "descriptionEn": "Can be ridden. Changes the player's attack type to Fire while mounted."
+  },
+  "acquisition": {
+    "habitats": [
+      "various"
+    ],
+    "isBreedable": true,
+    "isCatchable": true,
+    "isBossEncounter": false
+  },
+  "breeding": {
+    "breedingPower": 360
+  },
+  "drops": [],
+  "decision": {
+    "bestFor": [
+      "kindling"
+    ],
+    "gameStage": {
+      "early": false,
+      "mid": false,
+      "late": true
+    },
+    "scores": {},
+    "reasons": {}
+  }
+}

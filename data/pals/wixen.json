@@ -1,0 +1,98 @@
+{
+  "id": "wixen",
+  "gameId": "palworld",
+  "number": "076",
+  "name": {
+    "zh": "Wixen",
+    "en": "Wixen"
+  },
+  "slug": "wixen",
+  "image": "/images/pals/wixen.webp",
+  "classification": {
+    "elements": [
+      "Fire"
+    ],
+    "rarity": "Common",
+    "role": [
+      "Combat"
+    ],
+    "size": "Medium",
+    "isRideable": false,
+    "isFlyable": false
+  },
+  "stats": {
+    "hp": 90,
+    "attack": 110,
+    "defense": 80,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
+  },
+  "workSuitability": {
+    "kindling": 2,
+    "watering": 0,
+    "planting": 0,
+    "generating": 0,
+    "handiwork": 3,
+    "gathering": 0,
+    "lumbering": 0,
+    "mining": 0,
+    "medicine": 0,
+    "cooling": 0,
+    "transporting": 2,
+    "farming": 0
+  },
+  "skills": [
+    {
+      "name": "Fire Ball",
+      "element": "Fire",
+      "power": 75,
+      "cooldown": 6,
+      "level": 1
+    },
+    {
+      "name": "Flame Thrower",
+      "element": "Fire",
+      "power": 120,
+      "cooldown": 18,
+      "level": 15
+    },
+    {
+      "name": "Fire Blast",
+      "element": "Fire",
+      "power": 100,
+      "cooldown": 14,
+      "level": 22
+    }
+  ],
+  "partnerSkill": {
+    "name": "Lord Fox",
+    "descriptionEn": "While fighting together, changes the player's attack type to Fire."
+  },
+  "acquisition": {
+    "habitats": [
+      "various"
+    ],
+    "isBreedable": true,
+    "isCatchable": true,
+    "isBossEncounter": false
+  },
+  "breeding": {
+    "breedingPower": 1160
+  },
+  "drops": [],
+  "decision": {
+    "bestFor": [
+      "handiwork",
+      "kindling",
+      "transporting"
+    ],
+    "gameStage": {
+      "early": true,
+      "mid": false,
+      "late": false
+    },
+    "scores": {},
+    "reasons": {}
+  }
+}

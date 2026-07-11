@@ -1,0 +1,98 @@
+{
+  "id": "wumpo_botan",
+  "gameId": "palworld",
+  "number": "091B",
+  "name": {
+    "zh": "Wumpo Botan",
+    "en": "Wumpo Botan"
+  },
+  "slug": "wumpo_botan",
+  "image": "/images/pals/wumpo_botan.webp",
+  "classification": {
+    "elements": [
+      "Grass"
+    ],
+    "rarity": "Rare",
+    "role": [
+      "Worker"
+    ],
+    "size": "Medium",
+    "isRideable": false,
+    "isFlyable": false
+  },
+  "stats": {
+    "hp": 140,
+    "attack": 80,
+    "defense": 110,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
+  },
+  "workSuitability": {
+    "kindling": 0,
+    "watering": 0,
+    "planting": 1,
+    "generating": 0,
+    "handiwork": 2,
+    "gathering": 0,
+    "lumbering": 3,
+    "mining": 0,
+    "medicine": 0,
+    "cooling": 0,
+    "transporting": 4,
+    "farming": 0
+  },
+  "skills": [
+    {
+      "name": "Wind Cutter",
+      "element": "Grass",
+      "power": 55,
+      "cooldown": 4,
+      "level": 1
+    },
+    {
+      "name": "Seed Bomb",
+      "element": "Grass",
+      "power": 90,
+      "cooldown": 10,
+      "level": 10
+    },
+    {
+      "name": "Grass Tornado",
+      "element": "Grass",
+      "power": 100,
+      "cooldown": 18,
+      "level": 22
+    }
+  ],
+  "partnerSkill": {
+    "name": "Wumpo Botan's Partner Skill",
+    "descriptionEn": "Provides unique utility for Wumpo Botan."
+  },
+  "acquisition": {
+    "habitats": [
+      "various"
+    ],
+    "isBreedable": true,
+    "isCatchable": true,
+    "isBossEncounter": false
+  },
+  "breeding": {
+    "breedingPower": 480
+  },
+  "drops": [],
+  "decision": {
+    "bestFor": [
+      "transporting",
+      "lumbering",
+      "handiwork"
+    ],
+    "gameStage": {
+      "early": false,
+      "mid": true,
+      "late": false
+    },
+    "scores": {},
+    "reasons": {}
+  }
+}

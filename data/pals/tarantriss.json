@@ -1,0 +1,98 @@
+{
+  "id": "tarantriss",
+  "gameId": "palworld",
+  "number": "135",
+  "name": {
+    "zh": "Tarantriss",
+    "en": "Tarantriss"
+  },
+  "slug": "tarantriss",
+  "image": "/images/pals/tarantriss.webp",
+  "classification": {
+    "elements": [
+      "Dark"
+    ],
+    "rarity": "Uncommon",
+    "role": [
+      "Combat"
+    ],
+    "size": "Medium",
+    "isRideable": true,
+    "isFlyable": false
+  },
+  "stats": {
+    "hp": 110,
+    "attack": 100,
+    "defense": 100,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
+  },
+  "workSuitability": {
+    "kindling": 0,
+    "watering": 0,
+    "planting": 0,
+    "generating": 0,
+    "handiwork": 2,
+    "gathering": 2,
+    "lumbering": 0,
+    "mining": 0,
+    "medicine": 2,
+    "cooling": 0,
+    "transporting": 2,
+    "farming": 0
+  },
+  "skills": [
+    {
+      "name": "Dark Pulse",
+      "element": "Dark",
+      "power": 80,
+      "cooldown": 10,
+      "level": 1
+    },
+    {
+      "name": "Shadow Ball",
+      "element": "Dark",
+      "power": 100,
+      "cooldown": 14,
+      "level": 12
+    },
+    {
+      "name": "Night Slash",
+      "element": "Dark",
+      "power": 120,
+      "cooldown": 16,
+      "level": 22
+    }
+  ],
+  "partnerSkill": {
+    "name": "Tarantriss\u2019 Web",
+    "descriptionEn": "Can be ridden. Can double jump while mounted. Additionally, can shoot spider silk to grapple and move at fast speed."
+  },
+  "acquisition": {
+    "habitats": [
+      "various"
+    ],
+    "isBreedable": true,
+    "isCatchable": true,
+    "isBossEncounter": false
+  },
+  "breeding": {
+    "breedingPower": 825
+  },
+  "drops": [],
+  "decision": {
+    "bestFor": [
+      "handiwork",
+      "gathering",
+      "medicine"
+    ],
+    "gameStage": {
+      "early": false,
+      "mid": true,
+      "late": false
+    },
+    "scores": {},
+    "reasons": {}
+  }
+}

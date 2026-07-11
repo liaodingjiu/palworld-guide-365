@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Palworld Items Database | Palworld Database</title>
+<meta name="description" content="226 items - weapons, armor, spheres, tools, and accessories.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://palworldguides.com/items/">
+<meta property="og:title" content="Palworld Items Database">
+<meta property="og:description" content="226 items from wiki.gg">
+<meta property="og:type" content="website"><meta property="og:url" content="https://palworldguides.com/items/">
+<link rel="stylesheet" href="/shared.css">
+<style>
+.ig{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+.ic{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 10px;text-align:center;transition:border-color .15s}
+.ic:hover{border-color:var(--green)}
+.ic img{width:44px;height:44px;object-fit:contain;display:block;margin:0 auto 6px}
+.ic .in{font-size:14px;font-weight:600}
+.ic .it{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;display:block;margin:2px 0}
+.ic .ir{font-size:10px;padding:1px 6px;border-radius:3px;display:inline-block;margin-top:4px}
+.ic .is{font-size:11px;color:var(--text2);display:block;margin-top:3px}
+.r-legendary{background:#facc1520;color:#facc15}.r-epic{background:#c084fc20;color:#c084fc}.r-rare{background:#60a5fa20;color:#60a5fa}.r-uncommon{background:#34d39920;color:#34d399}.r-common{color:var(--text3)}
+@media(max-width:768px){.ig{grid-template-columns:repeat(3,1fr)}}@media(max-width:480px){.ig{grid-template-columns:repeat(2,1fr)}}
+</style>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","xk4e29fx10");</script>
+</head>
+<body>
+<div class="top-bar">📊 Palworld Database — 1.0</div>
+<nav aria-label="Main navigation"><div class="nav-inner"><a href="/" class="logo">Pal<span>Database</span></a><div class="nav-right"><ul class="nav-links"><li><a href="/pals/">Pals</a></li><li><a href="/breeding-calculator/" class="nav-highlight">Breeding Calculator</a></li><li><a href="/tier-list/">Tier List</a></li><li class="nav-dropdown"><a>Database ▾</a><ul class="dropdown-menu"><li><a href="/items/">Items</a></li><li><a href="/items/weapons/">Weapons</a></li><li><a href="/items/armor/">Armor</a></li><li><a href="/structures/">Structures</a></li></ul></li><li class="nav-dropdown"><a>Skills ▾</a><ul class="dropdown-menu"><li><a href="/skills/">Active Skills</a></li><li><a href="/skills/#passive">Passive Skills</a></li><li><a href="/skills/#partner">Partner Skills</a></li></ul></li><li><a href="/map/">Map</a></li></ul><button class="theme-toggle" id="themeToggle">☀<span>🌙</span></button></div></div></nav>
+<main class="container" style="max-width:1200px">
+<section class="hero" style="padding:20px 0 8px"><h1>Palworld Items Database</h1><p style="font-size:15px;color:var(--text2)">226 items. Data from wiki.gg.</p></section>
+<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:12px 0">
+<input type="text" id="s" placeholder="Search items..." autocomplete="off" style="flex:1;min-width:150px;max-width:280px;padding:7px 10px;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text);font-size:14px">
+<span id="c" style="font-size:13px;color:var(--text2)">226/226</span>
+<select id="sort" style="padding:7px 10px;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);font-size:13px"><option value="name">Name</option><option value="attack">Attack ↓</option><option value="defense">Defense ↓</option><option value="rarity">Rarity</option></select>
+</div>
+<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px" id="f">
+<span class="filter-chip active" data-cat="all" style="padding:4px 10px;border:1px solid var(--border);border-radius:16px;font-size:12px;cursor:pointer">All</span>
+<span class="filter-chip" data-cat="weapon" style="padding:4px 10px;border:1px solid var(--border);border-radius:16px;font-size:12px;cursor:pointer">⚔ Weapons</span>
+<span class="filter-chip" data-cat="armor" style="padding:4px 10px;border:1px solid var(--border);border-radius:16px;font-size:12px;cursor:pointer">🛡 Armor</span>
+<span class="filter-chip" data-cat="sphere" style="padding:4px 10px;border:1px solid var(--border);border-radius:16px;font-size:12px;cursor:pointer">🔮 Spheres</span>
+<span class="filter-chip" data-cat="tool" style="padding:4px 10px;border:1px solid var(--border);border-radius:16px;font-size:12px;cursor:pointer">🔧 Tools</span>
+<span class="filter-chip" data-cat="accessory" style="padding:4px 10px;border:1px solid var(--border);border-radius:16px;font-size:12px;cursor:pointer">💍 Accessories</span>
+</div>
+<div style="max-height:600px;overflow-y:auto;border:1px solid var(--border);border-radius:8px;padding:12px;background:var(--bg);margin-bottom:20px">
+<div class="ig" id="g"></div></div>
+</main>
+<footer class="site-footer"><div class="footer-inner"><p>© 2026 Palworld Database.</p><div class="footer-links"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a></div><p style="font-size:11px;color:var(--text3);margin-top:8px">Pal data from <a href="https://palworld.wiki.gg" style="color:var(--text3)">Palworld Wiki.gg</a> (CC BY-SA 3.0). Artwork © Pocketpair, Inc.</p></div></footer>
+<button class="back-top" id="backTop">↑</button>
+<script src="/cookie-consent.js"></script>
+<script src="/items/items-data.js"></script>
+<script>
+(function(){var t=document.getElementById("themeToggle"),s=localStorage.getItem("palguide-theme");if(s)document.documentElement.setAttribute("data-theme",s);t.addEventListener("click",function(){var c=document.documentElement.getAttribute("data-theme"),n=c==="dark"?"light":"dark";document.documentElement.setAttribute("data-theme",n);localStorage.setItem("palguide-theme",n)});var b=document.getElementById("backTop");window.addEventListener("scroll",function(){b.classList.toggle("visible",window.scrollY>500)});b.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})})})();
+function itemImg(n){return"/images/items/"+n.toLowerCase().replace(/ /g,"_").replace(/'/g,"").replace(/\(/g,"").replace(/\)/g,"")+".webp"}
+var D=window.__ITEMS__||[],A="all",RO={Legendary:5,Epic:4,Rare:3,Uncommon:2,Common:1};
+function render(l){
+  document.getElementById("c").textContent=l.length+"/"+D.length;
+  document.getElementById("g").innerHTML=l.map(function(i){
+    var rc="r-"+(i.r||"Common").toLowerCase();
+    return '<div class="ic"><img src="'+itemImg(i.n)+'" alt="'+i.n+'" onerror="this.style.display=\'none\'"><span class="in">'+i.n+'</span><span class="it">'+i.t+'</span><span class="ir '+rc+'">'+(i.r||"Common")+'</span>'+(i.a?'<span class="is">⚔ '+i.a+'</span>':'')+(i.df?'<span class="is">🛡 '+i.df+'</span>':'')+(i.lvl?'<span class="is">Lv '+i.lvl+'</span>':'')+'</div>';
+  }).join("");
+}
+function filter(){
+  var q=document.getElementById("s").value.toLowerCase(),s=document.getElementById("sort").value;
+  var l=D.filter(function(i){if(A!=="all"&&i.c!==A)return false;if(q&&i.n.toLowerCase().indexOf(q)<0)return false;return true});
+  if(s==="attack")l.sort(function(a,b){return(b.a||0)-(a.a||0)});
+  else if(s==="defense")l.sort(function(a,b){return(b.df||0)-(a.df||0)});
+  else if(s==="rarity")l.sort(function(a,b){return(RO[b.r]||0)-(RO[a.r]||0)});
+  else l.sort(function(a,b){return a.n.localeCompare(b.n)});
+  render(l);
+}
+document.getElementById("s").addEventListener("input",filter);document.getElementById("sort").addEventListener("change",filter);
+document.querySelectorAll("#f .filter-chip").forEach(function(c){c.addEventListener("click",function(){document.querySelectorAll("#f .filter-chip").forEach(function(x){x.classList.remove("active")});this.classList.add("active");A=this.getAttribute("data-cat");filter()})});
+render(D);
+</script>
+</body>
+</html>

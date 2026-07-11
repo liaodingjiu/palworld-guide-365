@@ -1,0 +1,96 @@
+{
+  "id": "frostallion_noct",
+  "gameId": "palworld",
+  "number": "110B",
+  "name": {
+    "zh": "Frostallion Noct",
+    "en": "Frostallion Noct"
+  },
+  "slug": "frostallion_noct",
+  "image": "/images/pals/frostallion_noct.webp",
+  "classification": {
+    "elements": [
+      "Dark"
+    ],
+    "rarity": "Legendary",
+    "role": [
+      "Combat"
+    ],
+    "size": "Large",
+    "isRideable": true,
+    "isFlyable": true
+  },
+  "stats": {
+    "hp": 140,
+    "attack": 140,
+    "defense": 135,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
+  },
+  "workSuitability": {
+    "kindling": 0,
+    "watering": 0,
+    "planting": 0,
+    "generating": 0,
+    "handiwork": 0,
+    "gathering": 4,
+    "lumbering": 0,
+    "mining": 0,
+    "medicine": 0,
+    "cooling": 0,
+    "transporting": 0,
+    "farming": 0
+  },
+  "skills": [
+    {
+      "name": "Dark Pulse",
+      "element": "Dark",
+      "power": 80,
+      "cooldown": 10,
+      "level": 1
+    },
+    {
+      "name": "Shadow Ball",
+      "element": "Dark",
+      "power": 100,
+      "cooldown": 14,
+      "level": 12
+    },
+    {
+      "name": "Night Slash",
+      "element": "Dark",
+      "power": 120,
+      "cooldown": 16,
+      "level": 22
+    }
+  ],
+  "partnerSkill": {
+    "name": "Black Steed",
+    "descriptionEn": "Can be ridden as a flying mount. Changes the player's attack type to Dark and enhances Dark attacks while mounted."
+  },
+  "acquisition": {
+    "habitats": [
+      "various"
+    ],
+    "isBreedable": true,
+    "isCatchable": true,
+    "isBossEncounter": true
+  },
+  "breeding": {
+    "breedingPower": 100
+  },
+  "drops": [],
+  "decision": {
+    "bestFor": [
+      "gathering"
+    ],
+    "gameStage": {
+      "early": false,
+      "mid": false,
+      "late": true
+    },
+    "scores": {},
+    "reasons": {}
+  }
+}

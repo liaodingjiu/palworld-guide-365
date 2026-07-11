@@ -1,0 +1,98 @@
+{
+  "id": "elizabee",
+  "gameId": "palworld",
+  "number": "051",
+  "name": {
+    "zh": "Elizabee",
+    "en": "Elizabee"
+  },
+  "slug": "elizabee",
+  "image": "/images/pals/elizabee.webp",
+  "classification": {
+    "elements": [
+      "Grass"
+    ],
+    "rarity": "Epic",
+    "role": [
+      "Combat"
+    ],
+    "size": "Medium",
+    "isRideable": false,
+    "isFlyable": false
+  },
+  "stats": {
+    "hp": 90,
+    "attack": 105,
+    "defense": 100,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
+  },
+  "workSuitability": {
+    "kindling": 0,
+    "watering": 0,
+    "planting": 2,
+    "generating": 0,
+    "handiwork": 2,
+    "gathering": 2,
+    "lumbering": 1,
+    "mining": 0,
+    "medicine": 2,
+    "cooling": 0,
+    "transporting": 0,
+    "farming": 0
+  },
+  "skills": [
+    {
+      "name": "Wind Cutter",
+      "element": "Grass",
+      "power": 55,
+      "cooldown": 4,
+      "level": 1
+    },
+    {
+      "name": "Seed Bomb",
+      "element": "Grass",
+      "power": 90,
+      "cooldown": 10,
+      "level": 10
+    },
+    {
+      "name": "Grass Tornado",
+      "element": "Grass",
+      "power": 100,
+      "cooldown": 18,
+      "level": 22
+    }
+  ],
+  "partnerSkill": {
+    "name": "Queen Bee Command",
+    "descriptionEn": "While fighting together, stats will increase the more [[Beegarde]] are in your team."
+  },
+  "acquisition": {
+    "habitats": [
+      "various"
+    ],
+    "isBreedable": true,
+    "isCatchable": true,
+    "isBossEncounter": false
+  },
+  "breeding": {
+    "breedingPower": 330
+  },
+  "drops": [],
+  "decision": {
+    "bestFor": [
+      "planting",
+      "handiwork",
+      "gathering"
+    ],
+    "gameStage": {
+      "early": false,
+      "mid": false,
+      "late": true
+    },
+    "scores": {},
+    "reasons": {}
+  }
+}

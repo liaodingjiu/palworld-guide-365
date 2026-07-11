@@ -1,70 +1,96 @@
 {
   "id": "foxparks",
   "gameId": "palworld",
-  "number": 5,
-
-  "name": { "zh": "火绒狐", "en": "Foxparks" },
+  "number": "005",
+  "name": {
+    "zh": "Foxparks",
+    "en": "Foxparks"
+  },
   "slug": "foxparks",
-  "image": "/images/pals/foxparks.png",
-
+  "image": "/images/pals/foxparks.webp",
   "classification": {
-    "elements": ["Fire"],
+    "elements": [
+      "Fire"
+    ],
     "rarity": "Common",
-    "role": ["Support", "Combat"],
-    "size": "Small",
+    "role": [
+      "Worker"
+    ],
+    "size": "Medium",
     "isRideable": false,
     "isFlyable": false
   },
-
-  "stats": { "hp": 65, "attack": 75, "defense": 55, "rangedAttack": 70, "speed": 80, "stamina": 100 },
-
-  "workSuitability": {
-    "kindling": 1, "watering": 0, "planting": 0, "generating": 0,
-    "handiwork": 0, "gathering": 0, "lumbering": 0, "mining": 0,
-    "medicine": 0, "cooling": 0, "transporting": 0, "farming": 0
+  "stats": {
+    "hp": 65,
+    "attack": 75,
+    "defense": 70,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
   },
-
+  "workSuitability": {
+    "kindling": 1,
+    "watering": 0,
+    "planting": 0,
+    "generating": 0,
+    "handiwork": 0,
+    "gathering": 0,
+    "lumbering": 0,
+    "mining": 0,
+    "medicine": 0,
+    "cooling": 0,
+    "transporting": 0,
+    "farming": 0
+  },
   "skills": [
-    { "name": "Ignis Blast", "element": "Fire", "power": 40, "cooldown": 4, "level": 1 },
-    { "name": "Spirit Fire", "element": "Fire", "power": 75, "cooldown": 10, "level": 7 },
-    { "name": "Flare Arrow", "element": "Fire", "power": 85, "cooldown": 8, "level": 15 },
-    { "name": "Ignis Breath", "element": "Fire", "power": 100, "cooldown": 14, "level": 22 },
-    { "name": "Fire Ball", "element": "Fire", "power": 150, "cooldown": 55, "level": 30 },
-    { "name": "Inferno", "element": "Fire", "power": 130, "cooldown": 35, "level": 40 }
+    {
+      "name": "Fire Ball",
+      "element": "Fire",
+      "power": 75,
+      "cooldown": 6,
+      "level": 1
+    },
+    {
+      "name": "Flame Thrower",
+      "element": "Fire",
+      "power": 120,
+      "cooldown": 18,
+      "level": 15
+    },
+    {
+      "name": "Fire Blast",
+      "element": "Fire",
+      "power": 100,
+      "cooldown": 14,
+      "level": 22
+    }
   ],
-
   "partnerSkill": {
     "name": "Huggy Fire",
-    "description": "可抱在怀中当作火焰喷射器使用。",
-    "descriptionEn": "Can be held in the player's arms and used as a flamethrower. Deals continuous Fire damage to enemies in front."
+    "descriptionEn": "When activated, equips to the player and transforms into a flamethrower."
   },
-
   "acquisition": {
-    "habitats": ["grassy_fields", "starter_plains"],
+    "habitats": [
+      "various"
+    ],
     "isBreedable": true,
     "isCatchable": true,
-    "isBossEncounter": false,
-    "dungeonBoss": false
+    "isBossEncounter": false
   },
-
   "breeding": {
-    "breedingPower": 1400,
-    "specialCombinations": [
-      { "parentA": "foxparks", "parentB": "lamball", "priority": 1 }
-    ]
+    "breedingPower": 1400
   },
-
-  "drops": [
-    { "itemId": "leather", "dropRate": "100%", "quantity": [1, 2] },
-    { "itemId": "flame_organ", "dropRate": "50%", "quantity": [1, 1] }
-  ],
-
+  "drops": [],
   "decision": {
-    "bestFor": ["combat", "kindling"],
-    "gameStage": { "early": true, "mid": true, "late": false },
-    "scores": { "mining": 0, "base-worker": 0, "combat": 70, "handiwork": 0, "transport": 0, "farming": 0, "gathering": 0, "mount-flying": 0, "mount-ground": 0 },
-    "reasons": {
-      "combat": ["Flamethrower partner skill — great early-game DPS", "Fire element melts Grass and Ice types", "Low food consumption, easy to maintain", "Breeding key: Foxparks + Lamball = Anubis"]
-    }
+    "bestFor": [
+      "combat"
+    ],
+    "gameStage": {
+      "early": true,
+      "mid": false,
+      "late": false
+    },
+    "scores": {},
+    "reasons": {}
   }
 }

@@ -1,0 +1,98 @@
+{
+  "id": "knocklem",
+  "gameId": "palworld",
+  "number": "120",
+  "name": {
+    "zh": "Knocklem",
+    "en": "Knocklem"
+  },
+  "slug": "knocklem",
+  "image": "/images/pals/knocklem.webp",
+  "classification": {
+    "elements": [
+      "Ground"
+    ],
+    "rarity": "Epic",
+    "role": [
+      "Combat"
+    ],
+    "size": "Large",
+    "isRideable": false,
+    "isFlyable": false
+  },
+  "stats": {
+    "hp": 105,
+    "attack": 110,
+    "defense": 135,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
+  },
+  "workSuitability": {
+    "kindling": 0,
+    "watering": 0,
+    "planting": 0,
+    "generating": 0,
+    "handiwork": 0,
+    "gathering": 3,
+    "lumbering": 0,
+    "mining": 4,
+    "medicine": 0,
+    "cooling": 0,
+    "transporting": 4,
+    "farming": 0
+  },
+  "skills": [
+    {
+      "name": "Sand Attack",
+      "element": "Ground",
+      "power": 45,
+      "cooldown": 3,
+      "level": 1
+    },
+    {
+      "name": "Rock Slide",
+      "element": "Ground",
+      "power": 90,
+      "cooldown": 12,
+      "level": 12
+    },
+    {
+      "name": "Earthquake",
+      "element": "Ground",
+      "power": 140,
+      "cooldown": 30,
+      "level": 30
+    }
+  ],
+  "partnerSkill": {
+    "name": "Steel Guardian Mode",
+    "descriptionEn": "When activated, a steel resolve increases Knocklem's Attack and Defense for a limited time."
+  },
+  "acquisition": {
+    "habitats": [
+      "various"
+    ],
+    "isBreedable": true,
+    "isCatchable": true,
+    "isBossEncounter": true
+  },
+  "breeding": {
+    "breedingPower": 265
+  },
+  "drops": [],
+  "decision": {
+    "bestFor": [
+      "mining",
+      "transporting",
+      "gathering"
+    ],
+    "gameStage": {
+      "early": false,
+      "mid": false,
+      "late": true
+    },
+    "scores": {},
+    "reasons": {}
+  }
+}

@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Palworld Breeding Calculator — Find Any Combination | Palworld Database</title>
+<meta name="description" content="Palworld Breeding Calculator — select two parent Pals and instantly find the offspring. 19,000+ breeding combinations. Also reverse-search: find all parent combos for any Pal.">
+<meta name="keywords" content="palworld breeding calculator, palworld breeding combos, palworld breeding combinations, palworld fusion, palworld breeding tree">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://palworldguides.com/breeding-calculator/">
+<meta property="og:title" content="Palworld Breeding Calculator — Find Any Combination | Palworld Database">
+<meta property="og:description" content="Select two parents, find their offspring instantly. Or reverse-search: pick a Pal, see all combos that breed it. 19K+ combinations.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://palworldguides.com/breeding-calculator/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Palworld Breeding Calculator">
+<meta name="twitter:description" content="19K+ breeding combos — find any offspring or reverse-search parent pairs.">
+<link rel="stylesheet" href="/shared.css">
+<link rel="stylesheet" href="/pals.css">
+<style>
+/* ── Page layout ── */
+.br-page { max-width: 1200px; margin: 0 auto; padding: 0 16px 40px; }
+.br-hero { text-align: center; padding: 28px 0 8px; }
+.br-hero h1 { font-size: 26px; margin-bottom: 6px; }
+.br-hero .br-sub { color: var(--text2); font-size: 15px; max-width: 640px; margin: 0 auto 16px; }
+.br-hero .br-actions { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.br-btn { padding: 8px 18px; border-radius: 6px; font-size: 15px; font-weight: 600; cursor: pointer; border: none; color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: opacity .15s; }
+.br-btn:hover { opacity: .85; }
+.br-btn-tree { background: #0d9488; }
+.br-btn-reverse { background: #2563eb; }
+
+/* ── Calculator panel ── */
+.br-calc { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 24px 0; flex-wrap: wrap; }
+.br-parent-box { width: 170px; min-height: 140px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; transition: border-color .2s, box-shadow .2s; padding: 12px; text-align: center; position: relative; }
+.br-parent-box:hover { border-color: var(--green); }
+.br-parent-box.active { border-color: #3b82f6; box-shadow: 0 0 0 2px rgba(59,130,246,.3); }
+.br-parent-box.dad-active { border-color: #06b6d4; box-shadow: 0 0 0 2px rgba(6,182,212,.3); }
+.br-parent-box.mom-active { border-color: #ec4899; box-shadow: 0 0 0 2px rgba(236,72,153,.3); }
+.br-parent-box .br-box-icon { font-size: 36px; margin-bottom: 4px; }
+.br-parent-box .br-box-label { font-size: 13px; color: var(--text3); text-transform: uppercase; letter-spacing: .05em; margin-top: 4px; }
+.br-parent-box .br-box-name { font-size: 15px; font-weight: 600; margin-top: 2px; }
+.br-parent-box .br-box-meta { font-size: 13px; color: var(--text2); }
+.br-parent-box .br-box-bp { font-size: 11px; color: var(--text3); margin-top: 2px; }
+.br-op { font-size: 22px; font-weight: 700; color: var(--text2); }
+.br-eq { font-size: 22px; font-weight: 700; color: var(--green); }
+.br-child-box { width: 170px; min-height: 140px; background: var(--surface); border: 2px solid #f0a040; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 12px; text-align: center; }
+.br-child-box .br-child-placeholder { font-size: 13px; color: var(--text3); }
+.br-child-box .br-child-icon { font-size: 42px; margin-bottom: 4px; }
+.br-child-box .br-child-name { font-size: 16px; font-weight: 700; }
+.br-child-box .br-child-name a { color: var(--green); text-decoration: none; }
+.br-child-box .br-child-name a:hover { text-decoration: underline; }
+.br-child-box .br-child-rarity { font-size: 13px; margin-top: 2px; padding: 1px 6px; border-radius: 3px; }
+.br-child-box .br-child-formula { font-size: 11px; color: var(--text3); margin-top: 6px; line-height: 1.4; max-width: 150px; }
+
+/* ── Pal grid section ── */
+.br-grid-header { display: flex; align-items: center; gap: 12px; margin: 28px 0 12px; flex-wrap: wrap; }
+.br-grid-header h2 { font-size: 16px; margin: 0; white-space: nowrap; }
+.br-grid-header .br-count { font-size: 15px; color: var(--text2); margin-left: auto; }
+.br-search { flex: 1; min-width: 200px; max-width: 320px; padding: 7px 12px; border: 1px solid var(--border); border-radius: 6px; background: var(--bg); color: var(--text); font-size: 15px; }
+.br-search:focus { outline: none; border-color: var(--green); }
+.br-sort { padding: 7px 10px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); color: var(--text); font-size: 13px; }
+.br-selected-label { font-size: 13px; color: var(--green); min-height: 18px; }
+
+/* ── Pal card grid ── */
+.br-grid-scroll { max-height: 420px; overflow-y: auto; border: 1px solid var(--border); border-radius: 8px; padding: 8px; background: var(--bg); margin-bottom: 20px; }
+.br-grid-scroll::-webkit-scrollbar { width: 6px; }
+.br-grid-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+.br-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 0; }
+.br-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px 8px; text-align: center; cursor: pointer; transition: border-color .15s, transform .1s, box-shadow .15s; position: relative; overflow: hidden; }
+.br-card:hover { border-color: var(--green); transform: translateY(-1px); box-shadow: 0 2px 8px rgba(0,0,0,.1); }
+.br-card.selected-dad { border: 2px solid #06b6d4; box-shadow: 0 0 0 2px rgba(6,182,212,.4); background: rgba(6,182,212,.06); }
+.br-card.selected-mom { border: 2px solid #ec4899; box-shadow: 0 0 0 2px rgba(236,72,153,.4); background: rgba(236,72,153,.06); }
+.br-card .br-card-icon { font-size: 36px; display: block; margin-bottom: 4px; }
+.br-card .br-card-name { font-size: 14px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.br-card .br-card-num { font-size: 10px; color: var(--text3); }
+.br-card .br-card-elems { display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:3px; }
+.br-card .br-card-elem-dot { width:8px;height:8px;border-radius:50%;display:inline-block; }
+.br-card .br-card-rarity { font-size: 11px; padding: 2px 6px; border-radius: 4px; display: inline-block; margin: 4px 0 2px; }
+.br-card .br-card-bp { font-size: 11px; color: var(--text3); }
+
+@media (max-width: 768px) {
+  .br-grid { grid-template-columns: repeat(3, 1fr); }
+  .br-card .br-card-name { font-size: 13px; }
+  .br-card .br-card-icon { font-size: 24px; }
+}
+@media (max-width: 480px) {
+  .br-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.rarity-legendary { background: #facc1518; color: #facc15; }
+.rarity-epic { background: #c084fc18; color: #c084fc; }
+.rarity-rare { background: #60a5fa18; color: #60a5fa; }
+.rarity-uncommon { background: #34d39918; color: #34d399; }
+.rarity-common { color: var(--text3); }
+
+/* ── Reverse search results ── */
+.br-reverse-results { display: none; margin: 20px 0; }
+.br-reverse-results.show { display: block; }
+.br-reverse-results h2 { font-size: 18px; margin-bottom: 12px; }
+.br-reverse-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 8px; }
+.br-reverse-item { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 10px 14px; font-size: 15px; display: flex; align-items: center; gap: 8px; }
+.br-reverse-item a { color: var(--green); text-decoration: none; }
+.br-reverse-item a:hover { text-decoration: underline; }
+
+/* ── Top combos table ── */
+.br-top-combos { margin: 28px 0; }
+.br-top-combos h2 { font-size: 18px; margin-bottom: 8px; }
+.br-top-combos table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.br-top-combos th { text-align: left; padding: 7px 10px; font-size: 13px; color: var(--text2); border-bottom: 2px solid var(--border); text-transform: uppercase; letter-spacing: .04em; }
+.br-top-combos td { padding: 7px 10px; border-bottom: 1px solid var(--border); }
+.br-top-combos td a { color: var(--green); text-decoration: none; }
+.br-top-combos td a:hover { text-decoration: underline; }
+
+@media (max-width: 640px) {
+  .br-calc { gap: 8px; }
+  .br-parent-box, .br-child-box { width: 130px; min-height: 110px; }
+}
+
+/* ── Modal ── */
+.br-modal-overlay { display:none; position:fixed; top:0;left:0;right:0;bottom:0; background:rgba(0,0,0,.7); z-index:200; justify-content:center; align-items:flex-start; padding-top:60px; }
+.br-modal-overlay.open { display:flex; }
+.br-modal { background:var(--surface); border:1px solid var(--border); border-radius:12px; width:90%; max-width:800px; max-height:80vh; overflow-y:auto; box-shadow:0 20px 60px rgba(0,0,0,.5); }
+.br-modal-header { padding:16px 20px; border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; background:var(--surface); z-index:1; border-radius:12px 12px 0 0; }
+.br-modal-header h2 { margin:0; font-size:18px; }
+.br-modal-close { background:none; border:none; font-size:22px; cursor:pointer; color:var(--text2); padding:4px 8px; border-radius:4px; }
+.br-modal-close:hover { background:var(--border); }
+.br-modal-search { padding:12px 20px; border-bottom:1px solid var(--border); }
+.br-modal-search input { width:100%; padding:8px 12px; border:1px solid var(--border); border-radius:6px; background:var(--bg); color:var(--text); font-size:13px; }
+.br-modal-search input:focus { outline:none; border-color:var(--green); }
+.br-modal-tabs { display:flex; border-bottom:1px solid var(--border); }
+.br-modal-tab { flex:1; padding:10px; text-align:center; font-size:13px; font-weight:600; cursor:pointer; color:var(--text2); background:transparent; border:none; border-bottom:2px solid transparent; transition:all .15s; }
+.br-modal-tab:hover { color:var(--text); }
+.br-modal-tab.active { color:var(--green); border-bottom-color:var(--green); }
+.br-modal-body { padding:16px 20px; }
+.br-modal-result-item { display:flex; align-items:center; gap:8px; padding:8px 12px; background:var(--bg); border:1px solid var(--border); border-radius:6px; margin-bottom:6px; font-size:13px; transition:border-color .15s; }
+.br-modal-result-item:hover { border-color:var(--green); }
+.br-modal-result-item a { color:var(--green); text-decoration:none; font-weight:600; }
+.br-modal-result-item a:hover { text-decoration:underline; }
+.br-modal-result-item .br-op-sm { color:var(--text3); margin:0 2px; }
+.br-modal-result-item .br-result-bp { font-size:10px; color:var(--text3); margin-left:2px; }
+.br-modal-empty { text-align:center; padding:24px; color:var(--text3); font-size:13px; }
+
+/* ── Breeding Tree ── */
+.br-tree { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin: 20px 0; }
+.br-tree .tree-title { font-size: 18px; font-weight: 700; margin-bottom: 16px; text-align: center; }
+.tree-gen { margin-bottom: 12px; }
+.tree-gen-label { font-size: 13px; color: var(--text3); text-transform: uppercase; letter-spacing: .06em; display: block; margin-bottom: 6px; text-align: center; }
+.tree-row { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.tree-pair { display: flex; align-items: center; gap: 6px; }
+.tree-pal-box { display: flex; flex-direction: column; align-items: center; padding: 8px 14px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; text-decoration: none; color: var(--text); transition: border-color .15s; min-width: 80px; }
+.tree-pal-box:hover { border-color: var(--green); }
+.tree-icon { font-size: 22px; }
+.tree-name { font-size: 13px; font-weight: 600; }
+.tree-bp { font-size: 11px; color: var(--text3); }
+.tree-plus { font-size: 15px; color: var(--text2); font-weight: 700; }
+.tree-empty { color: var(--text3); font-size: 13px; padding: 12px; }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebContent",
+  "name": "Palworld Breeding Calculator",
+  "description": "Interactive Breeding Calculator for Palworld. Select two parent Pals and find their offspring instantly. Covers all 19,000+ breeding combinations. Also reverse-search: find all parent combos for any Pal.",
+  "about": { "@type": "VideoGame", "name": "Palworld", "version": "1.0" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://palworldguides.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Breeding Calculator", "item": "https://palworldguides.com/breeding-calculator/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How does Palworld breeding work?", "acceptedAnswer": { "@type": "Answer", "text": "Each Pal has a hidden breeding power value. When two Pals breed, the game averages their breeding power values and produces the Pal whose breeding power is closest to that average. You need a Breeding Farm (level 19) and Cake to start breeding." } },
+    { "@type": "Question", "name": "Can I breed Legendary Pals?", "acceptedAnswer": { "@type": "Answer", "text": "Most Legendary Pals (Jetragon, Frostallion, Paladius, Necromus) are genderless and cannot be bred — you must catch them in the wild. However, some Legendary variants like Frostallion Noct (Frostallion + Helzephyr) are breeding-exclusive." } },
+    { "@type": "Question", "name": "What is breeding power in Palworld?", "acceptedAnswer": { "@type": "Answer", "text": "Breeding power is a hidden numeric value assigned to each Pal (ranging from 90 for Jetragon to 1500 for Chikipi). The child of any breeding pair is determined by averaging the two parents' breeding power values and finding the Pal closest to that average." } },
+    { "@type": "Question", "name": "How long does breeding take in Palworld?", "acceptedAnswer": { "@type": "Answer", "text": "The breeding progress bar takes about 5 minutes on default settings. Incubation time varies by egg size: regular eggs about 20 minutes, large eggs about 45 minutes, huge eggs up to 2 hours. You can adjust both timers in world settings." } },
+    { "@type": "Question", "name": "Do I need Cake for every breeding attempt?", "acceptedAnswer": { "@type": "Answer", "text": "One Cake lasts for multiple breeding cycles — it is not consumed after a single egg. However, it will eventually run out. Automate Milk (Mozzarina), Eggs (Chikipi), and Honey (Elizabee) at your Ranch for a steady supply." } }
+  ]
+}
+</script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xk4e29fx10");</script>
+</head>
+<body>
+
+<div class="top-bar">
+  📊 Palworld Database — 1.0. Data-driven, always up to date. — <time datetime="2026-07-11">2026-07-11</time>.
+</div>
+
+<nav aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="logo">Pal<span>Database</span></a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="/pals/">Pals</a></li>
+        <li><a href="/breeding-calculator/">Breeding Calculator</a></li>
+        <li><a href="/tier-list/">Tier List</a></li>
+        <li class="nav-dropdown">
+          <a href="/items/">Database ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="/items/">Items</a></li>
+            <li><a href="/items/weapons/">Weapons</a></li>
+            <li><a href="/items/armor/">Armor</a></li>
+            <li><a href="/structures/">Structures</a></li>
+          </ul>
+        </li>
+        <li><a href="/skills/">Skills</a></li>
+        <li><a href="/map/">Map</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <span class="sun">☀️</span><span class="moon">🌙</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main class="br-page">
+  <!-- Hero -->
+  <header class="br-hero">
+    <h1>Palworld Breeding Calculator</h1>
+    <div class="br-actions">
+      <button class="br-btn br-btn-tree" id="btnBreedingTree" title="Multi-generation breeding tree">🌳 View Breeding Chain</button>
+      <button class="br-btn br-btn-reverse" id="btnReverse" title="Find all parent combos for a target Pal">🔍 Find All Combinations for a Pal</button>
+    </div>
+  </header>
+
+  <!-- Calculator Panel: ♂ + ♀ = Child -->
+  <div class="br-calc" id="calcPanel">
+    <div class="br-parent-box" id="dadBox" onclick="selectSlot('dad')">
+      <div class="br-box-icon">🧬</div>
+      <span class="br-box-label">Select Parent ♂</span>
+    </div>
+    <span class="br-op">+</span>
+    <div class="br-parent-box" id="momBox" onclick="selectSlot('mom')">
+      <div class="br-box-icon">🧬</div>
+      <span class="br-box-label">Select Parent ♀</span>
+    </div>
+    <span class="br-eq">=</span>
+    <div class="br-child-box" id="childBox">
+      <div class="br-child-placeholder">Select two parents<br>to see the child</div>
+    </div>
+  </div>
+
+  <!-- Selected parents indicator -->
+  <div class="br-selected-label" id="selectedLabel"></div>
+
+  <!-- Pal Grid Header -->
+  <div class="br-grid-header">
+    <h2>Click a Pal to select as parent</h2>
+    <input class="br-search" id="searchInput" type="text" placeholder="Search for Pal..." autocomplete="off">
+    <span class="br-count" id="palCount">215/215</span>
+    <select class="br-sort" id="sortSelect">
+      <option value="name">Name ▲</option>
+      <option value="id">Number</option>
+      <option value="rarity">Rarity</option>
+    </select>
+  </div>
+
+<div class="br-grid-scroll" id="palGridScroll">
+  <!-- Pal Grid -->
+  <div class="br-grid" id="palGrid"></div>
+</div><!-- /br-grid-scroll -->
+
+  <!-- Reverse Search Results -->
+  <div class="br-reverse-results" id="reverseResults">
+    <h2 id="reverseTitle"></h2>
+    <div class="br-reverse-grid" id="reverseGrid"></div>
+  </div>
+
+  <!-- Modal: Find All Combinations -->
+  <div class="br-modal-overlay" id="comboModal">
+    <div class="br-modal">
+      <div class="br-modal-header">
+        <h2 id="comboModalTitle">All Breeding Combinations</h2>
+        <button class="br-modal-close" onclick="closeComboModal()">&times;</button>
+      </div>
+      <div class="br-modal-search">
+        <input type="text" id="comboSearchInput" placeholder="Search for Pal..." autocomplete="off">
+      </div>
+      <div class="br-modal-tabs">
+        <button class="br-modal-tab active" id="tabAsChild" onclick="switchComboTab('child')">As a Child</button>
+        <button class="br-modal-tab" id="tabAsParent" onclick="switchComboTab('parent')">As a Parent</button>
+      </div>
+      <div class="br-modal-body" id="comboModalBody"></div>
+    </div>
+  </div>
+
+  <!-- How it works -->
+  <section class="br-top-combos" style="margin-top:12px;">
+    <h2>How Palworld Breeding Works</h2>
+    <p style="font-size:13px;color:var(--text2);line-height:1.7;">Every Pal has a hidden <strong>breeding power</strong> value (90–1500). When two Pals breed, the game <strong>averages their values</strong> and produces the Pal closest to that average. For example: Anubis (570) + Bushi (1120) → 845 → the Pal closest to 845 is the child. You need a <strong>Breeding Farm</strong> (level 19) and <strong>Cake</strong>. One Cake lasts for multiple cycles — automate Milk, Eggs, and Honey at your Ranch for a steady supply.</p>
+  </section>
+
+  <!-- Top 20 Combos -->
+  <section class="br-top-combos">
+    <h2><span class="icon">⭐</span> Popular Breeding Combinations</h2>
+    <table>
+      <thead><tr><th>Parent A</th><th>Parent B</th><th>Child</th><th>Rarity</th></tr></thead>
+      <tbody>
+        <tr><td><a href="/pal/nitewing/">Nitewing</a></td><td><a href="/pal/rayhound/">Rayhound</a></td><td><a href="/pal/anubis/">Anubis</a></td><td><span class="br-card-rarity rarity-epic">💎 Epic</span></td></tr>
+        <tr><td><a href="/pal/penking/">Penking</a></td><td><a href="/pal/bushi/">Bushi</a></td><td><a href="/pal/anubis/">Anubis</a></td><td><span class="br-card-rarity rarity-epic">💎 Epic</span></td></tr>
+        <tr><td><a href="/pal/cinnamoth/">Cinnamoth</a></td><td><a href="/pal/vanwyrm/">Vanwyrm</a></td><td><a href="/pal/anubis/">Anubis</a></td><td><span class="br-card-rarity rarity-epic">💎 Epic</span></td></tr>
+        <tr><td><a href="/pal/beakon/">Beakon</a></td><td><a href="/pal/mossanda/">Mossanda</a></td><td><a href="/pal/faleris/">Faleris</a></td><td><span class="br-card-rarity rarity-epic">💎 Epic</span></td></tr>
+        <tr><td><a href="/pal/vanwyrm/">Vanwyrm</a></td><td><a href="/pal/anubis/">Anubis</a></td><td><a href="/pal/faleris/">Faleris</a></td><td><span class="br-card-rarity rarity-epic">💎 Epic</span></td></tr>
+        <tr><td><a href="/pal/grizzbolt/">Grizzbolt</a></td><td><a href="/pal/relaxaurus/">Relaxaurus</a></td><td><a href="/pal/orserk/">Orserk</a></td><td><span class="br-card-rarity rarity-legendary">⚡ Legendary</span></td></tr>
+        <tr><td><a href="/pal/orserk/">Orserk</a></td><td><a href="/pal/grizzbolt/">Grizzbolt</a></td><td><a href="/pal/blazamut/">Blazamut</a></td><td><span class="br-card-rarity rarity-legendary">⚡ Legendary</span></td></tr>
+        <tr><td><a href="/pal/pyrin/">Pyrin</a></td><td><a href="/pal/katress/">Katress</a></td><td><a href="/pal/blazehowl/">Blazehowl</a></td><td><span class="br-card-rarity rarity-rare">⭐ Rare</span></td></tr>
+        <tr><td><a href="/pal/jormuntide/">Jormuntide</a></td><td><a href="/pal/anubis/">Anubis</a></td><td><a href="/pal/suzaku/">Suzaku</a></td><td><span class="br-card-rarity rarity-legendary">⚡ Legendary</span></td></tr>
+        <tr><td><a href="/pal/mossanda/">Mossanda</a></td><td><a href="/pal/petallia/">Petallia</a></td><td><a href="/pal/loupmoon/">Loupmoon</a></td><td><span class="br-card-rarity rarity-rare">⭐ Rare</span></td></tr>
+        <tr><td><a href="/pal/sparkit/">Sparkit</a></td><td><a href="/pal/relaxaurus/">Relaxaurus</a></td><td><a href="/pal/digtoise/">Digtoise</a></td><td><span class="br-card-rarity rarity-rare">⭐ Rare</span></td></tr>
+        <tr><td><a href="/pal/grizzbolt/">Grizzbolt</a></td><td><a href="/pal/suzaku/">Suzaku</a></td><td><a href="/pal/jormuntide/">Jormuntide</a></td><td><span class="br-card-rarity rarity-legendary">⚡ Legendary</span></td></tr>
+        <tr><td><a href="/pal/blazamut/">Blazamut</a></td><td><a href="/pal/felbat/">Felbat</a></td><td><a href="/pal/shadowbeak/">Shadowbeak</a></td><td><span class="br-card-rarity rarity-legendary">⚡ Legendary</span></td></tr>
+        <tr><td><a href="/pal/robinquill/">Robinquill</a></td><td><a href="/pal/bushi/">Bushi</a></td><td><a href="/pal/verdash/">Verdash</a></td><td><span class="br-card-rarity rarity-epic">💎 Epic</span></td></tr>
+        <tr><td><a href="/pal/mau/">Mau</a></td><td><a href="/pal/penking/">Penking</a></td><td><a href="/pal/azurobe/">Azurobe</a></td><td><span class="br-card-rarity rarity-rare">⭐ Rare</span></td></tr>
+        <tr><td><a href="/pal/surfent/">Surfent</a></td><td><a href="/pal/dumud/">Dumud</a></td><td><a href="/pal/penking/">Penking</a></td><td><span class="br-card-rarity rarity-rare">⭐ Rare</span></td></tr>
+        <tr><td><a href="/pal/lifmunk/">Lifmunk</a></td><td><a href="/pal/direhowl/">Direhowl</a></td><td><a href="/pal/mozzarina/">Mozzarina</a></td><td><span class="br-card-rarity rarity-common">Common</span></td></tr>
+        <tr><td><a href="/pal/foxparks/">Foxparks</a></td><td><a href="/pal/hoocrates/">Hoocrates</a></td><td><a href="/pal/ribbuny/">Ribbuny</a></td><td><span class="br-card-rarity rarity-common">Common</span></td></tr>
+        <tr><td><a href="/pal/lamball/">Lamball</a></td><td><a href="/pal/chikipi/">Chikipi</a></td><td><a href="/pal/cattiva/">Cattiva</a></td><td><span class="br-card-rarity rarity-common">Common</span></td></tr>
+        <tr><td><a href="/pal/lifmunk/">Lifmunk</a></td><td><a href="/pal/tanzee/">Tanzee</a></td><td><a href="/pal/galeclaw/">Galeclaw</a></td><td><span class="br-card-rarity rarity-rare">⭐ Rare</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <h2><span class="icon">❓</span> Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <details class="faq-item"><summary>How does Palworld breeding work?</summary><div class="faq-a">Each Pal has a hidden <strong>breeding power</strong> value (90–1500). When two Pals breed, the game averages their values and produces the Pal closest to that average. You need a <strong>Breeding Farm</strong> (level 19) and <strong>Cake</strong>.</div></details>
+      <details class="faq-item"><summary>Can I breed Legendary Pals like Jetragon?</summary><div class="faq-a">No. Jetragon, Frostallion, Paladius, and Necromus are <strong>genderless</strong> and cannot be bred. However, variants like <strong>Frostallion Noct</strong> (Frostallion + Helzephyr) CAN be bred.</div></details>
+      <details class="faq-item"><summary>What is the formula for breeding in Palworld?</summary><div class="faq-a">The formula is: <strong>(Parent A breeding power + Parent B breeding power) ÷ 2 → find the Pal with the closest breeding power.</strong> Example: Anubis (570) + Bushi (1120) = 845 → closest Pal is the child.</div></details>
+      <details class="faq-item"><summary>How long does breeding take?</summary><div class="faq-a">Breeding takes about <strong>5 minutes</strong>. Incubation: ~20 min (regular), ~45 min (large), up to <strong>2 hours</strong> (huge). Adjust timers in world/server settings.</div></details>
+      <details class="faq-item"><summary>What items do I need to breed Pals?</summary><div class="faq-a">You need a <strong>Breeding Farm</strong> (level 19) and <strong>Cake</strong> (Flour + Red Berries + Milk + Egg + Honey). Automate Milk (Mozzarina), Eggs (Chikipi), Honey (Elizabee) at your Ranch.</div></details>
+    </div>
+  </section>
+
+  <!-- Related Tools -->
+  <section style="margin-top:24px;">
+    <h2>Related Tools</h2>
+    <div class="tool-links">
+      <a href="/pals/" class="tool-card"><span class="tool-icon">📚</span><strong>Pal Database</strong><span>Search and filter all 180 Pals</span></a>
+      <a href="/tier-list/" class="tool-card"><span class="tool-icon">⚔</span><strong>Tier List</strong><span>Best Pals ranked by role</span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>© 2026 Palworld Database. Data-driven Palworld companion.</p>
+    <div class="footer-links">
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+<p style="font-size:11px;color:var(--text3);margin-top:8px">Pal data sourced from <a href="https://palworld.wiki.gg" style="color:var(--text3)">Palworld Wiki.gg</a> (CC BY-SA 3.0). Game artwork &amp; assets © Pocketpair, Inc.</p></footer>
+
+<button class="back-top" id="backTop" aria-label="Back to top" title="Back to top">↑</button>
+
+<script src="/cookie-consent.js"></script>
+<script src="/breeding-calculator/pal-data.js"></script>
+<script src="/breeding-calculator/special-combos.js"></script>
+<script>
+// Theme toggle & back-to-top
+(function() {
+  var t=document.getElementById('themeToggle'),s=localStorage.getItem('palguide-theme');
+  if(s)document.documentElement.setAttribute('data-theme',s);
+  t.addEventListener('click',function(){var c=document.documentElement.getAttribute('data-theme'),n=c==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);localStorage.setItem('palguide-theme',n);});
+  var b=document.getElementById('backTop');window.addEventListener('scroll',function(){b.classList.toggle('visible',window.scrollY>500);});
+  b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+
+<script>
+// ============================================================
+// Breeding Calculator — Full rewrite
+// ============================================================
+
+var ELEM_ICONS = { 'Neutral':'⚪','Fire':'🔥','Water':'💧','Grass':'🌿','Electric':'⚡','Ice':'❄️','Dark':'🌑','Ground':'🪨','Dragon':'🐉' };
+var RARITY_CLASS = { 'Legendary':'rarity-legendary','Epic':'rarity-epic','Rare':'rarity-rare','Uncommon':'rarity-uncommon','Common':'rarity-common' };
+var RARITY_ORDER = { 'Legendary':5,'Epic':4,'Rare':3,'Uncommon':2,'Common':1 };
+
+var PALS=[], PAL_BY_SLUG={}, POWERS=[];
+var currentSlot='dad'; // 'dad' or 'mom' or null
+var dad=null, mom=null;
+
+function init() {
+  var raw=window.__PAL_DATA__||[];
+  raw.forEach(function(d){var p={slug:d.s,n:d.n,zh:d.z,num:d.num,elem:d.e,rarity:d.r,bp:d.bp};PALS.push(p);PAL_BY_SLUG[d.s]=p;});
+  PALS.sort(function(a,b){return a.num-b.num;});
+  POWERS=PALS.map(function(p){return[p.bp,p];}).sort(function(a,b){return a[0]-b[0];});
+  console.log('Calc ready: '+PALS.length+' Pals');
+  renderGrid();
+  setupSearch();
+  setupSort();
+  setupButtons();
+  setupComboSearch();
+}
+
+// ── Render Pal Grid ──
+function renderGrid(filtered) {
+  var list=filtered||PALS;
+  var grid=document.getElementById('palGrid');
+  var count=document.getElementById('palCount');
+  count.textContent=list.length+'/'+PALS.length;
+  var elemColors={Neutral:'#9ca3af',Fire:'#ef4444',Water:'#3b82f6',Grass:'#22c55e',Electric:'#facc15',Ice:'#06b6d4',Dark:'#8b5cf6',Ground:'#d97706',Dragon:'#a855f7'};
+  var rarityStroke={Legendary:'#facc15',Epic:'#c084fc',Rare:'#60a5fa',Uncommon:'#34d399',Common:'#9ca3af'};
+  grid.innerHTML=list.map(function(p){
+    var icon=ELEM_ICONS[p.elem]||'⭐';
+    var rc=RARITY_CLASS[p.rarity]||'';
+    var sc='',stroke=rarityStroke[p.rarity]||'#9ca3af';
+    if(dad&&dad.slug===p.slug)sc=' selected-dad';
+    if(mom&&mom.slug===p.slug)sc=' selected-mom';
+    return '<div class="br-card'+sc+'" data-slug="'+p.slug+'" title="'+p.n+' (BP'+p.bp+')" style="border-top:3px solid '+stroke+'">'+
+      '<span class="br-card-icon"><img src="/images/pals/'+p.slug+'.webp" alt="'+p.n+'" loading="lazy" style="width:36px;height:36px;object-fit:contain" onerror="this.style.display=\'none\'"></span>'+
+      '<span class="br-card-name">'+p.n+'</span>'+
+      '<span class="br-card-num">#'+p.num+'</span>'+
+      '<span class="br-card-rarity '+rc+'">'+p.rarity+'</span>'+
+      '<span class="br-card-bp">BP '+p.bp+'</span></div>';
+  }).join('');
+  // Click handlers
+  grid.querySelectorAll('.br-card').forEach(function(card){
+    card.addEventListener('click',function(){
+      var pal=PAL_BY_SLUG[this.getAttribute('data-slug')];
+      if(!pal)return;
+      if(currentSlot==='dad'){dad=pal;updateDadBox();}
+      else if(currentSlot==='mom'){mom=pal;updateMomBox();}
+      else{/* auto-pick: first click dad, second mom */}
+      updateChildBox();
+      updateSelectedLabel();
+      renderGrid(); // re-render for highlights
+      if(window.clarity)window.clarity('event','breeding_calculator_used');
+    });
+  });
+}
+
+// ── Update parent boxes ──
+function updateDadBox(){
+  var box=document.getElementById('dadBox');
+  if(!dad){box.innerHTML='<div class="br-box-icon">🧬</div><span class="br-box-label">Select Parent ♂</span>';return;}
+  box.innerHTML='<img src="/images/pals/'+dad.slug+'.webp" alt="'+dad.n+'" style="width:48px;height:48px;object-fit:contain" onerror="this.style.display=\'none\'"><span style="font-size:32px;display:none">'+(ELEM_ICONS[dad.elem]||'⭐')+'</span>'+
+    '<span class="br-box-name">'+dad.n+'</span>'+
+    '<span class="br-box-meta">#'+dad.num+' &middot; '+dad.rarity+'</span>'+
+    '<span class="br-box-bp">BP '+dad.bp+'</span>';
+  box.classList.remove('dad-active');
+}
+function updateMomBox(){
+  var box=document.getElementById('momBox');
+  if(!mom){box.innerHTML='<div class="br-box-icon">🧬</div><span class="br-box-label">Select Parent ♀</span>';return;}
+  box.innerHTML='<img src="/images/pals/'+mom.slug+'.webp" alt="'+mom.n+'" style="width:48px;height:48px;object-fit:contain" onerror="this.style.display=\'none\'"><span style="font-size:32px;display:none">'+(ELEM_ICONS[mom.elem]||'⭐')+'</span>'+
+    '<span class="br-box-name">'+mom.n+'</span>'+
+    '<span class="br-box-meta">#'+mom.num+' &middot; '+mom.rarity+'</span>'+
+    '<span class="br-box-bp">BP '+mom.bp+'</span>';
+  box.classList.remove('mom-active');
+}
+
+// ── Calculate child ──
+var SPECIAL_COMBOS=window.__SPECIAL_COMBOS__||[];
+function findChild(bpA,bpB,slugA,slugB){
+  // 1. Check special combos
+  if(slugA&&slugB){for(var i=0;i<SPECIAL_COMBOS.length;i++){var sc=SPECIAL_COMBOS[i];if((sc.a===slugA&&sc.b===slugB)||(sc.a===slugB&&sc.b===slugA)){var sp=PAL_BY_SLUG[sc.c];if(sp)return{pal:sp,bp:sp.bp,avg:(bpA+bpB)/2,special:true};}}}
+  // 2. Formula
+  var avg=(bpA+bpB)/2,best=POWERS[0],bestDist=Math.abs(best[0]-avg);
+  for(var i=1;i<POWERS.length;i++){var d=Math.abs(POWERS[i][0]-avg);if(d<bestDist){best=POWERS[i];bestDist=d;}}
+  return {pal:best[1],bp:best[0],avg:avg,special:false};
+}
+function updateChildBox(){
+  var box=document.getElementById('childBox');
+  if(!dad||!mom){box.innerHTML='<div class="br-child-placeholder">Select two parents<br>to see the child</div>';return;}
+  var r=findChild(dad.bp,mom.bp,dad.slug,mom.slug),c=r.pal;
+  var rc=RARITY_CLASS[c.rarity]||'';
+  box.innerHTML='<img src="/images/pals/'+c.slug+'.webp" alt="'+c.n+'" style="width:52px;height:52px;object-fit:contain;margin-bottom:4px" onerror="this.style.display=\'none\'"><span class="br-child-icon" style="display:none">'+(ELEM_ICONS[c.elem]||'⭐')+'</span>'+
+    '<span class="br-child-name"><a href="/pal/'+c.slug+'/">'+c.n+'</a></span>'+
+    '<span class="br-child-rarity '+rc+'">'+c.rarity+(r.special?' ✅ Guaranteed':'')+'</span>'+
+    '<span class="br-child-formula">('+dad.bp+' + '+mom.bp+') ÷ 2 = '+r.avg.toFixed(1)+'<br>→ BP '+c.bp+'</span>';
+}
+function updateSelectedLabel(){
+  var el=document.getElementById('selectedLabel'),p=[];
+  if(dad)p.push('♂ '+dad.n);
+  if(mom)p.push('♀ '+mom.n);
+  el.textContent=p.join('  ·  ');
+}
+
+// ── Slot selection ──
+function selectSlot(slot){
+  currentSlot=slot;
+  var dadBox=document.getElementById('dadBox'),momBox=document.getElementById('momBox');
+  dadBox.classList.remove('dad-active','mom-active','active');
+  momBox.classList.remove('dad-active','mom-active','active');
+  if(slot==='dad')dadBox.classList.add('dad-active');
+  else momBox.classList.add('mom-active');
+}
+// Expose globally
+window.selectSlot=selectSlot;
+
+// ── Search ──
+function setupSearch(){
+  var input=document.getElementById('searchInput');
+  input.addEventListener('input',function(){
+    var q=this.value.toLowerCase().trim();
+    if(!q){renderGrid();return;}
+    renderGrid(PALS.filter(function(p){return p.n.toLowerCase().indexOf(q)>=0||(p.zh&&p.zh.indexOf(q)>=0);}));
+  });
+}
+
+// ── Sort ──
+function setupSort(){
+  var sel=document.getElementById('sortSelect');
+  sel.addEventListener('change',function(){
+    var v=this.value,sorted=PALS.slice();
+    if(v==='id')sorted.sort(function(a,b){return a.num-b.num;});
+    else if(v==='rarity')sorted.sort(function(a,b){return(RARITY_ORDER[b.rarity]||0)-(RARITY_ORDER[a.rarity]||0);});
+    else sorted.sort(function(a,b){return a.n.localeCompare(b.n);});
+    renderGrid(sorted);
+  });
+}
+
+// ── Modal: Find All Combinations ──
+var comboModalTarget=null, comboModalTab='child';
+
+function openComboModal(){
+  document.getElementById('comboModal').classList.add('open');
+  document.getElementById('comboSearchInput').value='';
+  document.getElementById('comboSearchInput').focus();
+  comboModalTarget=null;
+  switchComboTab('child');
+  // Show initial pal list in modal
+  renderComboPalPicker();
+}
+function closeComboModal(){
+  document.getElementById('comboModal').classList.remove('open');
+}
+function switchComboTab(tab){
+  comboModalTab=tab;
+  document.getElementById('tabAsChild').classList.toggle('active',tab==='child');
+  document.getElementById('tabAsParent').classList.toggle('active',tab==='parent');
+  if(comboModalTarget)renderComboResults(comboModalTarget);
+  else document.getElementById('comboModalBody').innerHTML='<div class="br-modal-empty">Select a Pal above to see breeding combinations</div>';
+}
+
+// Render pal picker grid inside modal
+function renderComboPalPicker(filtered){
+  var list=filtered||PALS;
+  document.getElementById('comboModalTitle').textContent='Find All Combinations for a Pal';
+  var html='<div class="br-grid" style="grid-template-columns:repeat(auto-fill,minmax(110px,1fr));">';
+  var elemColors={Neutral:'#9ca3af',Fire:'#ef4444',Water:'#3b82f6',Grass:'#22c55e',Electric:'#facc15',Ice:'#06b6d4',Dark:'#8b5cf6',Ground:'#d97706',Dragon:'#a855f7'};
+  var rarityStroke={Legendary:'#facc15',Epic:'#c084fc',Rare:'#60a5fa',Uncommon:'#34d399',Common:'#9ca3af'};
+  list.forEach(function(p){
+    var icon=ELEM_ICONS[p.elem]||'⭐';
+    var rc=RARITY_CLASS[p.rarity]||'',stroke=rarityStroke[p.rarity]||'#9ca3af';
+    html+='<div class="br-card" data-slug="'+p.slug+'" style="cursor:pointer;border-top:3px solid '+stroke+'" onclick="event.stopPropagation();selectComboTarget(\''+p.slug+'\')">'+
+      '<span class="br-card-icon"><img src="/images/pals/'+p.slug+'.webp" alt="'+p.n+'" loading="lazy" style="width:36px;height:36px;object-fit:contain" onerror="this.style.display=\'none\'"></span>'+
+      '<span class="br-card-name">'+p.n+'</span>'+
+      '<span class="br-card-num">#'+p.num+'</span>'+
+      '<span class="br-card-rarity '+rc+'">'+p.rarity+'</span></div>';
+  });
+  html+='</div>';
+  document.getElementById('comboModalBody').innerHTML=html;
+}
+
+// Select target Pal in modal
+function selectComboTarget(slug){
+  comboModalTarget=PAL_BY_SLUG[slug];
+  if(!comboModalTarget)return;
+  document.getElementById('comboSearchInput').value=comboModalTarget.n;
+  document.getElementById('comboModalTitle').textContent=comboModalTarget.n+' — Breeding Combinations';
+  renderComboResults(comboModalTarget);
+}
+
+// Render results: As a Child = reverse, As a Parent = forward
+function renderComboResults(target){
+  document.getElementById('comboModalBody').innerHTML='<div style="text-align:center;padding:20px;color:var(--text2);">Calculating...</div>';
+
+  setTimeout(function(){
+    var results=[];
+    if(comboModalTab==='child'){
+      // Find all parent pairs that produce this Pal
+      var seen={};
+      for(var i=0;i<PALS.length;i++){
+        for(var j=i;j<PALS.length;j++){
+          var c=findChild(PALS[i].bp,PALS[j].bp,PALS[i].slug,PALS[j].slug).pal;
+          if(c.slug===target.slug){
+            var key=PALS[i].slug+'_'+PALS[j].slug;
+            if(!seen[key]){seen[key]=true;results.push({a:PALS[i],b:PALS[j]});}
+          }
+        }
+      }
+      results.sort(function(x,y){var ax=(x.a.bp+x.b.bp)/2,ay=(y.a.bp+y.b.bp)/2;return Math.abs(ax-target.bp)-Math.abs(ay-target.bp);});
+      document.getElementById('comboModalTitle').textContent=target.n+' — As a Child ('+results.length+' pairs)';
+    } else {
+      // Find all offspring when this Pal is bred with every other Pal
+      var seen2={};
+      var targetSlug=target.slug;
+      for(var k=0;k<PALS.length;k++){
+        if(PALS[k].slug===targetSlug)continue;
+        var child=findChild(target.bp,PALS[k].bp,target.slug,PALS[k].slug).pal;
+        var key2=child.slug;
+        if(!seen2[key2]){seen2[key2]=true;results.push({a:target,b:PALS[k],child:child});}
+      }
+      results.sort(function(x,y){return x.child.n.localeCompare(y.child.n);});
+      document.getElementById('comboModalTitle').textContent=target.n+' — As a Parent ('+results.length+' offspring)';
+    }
+
+    if(results.length===0){
+      document.getElementById('comboModalBody').innerHTML='<div class="br-modal-empty">No combinations found.</div>';
+      return;
+    }
+
+    var icon=ELEM_ICONS[target.elem]||'⭐';
+    var html='';
+    var limit=Math.min(results.length,100);
+    for(var r=0;r<limit;r++){
+      var row=results[r];
+      if(comboModalTab==='child'){
+        html+='<div class="br-modal-result-item">'+
+          '<a href="/pal/'+row.a.slug+'/">'+row.a.n+'</a> <span class="br-result-bp">BP'+row.a.bp+'</span>'+
+          '<span class="br-op-sm">+</span> '+
+          '<a href="/pal/'+row.b.slug+'/">'+row.b.n+'</a> <span class="br-result-bp">BP'+row.b.bp+'</span>'+
+          '<span class="br-op-sm">=</span> '+
+          '<span style="font-weight:600;">'+target.n+'</span>'+
+          '<span style="margin-left:auto;font-size:10px;color:var(--text3);">avg '+((row.a.bp+row.b.bp)/2).toFixed(0)+'</span></div>';
+      } else {
+        html+='<div class="br-modal-result-item">'+
+          '<span style="font-weight:600;">'+row.a.n+'</span> <span class="br-result-bp">BP'+row.a.bp+'</span>'+
+          '<span class="br-op-sm">+</span> '+
+          '<a href="/pal/'+row.b.slug+'/">'+row.b.n+'</a> <span class="br-result-bp">BP'+row.b.bp+'</span>'+
+          '<span class="br-op-sm">=</span> '+
+          '<a href="/pal/'+row.child.slug+'/">'+row.child.n+'</a>'+
+          '<span style="margin-left:auto;font-size:10px;color:var(--text3);">avg '+((row.a.bp+row.b.bp)/2).toFixed(0)+'</span></div>';
+      }
+    }
+    if(results.length>limit){
+      html+='<div class="br-modal-empty">Showing '+limit+' of '+results.length+' combinations. Use search to narrow down.</div>';
+    }
+    document.getElementById('comboModalBody').innerHTML=html;
+  },10);
+}
+
+// Modal search
+function setupComboSearch(){
+  var input=document.getElementById('comboSearchInput');
+  input.addEventListener('input',function(){
+    var q=this.value.toLowerCase().trim();
+    if(!q){renderComboPalPicker();return;}
+    var filtered=PALS.filter(function(p){return p.n.toLowerCase().indexOf(q)>=0||(p.zh&&p.zh.indexOf(q)>=0);});
+    renderComboPalPicker(filtered);
+  });
+  // Close modal on overlay click
+  document.getElementById('comboModal').addEventListener('click',function(e){
+    if(e.target===this)closeComboModal();
+  });
+  // Esc to close
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeComboModal();});
+}
+
+// ── Buttons ──
+function setupButtons(){
+  document.getElementById('btnReverse').addEventListener('click',openComboModal);
+  document.getElementById('btnBreedingTree').addEventListener('click',function(){
+    if(!dad||!mom){alert('Select two parents first to generate a breeding tree.');return;}
+    var child=findChild(dad.bp,mom.bp,dad.slug,mom.slug).pal;
+    renderBreedingTree(dad, mom, child);
+  });
+}
+
+// ── Breeding Tree — visual chain display ──
+function renderBreedingTree(parentA, parentB, child){
+  // Find potential grandparent pairs for each parent
+  function findGrandparents(pal){
+    var pairs=[];
+    for(var i=0;i<PALS.length&&pairs.length<3;i++){
+      for(var j=i;j<PALS.length&&pairs.length<3;j++){
+        if(PALS[i].slug===pal.slug||PALS[j].slug===pal.slug)continue;
+        var c=findChild(PALS[i].bp,PALS[j].bp,PALS[i].slug,PALS[j].slug).pal;
+        if(c.slug===pal.slug){pairs.push({a:PALS[i],b:PALS[j]});}
+      }
+    }
+    return pairs.slice(0,2);
+  }
+
+  var gpA=findGrandparents(parentA);
+  var gpB=findGrandparents(parentB);
+
+  function palBox(p){
+    var icon=ELEM_ICONS[p.elem]||'⭐';
+    return '<a href="/pal/'+p.slug+'/" class="tree-pal-box"><span class="tree-icon">'+icon+'</span><span class="tree-name">'+p.n+'</span><span class="tree-bp">BP '+p.bp+'</span></a>';
+  }
+
+  var html='<div class="br-tree" id="breedTree"><div class="tree-title">🌳 View Breeding Chain</div>';
+
+  // Generation 1: Grandparents
+  html+='<div class="tree-gen"><span class="tree-gen-label">Grandparents</span><div class="tree-row">';
+  var anyGP=false;
+  for(var a=0;a<Math.max(gpA.length,gpB.length);a++){
+    html+='<div class="tree-pair">';
+    if(gpA[a]){html+=palBox(gpA[a].a)+'<span class="tree-plus">+</span>'+palBox(gpA[a].b);anyGP=true;}
+    else html+='<span class="tree-empty">—</span>';
+    html+='</div>';
+  }
+  html+='</div></div>';
+
+  // Generation 2: Parents
+  html+='<div class="tree-gen"><span class="tree-gen-label">Parents</span><div class="tree-row"><div class="tree-pair">';
+  html+=palBox(parentA)+'<span class="tree-plus">+</span>'+palBox(parentB);
+  html+='</div></div></div>';
+
+  // Generation 3: Child
+  html+='<div class="tree-gen"><span class="tree-gen-label">Child</span><div class="tree-row">'+palBox(child)+'</div></div>';
+
+  html+='</div>';
+
+  // Show below calculator
+  var existing=document.getElementById('breedTree');
+  if(existing)existing.remove();
+  var panel=document.getElementById('calcPanel');
+  panel.insertAdjacentHTML('afterend',html);
+  document.getElementById('breedTree').scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+init();
+</script>
+</body>
+</html>

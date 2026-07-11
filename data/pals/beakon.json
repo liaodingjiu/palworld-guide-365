@@ -1,0 +1,97 @@
+{
+  "id": "beakon",
+  "gameId": "palworld",
+  "number": "073",
+  "name": {
+    "zh": "Beakon",
+    "en": "Beakon"
+  },
+  "slug": "beakon",
+  "image": "/images/pals/beakon.webp",
+  "classification": {
+    "elements": [
+      "Electric"
+    ],
+    "rarity": "Epic",
+    "role": [
+      "Combat"
+    ],
+    "size": "Large",
+    "isRideable": false,
+    "isFlyable": false
+  },
+  "stats": {
+    "hp": 105,
+    "attack": 115,
+    "defense": 80,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
+  },
+  "workSuitability": {
+    "kindling": 0,
+    "watering": 0,
+    "planting": 0,
+    "generating": 2,
+    "handiwork": 0,
+    "gathering": 1,
+    "lumbering": 0,
+    "mining": 0,
+    "medicine": 0,
+    "cooling": 0,
+    "transporting": 3,
+    "farming": 0
+  },
+  "skills": [
+    {
+      "name": "Thunder Shock",
+      "element": "Electric",
+      "power": 50,
+      "cooldown": 3,
+      "level": 1
+    },
+    {
+      "name": "Thunderbolt",
+      "element": "Electric",
+      "power": 100,
+      "cooldown": 12,
+      "level": 12
+    },
+    {
+      "name": "Lightning Strike",
+      "element": "Electric",
+      "power": 130,
+      "cooldown": 20,
+      "level": 25
+    }
+  ],
+  "partnerSkill": {
+    "name": "Beakon's Partner Skill",
+    "descriptionEn": "Provides unique utility for Beakon."
+  },
+  "acquisition": {
+    "habitats": [
+      "various"
+    ],
+    "isBreedable": true,
+    "isCatchable": true,
+    "isBossEncounter": true
+  },
+  "breeding": {
+    "breedingPower": 220
+  },
+  "drops": [],
+  "decision": {
+    "bestFor": [
+      "transporting",
+      "generating"
+    ],
+    "gameStage": {
+      "early": false,
+      "mid": false,
+      "late": true
+    },
+    "scores": {},
+    "reasons": {}
+  }
+}

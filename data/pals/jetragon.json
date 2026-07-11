@@ -1,33 +1,33 @@
 {
   "id": "jetragon",
   "gameId": "palworld",
-  "number": 111,
-
+  "number": "111",
   "name": {
-    "zh": "捷龙",
+    "zh": "Jetragon",
     "en": "Jetragon"
   },
   "slug": "jetragon",
-  "image": "/images/pals/jetragon.png",
-
+  "image": "/images/pals/jetragon.webp",
   "classification": {
-    "elements": ["Dragon"],
+    "elements": [
+      "Dragon"
+    ],
     "rarity": "Legendary",
-    "role": ["Mount", "Combat"],
-    "size": "Huge",
+    "role": [
+      "Combat"
+    ],
+    "size": "Large",
     "isRideable": true,
     "isFlyable": true
   },
-
   "stats": {
-    "hp": 175,
+    "hp": 110,
     "attack": 140,
-    "defense": 120,
+    "defense": 110,
     "rangedAttack": 0,
-    "speed": 170,
-    "stamina": 120
+    "speed": 70,
+    "stamina": 100
   },
-
   "workSuitability": {
     "kindling": 0,
     "watering": 0,
@@ -42,66 +42,55 @@
     "transporting": 0,
     "farming": 0
   },
-
   "skills": [
-    { "name": "Dragon Cannon", "element": "Dragon", "power": 80, "cooldown": 5, "level": 1 },
-    { "name": "Dragon Burst", "element": "Dragon", "power": 100, "cooldown": 10, "level": 7 },
-    { "name": "Dragon Meteor", "element": "Dragon", "power": 150, "cooldown": 45, "level": 15 },
-    { "name": "Fire Ball", "element": "Fire", "power": 150, "cooldown": 55, "level": 22 },
-    { "name": "Beam Comet", "element": "Dragon", "power": 130, "cooldown": 25, "level": 30 },
-    { "name": "Flare Storm", "element": "Fire", "power": 100, "cooldown": 18, "level": 40 },
-    { "name": "Dragon God's Wrath", "element": "Dragon", "power": 180, "cooldown": 60, "level": 50 }
+    {
+      "name": "Dragon Breath",
+      "element": "Dragon",
+      "power": 70,
+      "cooldown": 6,
+      "level": 1
+    },
+    {
+      "name": "Dragon Claw",
+      "element": "Dragon",
+      "power": 95,
+      "cooldown": 10,
+      "level": 12
+    },
+    {
+      "name": "Dragon Meteor",
+      "element": "Dragon",
+      "power": 150,
+      "cooldown": 30,
+      "level": 30
+    }
   ],
-
   "partnerSkill": {
     "name": "Aerial Missile",
-    "description": "可作为飞行坐骑骑乘。骑乘时，捷龙会持续发射追踪导弹攻击敌人。",
-    "descriptionEn": "Can be ridden as a flying mount. While riding, Jetragon continuously fires homing missiles at enemies."
+    "descriptionEn": "Can be [[ridden]] as a flying mount. Can rapidly fire a missile launcher while mounted."
   },
-
   "acquisition": {
-    "habitats": ["mount_obsidian"],
+    "habitats": [
+      "various"
+    ],
     "isBreedable": true,
     "isCatchable": true,
-    "isBossEncounter": true,
-    "bossLocation": "Mount Obsidian Summit",
-    "bossLevel": 50,
-    "dungeonBoss": false
+    "isBossEncounter": true
   },
-
   "breeding": {
-    "breedingPower": 999,
-    "specialCombinations": []
+    "breedingPower": 90
   },
-
-  "drops": [
-    { "itemId": "pure_quartz", "dropRate": "100%", "quantity": [5, 10] },
-    { "itemId": "polymer", "dropRate": "100%", "quantity": [3, 8] },
-    { "itemId": "carbon_fiber", "dropRate": "50%", "quantity": [2, 5] },
-    { "itemId": "diamond", "dropRate": "20%", "quantity": [1, 2] }
-  ],
-
+  "drops": [],
   "decision": {
-    "bestFor": ["mount-flying", "combat"],
+    "bestFor": [
+      "gathering"
+    ],
     "gameStage": {
       "early": false,
       "mid": false,
       "late": true
     },
-    "scores": {
-      "mining": 0,
-      "base-worker": 0,
-      "combat": 95,
-      "handiwork": 0,
-      "transport": 0,
-      "farming": 0,
-      "gathering": 0,
-      "mount-flying": 99,
-      "mount-ground": 0
-    },
-    "reasons": {
-      "mount-flying": ["Fastest flying speed in the game (170)", "Legendary stamina — cross the map non-stop", "Hover mode for precise exploration", "Homing missiles clear enemies while flying"],
-      "combat": ["Legendary stats — 175 HP, 140 ATK", "Dragon + Fire dual element coverage", "Partner skill adds missile DPS while mounted", "Counters Dark, Grass, Ice, and more"]
-    }
+    "scores": {},
+    "reasons": {}
   }
 }

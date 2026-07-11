@@ -53,8 +53,157 @@ function ensureDir(dirPath) {
 // ─── CSS (extracted to generated-components.css) ─────────────
 const COMPONENT_CSS_LINK = '<link rel="stylesheet" href="/generated-components.css">';
 
+// ─── Navigation render helper ────────────────────────────────
+function renderNav() {
+  const items = C.nav.links.map(l => {
+    if (l.dropdown) {
+      return `<li class="nav-dropdown">
+      <a>${l.label}</a>
+      <ul class="dropdown-menu">
+        ${l.dropdown.map(d => `<li><a href="${d.href}">${d.label}</a></li>`).join('\n        ')}
+      </ul>
+    </li>`;
+    }
+    const cls = l.cls ? ` class="${l.cls}"` : '';
+    return `<li><a href="${l.href}"${cls}>${l.label}</a></li>`;
+  }).join('\n        ');
+
+  return `<nav aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="${C.nav.logoHref}" class="logo">${C.nav.logoHTML}</a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        ${items}
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <span class="sun">☀️</span>
+        <span class="moon">🌙</span>
+      </button>
+    </div>
+  </div>
+</nav>`;
+}
+
 // ─── Page Rendering ──────────────────────────────────────────
+// ─── FAQ Generation ──────────────────────────────────────────
+function renderPalFAQ(pal) {
+  const name = pal.name.en;
+
+  // Derive bestFor + scores from actual work data
+  const workEntries = Object.entries(pal.workSuitability || {})
+    .filter(([, lv]) => lv > 0)
+    .sort(([, a], [, b]) => b - a);
+  const topWorks = workEntries.slice(0, 3);
+  const primaryRole = topWorks[0]?.[0] || 'combat';
+
+  // Score from work level: Lv4=95, Lv3=80, Lv2=55, Lv1=30
+  function workScore(lv) { return lv >= 4 ? 95 : lv >= 3 ? 80 : lv >= 2 ? 55 : lv >= 1 ? 30 : 0; }
+
+  // Combat score from Attack stat
+  const atk = pal.stats?.attack || 70;
+  function combatScore(a) { return a >= 150 ? 95 : a >= 130 ? 85 : a >= 110 ? 70 : a >= 90 ? 50 : a >= 70 ? 30 : 15; }
+
+  const roleLabel = C.getScenarioLabel(primaryRole) || primaryRole;
+  const topRoles = topWorks.map(([k]) => C.getScenarioLabel(k) || k);
+  const topScores = topWorks.map(([, lv]) => workScore(lv));
+
+  // Q1: How to get
+  let q1Answer = '';
+  const habitatStr = pal.acquisition.habitats?.length > 0 && pal.acquisition.habitats[0] !== 'various'
+    ? pal.acquisition.habitats.map(h => h.replace(/_/g, ' ')).join(', ')
+    : 'the wild';
+  if (pal.acquisition.isCatchable && pal.acquisition.isBossEncounter) {
+    q1Answer = `${name} can be caught in <strong>${habitatStr}</strong>. A field boss spawns at <strong>${pal.acquisition.bossLocation || name + '\'s Domain'}</strong>. It can also be obtained through breeding.`;
+  } else if (pal.acquisition.isCatchable) {
+    q1Answer = `${name} can be caught in <strong>${habitatStr}</strong>. It can also be obtained through breeding using the standard breeding power formula (BP ${pal.breeding.breedingPower}).`;
+  } else if (pal.acquisition.isBreedable) {
+    q1Answer = `${name} is obtained through <strong>breeding</strong>. Use the breeding power formula — ${name} has a breeding power of <strong>${pal.breeding.breedingPower}</strong>.`;
+  } else {
+    q1Answer = `${name} is a special Pal obtained through <strong>raids or events</strong>. Check the latest Palworld content updates for availability.`;
+  }
+
+  // Q2: Best used for — show work levels, not scores
+  let q2Answer = '';
+  if (topWorks.length >= 2) {
+    const parts = topWorks.map(([k, lv]) => `${C.getScenarioLabel(k) || k} (Lv ${lv})`);
+    q2Answer = `${name} excels at <strong>${parts.join(', ')}</strong>. Its ${pal.classification.elements.join('/')} typing and stat distribution (ATK ${atk}) make it a strong choice for ${topRoles[0].toLowerCase()} tasks.`;
+  } else if (topWorks.length === 1) {
+    q2Answer = `${name} is best used for <strong>${topRoles[0]}</strong> (Lv ${topWorks[0][1]}). Focus on this role to get the most value from ${name}.`;
+  } else {
+    const cs = combatScore(atk);
+    q2Answer = `${name} has no work suitabilities. Its value is in <strong>combat</strong> (ATK ${atk}${cs >= 70 ? ', above average' : ''}) and its Partner Skill utility.`;
+  }
+
+  // Q3: Rideable / flyable
+  let q3Answer = '';
+  if (pal.classification.isFlyable) {
+    q3Answer = `<strong>Yes, ${name} can be ridden as a flying mount!</strong> You'll need to craft ${name}'s saddle at a Pal Gear Workbench. Flying mounts let you traverse the map quickly and engage in aerial combat.`;
+  } else if (pal.classification.isRideable) {
+    q3Answer = `<strong>Yes, ${name} can be ridden as a ground mount.</strong> Craft its saddle at a Pal Gear Workbench. While not a flyer, it provides solid ground mobility${pal.stats.speed >= 120 ? ' with above-average speed' : ''}.`;
+  } else {
+    const strength = topWorks.length > 0 ? `${topRoles[0].toLowerCase()} work (Lv ${topWorks[0][1]})` : 'combat';
+    q3Answer = `No, ${name} cannot be ridden. However, it can still be assigned to your base as a worker or added to your party — its strength lies in <strong>${strength}</strong> rather than transportation.`;
+  }
+
+  // Q4: Partner Skill
+  const skillName = pal.partnerSkill?.name || `${name}'s Partner Skill`;
+  const skillDesc = pal.partnerSkill?.descriptionEn || 'Provides unique utility in combat or at base.';
+  const cleanDesc = skillDesc.replace(/\[\[(.*?)\]\]/g, '$1').replace(/\{\{(.*?)\}\}/g, '$1').replace(/\{\{i\|(.*?)\}\}/g, '$1');
+  const q4Answer = `${name}'s Partner Skill is <strong>${skillName}</strong>: ${cleanDesc}`;
+
+  // Q5: Is it good for primary role — use actual work level
+  const topLevel = topWorks[0]?.[1] || 0;
+  const topScore = topScores[0] || combatScore(atk);
+  let q5Answer = '';
+  if (topLevel >= 4) {
+    q5Answer = `<strong>Yes, absolutely.</strong> ${name} has <strong>${roleLabel} Lv ${topLevel}</strong> — top-tier efficiency for this role. It's one of the best Pals you can assign for ${roleLabel.toLowerCase()} tasks.`;
+  } else if (topLevel >= 3) {
+    q5Answer = `<strong>Yes, a very strong choice.</strong> ${name} has <strong>${roleLabel} Lv ${topLevel}</strong>. It's a reliable, high-efficiency worker for ${roleLabel.toLowerCase()} — excellent from mid-game onward.`;
+  } else if (topLevel >= 2) {
+    q5Answer = `<strong>It's decent.</strong> ${name} has <strong>${roleLabel} Lv ${topLevel}</strong>. Serviceable for ${roleLabel.toLowerCase()} if you don't have higher-tier alternatives yet.`;
+  } else if (topLevel >= 1) {
+    q5Answer = `${name} has <strong>${roleLabel} Lv 1</strong> — basic capability. It can do the job in a pinch, but there are much stronger options for dedicated ${roleLabel.toLowerCase()} work.`;
+  } else if (topWorks.length === 0 && atk >= 120) {
+    q5Answer = `${name} has no work suitabilities, but with <strong>ATK ${atk}</strong> it's a powerful combat Pal. Use it for fighting, not base labor.`;
+  } else {
+    q5Answer = `${name} is not particularly suited for dedicated work roles. Its value comes from <strong>combat capabilities and Partner Skill utility</strong> rather than base labor.`;
+  }
+
+  const faqs = [
+    { q: `How do I get ${name} in Palworld?`, a: q1Answer },
+    { q: `What is ${name} best used for?`, a: q2Answer },
+    { q: `Can you ride ${name}?`, a: q3Answer },
+    { q: `What does ${name}'s Partner Skill do?`, a: q4Answer },
+    { q: `Is ${name} good for ${roleLabel.toLowerCase()}?`, a: q5Answer },
+  ];
+
+  const faqHTML = faqs.map(f => `<details class="faq-item">
+      <summary>${f.q}</summary>
+      <div class="faq-a">${f.a}</div>
+    </details>`).join('\n    ');
+
+  return { html: faqHTML, faqs };
+}
+
+function renderFAQPageSchema(faqs) {
+  return JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": f.a.replace(/<[^>]*>/g, '')  // strip HTML tags for schema
+      }
+    }))
+  });
+}
+
 function renderPalEntityPage(pal, game) {
+  // Pre-compute FAQ data so it's available for both schema (<head>) and HTML (<body>)
+  const { html: faqHTML, faqs: faqData } = renderPalFAQ(pal);
+
   const rarityLabels = { 'Legendary': '⚡ Legendary', 'Rare': '⭐ Rare', 'Epic': '💎 Epic', 'Uncommon': 'Uncommon', 'Common': 'Common' };
   const rarityLabel = rarityLabels[pal.classification.rarity] || pal.classification.rarity;
 
@@ -207,6 +356,9 @@ ${COMPONENT_CSS_LINK}
 ${JSON.stringify(C.schemaOrgEntity(pal, game), null, 2)}
 </script>
 <script type="application/ld+json">
+${renderFAQPageSchema(faqData)}
+</script>
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -225,14 +377,7 @@ ${JSON.stringify(C.schemaOrgEntity(pal, game), null, 2)}
   ${C.ui.topBar(game)} — <time datetime="${game.lastUpdated}">${game.lastUpdated}</time>.
 </div>
 
-<nav aria-label="Main navigation">
-  <div class="nav-inner">
-    <a href="${C.nav.logoHref}" class="logo">${C.nav.logoHTML}</a>
-    <div class="nav-links">
-      ${C.nav.links.map(l => `<a href="${l.href}">${l.label}</a>`).join('\n      ')}
-    </div>
-  </div>
-</nav>
+${renderNav()}
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <ol>
@@ -306,6 +451,13 @@ ${JSON.stringify(C.schemaOrgEntity(pal, game), null, 2)}
   ${dropsHTML}
 
   ${bestUsesHTML}
+
+  <section class="section" id="faq">
+    <h2><span class="icon">❓</span> Frequently Asked Questions — ${pal.name.en}</h2>
+    <div class="faq-list">
+    ${faqHTML}
+    </div>
+  </section>
 
   <section class="related-tools">
     <h2>Related Tools</h2>
@@ -442,14 +594,7 @@ ${COMPONENT_CSS_LINK}
   ${C.ui.decisionTopBar(game)} — <time datetime="${game.lastUpdated}">${game.lastUpdated}</time>.
 </div>
 
-<nav aria-label="Main navigation">
-  <div class="nav-inner">
-    <a href="${C.nav.logoHref}" class="logo">${C.nav.logoHTML}</a>
-    <div class="nav-links">
-      ${C.nav.links.map(l => `<a href="${l.href}">${l.label}</a>`).join('\n      ')}
-    </div>
-  </div>
-</nav>
+${renderNav()}
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <ol>

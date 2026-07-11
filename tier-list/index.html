@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Palworld Tier List — Best Pals Ranked by Combat & Work | Palworld Database</title>
+<meta name="description" content="Data-driven Palworld tier list — S/A/B rankings for Combat, Base Work, and Overall. All 215 Pals ranked by verified stats from the official wiki.gg.">
+<meta name="keywords" content="Palworld tier list, best Pals Palworld, Palworld S tier, Palworld rankings, Palworld combat tier list, Palworld worker tier list">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://palworldguides.com/tier-list/">
+<meta property="og:title" content="Palworld Tier List — Best Pals Ranked | Palworld Database">
+<meta property="og:description" content="S/A/B rankings for Combat, Base Work, and Overall. All 215 Pals ranked by verified stats.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://palworldguides.com/tier-list/">
+<link rel="stylesheet" href="/shared.css"><link rel="stylesheet" href="/pals.css">
+<style>
+.tier-tabs { display: flex; gap: 0; margin: 16px 0 0; border-bottom: 2px solid var(--border); }
+.tier-tab { padding: 10px 20px; font-size: 14px; font-weight: 600; cursor: pointer; color: var(--text2); background: none; border: none; border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all .15s; }
+.tier-tab:hover { color: var(--text); }
+.tier-tab.active { color: var(--green); border-bottom-color: var(--green); }
+.tier-section { margin: 20px 0; }
+.tier-label { font-size: 22px; font-weight: 800; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+.tier-label.s-tier { color: #facc15; }
+.tier-label.a-tier { color: #ef4444; }
+.tier-label.b-tier { color: #3b82f6; }
+.tier-grid-scroll { max-height: 520px; overflow-y: auto; border: 1px solid var(--border); border-radius: 8px; padding: 8px; background: var(--bg); margin-bottom: 12px; }
+.tier-grid-scroll::-webkit-scrollbar { width: 6px; }
+.tier-grid-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+.tier-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-bottom: 0; }
+.tier-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 10px 8px; text-align: center; transition: border-color .15s; text-decoration: none; color: var(--text); display: block; }
+.tier-card:hover { border-color: var(--green); }
+.tier-card.s-card { border-left: 3px solid #facc15; }
+.tier-card.a-card { border-left: 3px solid #ef4444; }
+.tier-card.b-card { border-left: 3px solid #3b82f6; }
+.tier-card .tc-icon { font-size: 28px; display: block; margin-bottom: 2px; }
+.tier-card .tc-name { font-size: 13px; font-weight: 600; }
+.tier-card .tc-rarity { font-size: 10px; margin-top: 2px; }
+.tier-card .tc-stat { font-size: 11px; color: var(--text2); margin-top: 2px; }
+.methodology { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin: 24px 0; font-size: 13px; color: var(--text2); line-height: 1.7; }
+.rarity-legendary { color: #facc15; }
+.rarity-epic { color: #c084fc; }
+.rarity-rare { color: #60a5fa; }
+.rarity-uncommon { color: #34d399; }
+@media (max-width: 768px) { .tier-grid { grid-template-columns: repeat(3, 1fr); } .tier-tab { padding: 8px 12px; font-size: 12px; } }
+@media (max-width: 480px) { .tier-grid { grid-template-columns: repeat(2, 1fr); } }
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Palworld Tier List","description":"Data-driven tier list — S/A/B rankings for Combat, Base Work, and Overall. All 215 Pals ranked by verified wiki.gg stats.","url":"https://palworldguides.com/tier-list/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://palworldguides.com/"},{"@type":"ListItem","position":2,"name":"Tier List","item":"https://palworldguides.com/tier-list/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is the Palworld tier list calculated?","acceptedAnswer":{"@type":"Answer","text":"Combat tier ranks Pals by their Attack stat from wiki.gg. Worker tier ranks by total work suitability levels (Kindling, Watering, Handiwork, Mining, etc.). Overall tier combines Combat + Worker rankings. S = top 10%, A = next 20%, B = next 30%."}},{"@type":"Question","name":"What is the strongest Pal in Palworld?","acceptedAnswer":{"@type":"Answer","text":"Bellanoir Libero and Bellanoir have the highest attack (150) according to wiki.gg data, followed by Necromus (145) and Neptilius (145). Jetragon (140) is top-tier for speed and flying."}},{"@type":"Question","name":"What is the best Pal for base work?","acceptedAnswer":{"@type":"Answer","text":"Verdash, Lyleen, and Knocklem have the highest total work suitability levels. Anubis is top-tier for Handiwork (Lv4) and Mining (Lv3) — excellent all-around base worker."}}]}</script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xk4e29fx10");</script>
+</head>
+<body>
+<div class="top-bar">📊 Palworld Database — 1.0. Data-driven, always up to date.</div>
+<nav aria-label="Main navigation"><div class="nav-inner"><a href="/" class="logo">Pal<span>Database</span></a><div class="nav-right"><ul class="nav-links">
+<li><a href="/pals/">Pals</a></li><li><a href="/breeding-calculator/" class="nav-highlight">Breeding Calculator</a></li><li><a href="/tier-list/">Tier List</a></li>
+<li class="nav-dropdown"><a>Database ▾</a><ul class="dropdown-menu"><li><a href="/items/">Items</a></li><li><a href="/items/weapons/">Weapons</a></li><li><a href="/items/armor/">Armor</a></li><li><a href="/structures/">Structures</a></li></ul></li>
+<li class="nav-dropdown"><a>Skills ▾</a><ul class="dropdown-menu"><li><a href="/skills/">Active Skills</a></li><li><a href="/skills/#passive">Passive Skills</a></li><li><a href="/skills/#partner">Partner Skills</a></li></ul></li>
+<li><a href="/map/">Map</a></li>
+</ul><button class="theme-toggle" id="themeToggle">☀️<span>🌙</span></button></div></div></nav>
+
+<main class="container" style="max-width:1200px;">
+<section class="hero" style="padding:20px 0 8px;"><h1>Palworld Tier List</h1><p style="font-size:14px;color:var(--text2);max-width:700px;">S/A/B rankings for Combat, Base Work, and Overall. All 215 Pals ranked by verified stats from <strong>palworld.wiki.gg</strong>. Methodology: Combat = Attack stat. Worker = total work suitability. Overall = combined. S = top 10%, A = next 20%, B = next 30%.</p></section>
+
+<div class="tier-tabs" id="tierTabs">
+  <button class="tier-tab active" data-tab="overall">⭐ Overall</button>
+  <button class="tier-tab" data-tab="combat">⚔ Combat</button>
+  <button class="tier-tab" data-tab="worker">🔧 Workers</button>
+</div>
+
+<div class="tier-grid-scroll" id="tierContent"></div>
+
+<div class="methodology">
+  <strong>📊 Methodology:</strong> All rankings use verified data from <a href="https://palworld.wiki.gg" style="color:var(--green);">palworld.wiki.gg</a>.
+  <strong>Combat</strong> tier = Attack stat (raw damage output).
+  <strong>Worker</strong> tier = sum of all work suitability levels (Kindling + Watering + Planting + Generating + Handiwork + Gathering + Lumbering + Mining + Medicine + Cooling + Transporting + Farming).
+  <strong>Overall</strong> = Attack + (Worker × 3), weighted toward base utility.
+  Percentiles: S = top 10%, A = 10-30%, B = 30-60%, C = rest. No subjective judgment — purely numbers.
+</div>
+</main>
+
+<footer class="site-footer"><div class="footer-inner"><p>© 2026 Palworld Database.</p><div class="footer-links"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a></div></div><p style="font-size:11px;color:var(--text3);margin-top:8px">Pal data sourced from <a href="https://palworld.wiki.gg" style="color:var(--text3)">Palworld Wiki.gg</a> (CC BY-SA 3.0). Game artwork &amp; assets © Pocketpair, Inc.</p></footer>
+<button class="back-top" id="backTop">↑</button>
+<script src="/cookie-consent.js"></script>
+<script src="/tier-list/tier-data.js"></script>
+<script>
+(function(){
+  var t=document.getElementById('themeToggle'),s=localStorage.getItem('palguide-theme');
+  if(s)document.documentElement.setAttribute('data-theme',s);
+  t.addEventListener('click',function(){var c=document.documentElement.getAttribute('data-theme'),n=c==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);localStorage.setItem('palguide-theme',n);});
+  var b=document.getElementById('backTop');window.addEventListener('scroll',function(){b.classList.toggle('visible',window.scrollY>500);});
+  b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+
+var TIER=window.__TIER__||[];
+var currentTab='overall';
+
+function tierKey(tab){ return tab==='combat'?'ct':tab==='worker'?'wt':'ot'; }
+function scoreKey(tab){ return tab==='combat'?'cs':tab==='worker'?'ws':null; }
+
+function buildTier(pals, tab){
+  var tk = tierKey(tab);
+  var tiers = {'S':[], 'A':[], 'B':[], 'C':[]};
+  pals.forEach(function(p){ tiers[p[tk]] = tiers[p[tk]] || []; tiers[p[tk]].push(p); });
+
+  var html = '';
+  ['S','A','B','C'].forEach(function(tier){
+    var list = tiers[tier];
+    if(!list||list.length===0) return;
+    var cls = tier==='S'?'s-tier':tier==='A'?'a-tier':tier==='B'?'b-tier':'';
+    var cardCls = tier==='S'?'s-card':tier==='A'?'a-card':tier==='B'?'b-card':'';
+    var emoji = tier==='S'?'🌟':tier==='A'?'⭐':tier==='B'?'🔹':'';
+    html += '<div class="tier-section"><div class="tier-label '+cls+'">'+emoji+' '+tier+' Tier <span style="font-size:13px;font-weight:400;">('+list.length+' Pals)</span></div><div class="tier-grid">';
+    list.forEach(function(p){
+      var rc = 'rarity-'+(p.r||'Common').toLowerCase();
+      var stat = '';
+      if(tab==='combat') stat = '⚔ '+p.atk;
+      else if(tab==='worker') stat = '🔧 '+p.tw+' work';
+      html += '<a href="/pal/'+p.s+'/" class="tier-card '+cardCls+'"><img src="/images/pals/'+p.s+'.webp" alt="'+p.n+'" loading="lazy" width="28" height="28" style="object-fit:contain;display:block;margin:0 auto 2px" onerror="this.style.display=\'none\'"><span class="tc-icon" style="display:none">'+p.e+'</span><span class="tc-name">'+p.n+'</span><span class="tc-rarity '+rc+'">'+p.r+'</span><span class="tc-stat">'+stat+'</span></a>';
+    });
+    html += '</div></div>';
+  });
+  return html;
+}
+
+function renderTab(tab){
+  document.getElementById('tierContent').innerHTML = buildTier(TIER, tab);
+}
+
+document.querySelectorAll('.tier-tab').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.tier-tab').forEach(function(b){b.classList.remove('active');});
+    this.classList.add('active');
+    currentTab=this.getAttribute('data-tab');
+    renderTab(currentTab);
+  });
+});
+
+renderTab('overall');
+</script>
+</body>
+</html>

@@ -44,12 +44,35 @@
 
 <nav aria-label="Main navigation">
   <div class="nav-inner">
-    <a href="/" class="logo">Pal<span>Guide</span></a>
-    <div class="nav-links">
-      <a href="/best-pals.html">Pal Finder</a>
-      <a href="/best-pals/mining/">Best Pals</a>
-      <a href="/breeding-guide.html">Breeding</a>
-      <a href="/about.html">About</a>
+    <a href="/" class="logo">Pal<span>Database</span></a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="/pals/">Pals</a></li>
+        <li><a href="/breeding-calculator/" class="nav-highlight">Breeding Calculator</a></li>
+        <li><a href="/tier-list/">Tier List</a></li>
+        <li class="nav-dropdown">
+      <a>Database ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="/items/">Items</a></li>
+        <li><a href="/items/weapons/">Weapons</a></li>
+        <li><a href="/items/armor/">Armor</a></li>
+        <li><a href="/structures/">Structures</a></li>
+      </ul>
+    </li>
+        <li class="nav-dropdown">
+      <a>Skills ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="/skills/">Active Skills</a></li>
+        <li><a href="/skills/#passive">Passive Skills</a></li>
+        <li><a href="/skills/#partner">Partner Skills</a></li>
+      </ul>
+    </li>
+        <li><a href="/map/">Map</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <span class="sun">☀️</span>
+        <span class="moon">🌙</span>
+      </button>
     </div>
   </div>
 </nav>
@@ -80,7 +103,7 @@
   </section>
 
   <section class="ranking-table-section">
-    <h2>Top 1 Mining Pals — Ranked</h2>
+    <h2>Top 20 Mining Pals — Ranked</h2>
     <table class="ranking-table">
       <thead>
         <tr>
@@ -89,39 +112,704 @@
       </thead>
       <tbody><tr>
         <td class="rank-cell">🥇</td>
-        <td><a href="/pal/anubis/"><strong>Anubis</strong></a> <small>阿努比斯</small></td>
+        <td><a href="/pal/astegon/"><strong>Astegon</strong></a> <small>Astegon</small></td>
+        <td>Neutral</td>
+        <td>⛏️⛏️⛏️⛏️ <span class="lv-badge">Lv 4</span></td>
+        <td><span class="score-badge ">0</span></td>
+        <td>mining</td>
+        <td>Late</td>
+      </tr>
+    <tr>
+        <td class="rank-cell">🥈</td>
+        <td><a href="/pal/blazamut/"><strong>Blazamut</strong></a> <small>Blazamut</small></td>
+        <td>Fire</td>
+        <td>⛏️⛏️⛏️⛏️ <span class="lv-badge">Lv 4</span></td>
+        <td><span class="score-badge ">0</span></td>
+        <td>mining, kindling</td>
+        <td>Late</td>
+      </tr>
+    <tr>
+        <td class="rank-cell">🥉</td>
+        <td><a href="/pal/blazamut_ryu/"><strong>Blazamut Ryu</strong></a> <small>Blazamut Ryu</small></td>
+        <td>Neutral</td>
+        <td>⛏️⛏️⛏️⛏️ <span class="lv-badge">Lv 4</span></td>
+        <td><span class="score-badge ">0</span></td>
+        <td>kindling, mining</td>
+        <td>Late</td>
+      </tr>
+    <tr>
+        <td class="rank-cell">#4</td>
+        <td><a href="/pal/knocklem/"><strong>Knocklem</strong></a> <small>Knocklem</small></td>
+        <td>Ground</td>
+        <td>⛏️⛏️⛏️⛏️ <span class="lv-badge">Lv 4</span></td>
+        <td><span class="score-badge ">0</span></td>
+        <td>mining, transporting, gathering</td>
+        <td>Late</td>
+      </tr>
+    <tr>
+        <td class="rank-cell">#5</td>
+        <td><a href="/pal/anubis/"><strong>Anubis</strong></a> <small>Anubis</small></td>
         <td>Ground</td>
         <td>⛏️⛏️⛏️ <span class="lv-badge">Lv 3</span></td>
-        <td><span class="score-badge s-tier">95</span></td>
-        <td>mining, base worker, combat</td>
-        <td>Mid / Late</td>
+        <td><span class="score-badge ">0</span></td>
+        <td>handiwork, mining, transporting</td>
+        <td>Mid</td>
+      </tr>
+    <tr>
+        <td class="rank-cell">#6</td>
+        <td><a href="/pal/bastigor/"><strong>Bastigor</strong></a> <small>Bastigor</small></td>
+        <td>Ice</td>
+        <td>⛏️⛏️⛏️ <span class="lv-badge">Lv 3</span></td>
+        <td><span class="score-badge ">0</span></td>
+        <td>cooling, lumbering, mining</td>
+        <td>Late</td>
+      </tr>
+    <tr>
+        <td class="rank-cell">#7</td>
+        <td><a href="/pal/cryolinx_terra/"><strong>Cryolinx Terra</strong></a> <small>Cryolinx Terra</small></td>
+        <td>Ground</td>
+        <td>⛏️⛏️⛏️ <span class="lv-badge">Lv 3</span></td>
+        <td><span class="score-badge ">0</span></td>
+        <td>mining, transporting, lumbering</td>
+        <td>Late</td>
+      </tr>
+    <tr>
+        <td class="rank-cell">#8</td>
+        <td><a href="/pal/digtoise/"><strong>Digtoise</strong></a> <small>Digtoise</small></td>
+        <td>Ground</td>
+        <td>⛏️⛏️⛏️ <span class="lv-badge">Lv 3</span></td>
+        <td><span class="score-badge ">0</span></td>
+        <td>mining</td>
+        <td>Mid</td>
+      </tr>
+    <tr>
+        <td class="rank-cell">#9</td>
+        <td><a href="/pal/menasting/"><strong>Menasting</strong></a> <small>Menasting</small></td>
+        <td>Neutral</td>
+        <td>⛏️⛏️⛏️ <span class="lv-badge">Lv 3</span></td>
+        <td><span class="score-badge ">0</span></td>
+        <td>mining, lumbering</td>
+        <td>Late</td>
+      </tr>
+    <tr>
+        <td class="rank-cell">#10</td>
+        <td><a href="/pal/menasting_terra/"><strong>Menasting Terra</strong></a> <small>Menasting Terra</small></td>
+        <td>Ground</td>
+        <td>⛏️⛏️⛏️ <span class="lv-badge">Lv 3</span></td>
+        <td><span class="score-badge ">0</span></td>
+        <td>mining, lumbering</td>
+        <td>Late</td>
+      </tr>
+    <tr>
+        <td class="rank-cell">#11</td>
+        <td><a href="/pal/palumba/"><strong>Palumba</strong></a> <small>Palumba</small></td>
+        <td>Grass</td>
+        <td>⛏️⛏️⛏️ <span class="lv-badge">Lv 3</span></td>
+        <td><span class="score-badge ">0</span></td>
+        <td>mining, planting, gathering</td>
+        <td>Mid</td>
+      </tr>
+    <tr>
+        <td class="rank-cell">#12</td>
+        <td><a href="/pal/reptyro/"><strong>Reptyro</strong></a> <small>Reptyro</small></td>
+        <td>Neutral</td>
+        <td>⛏️⛏️⛏️ <span class="lv-badge">Lv 3</span></td>
+        <td><span class="score-badge ">0</span></td>
+        <td>kindling, mining</td>
+        <td>Late</td>
+      </tr>
+    <tr>
+        <td class="rank-cell">#13</td>
+        <td><a href="/pal/reptyro_cryst/"><strong>Reptyro Cryst</strong></a> <small>Reptyro Cryst</small></td>
+        <td>Neutral</td>
+        <td>⛏️⛏️⛏️ <span class="lv-badge">Lv 3</span></td>
+        <td><span class="score-badge ">0</span></td>
+        <td>mining, cooling</td>
+        <td>Late</td>
+      </tr>
+    <tr>
+        <td class="rank-cell">#14</td>
+        <td><a href="/pal/warsect_terra/"><strong>Warsect Terra</strong></a> <small>Warsect Terra</small></td>
+        <td>Ground</td>
+        <td>⛏️⛏️⛏️ <span class="lv-badge">Lv 3</span></td>
+        <td><span class="score-badge ">0</span></td>
+        <td>mining, transporting</td>
+        <td>Late</td>
+      </tr>
+    <tr>
+        <td class="rank-cell">#15</td>
+        <td><a href="/pal/xenogard/"><strong>Xenogard</strong></a> <small>Xenogard</small></td>
+        <td>Dragon</td>
+        <td>⛏️⛏️⛏️ <span class="lv-badge">Lv 3</span></td>
+        <td><span class="score-badge ">0</span></td>
+        <td>mining</td>
+        <td>Mid</td>
+      </tr>
+    <tr>
+        <td class="rank-cell">#16</td>
+        <td><a href="/pal/braloha/"><strong>Braloha</strong></a> <small>Braloha</small></td>
+        <td>Neutral</td>
+        <td>⛏️⛏️ <span class="lv-badge">Lv 2</span></td>
+        <td><span class="score-badge ">0</span></td>
+        <td>planting, gathering, mining</td>
+        <td>Mid</td>
+      </tr>
+    <tr>
+        <td class="rank-cell">#17</td>
+        <td><a href="/pal/dumud/"><strong>Dumud</strong></a> <small>Dumud</small></td>
+        <td>Neutral</td>
+        <td>⛏️⛏️ <span class="lv-badge">Lv 2</span></td>
+        <td><span class="score-badge ">0</span></td>
+        <td>mining</td>
+        <td>Mid</td>
+      </tr>
+    <tr>
+        <td class="rank-cell">#18</td>
+        <td><a href="/pal/dumud_gild/"><strong>Dumud Gild</strong></a> <small>Dumud Gild</small></td>
+        <td>Neutral</td>
+        <td>⛏️⛏️ <span class="lv-badge">Lv 2</span></td>
+        <td><span class="score-badge ">0</span></td>
+        <td>mining</td>
+        <td>Mid</td>
+      </tr>
+    <tr>
+        <td class="rank-cell">#19</td>
+        <td><a href="/pal/gorirat_terra/"><strong>Gorirat Terra</strong></a> <small>Gorirat Terra</small></td>
+        <td>Ground</td>
+        <td>⛏️⛏️ <span class="lv-badge">Lv 2</span></td>
+        <td><span class="score-badge ">0</span></td>
+        <td>transporting, mining</td>
+        <td>Early</td>
+      </tr>
+    <tr>
+        <td class="rank-cell">#20</td>
+        <td><a href="/pal/mammorest/"><strong>Mammorest</strong></a> <small>Mammorest</small></td>
+        <td>Neutral</td>
+        <td>⛏️⛏️ <span class="lv-badge">Lv 2</span></td>
+        <td><span class="score-badge ">0</span></td>
+        <td>planting, lumbering, mining</td>
+        <td>Late</td>
       </tr></tbody>
     </table>
   </section>
 
   <section class="detail-cards">
     <h2>Detailed Breakdown</h2>
-    <article class="pal-detail-card" id="anubis">
+    <article class="pal-detail-card" id="astegon">
       <div class="card-header">
         <span class="card-rank">#1</span>
-        <img src="/images/pals/anubis.png" alt="Anubis" loading="lazy" width="80" height="80">
+        <img src="/images/pals/astegon.webp" alt="Astegon" loading="lazy" width="80" height="80">
         <div>
-          <h3><a href="/pal/anubis/">Anubis</a> <small>阿努比斯</small></h3>
-          <span class="card-score">Score: 95/100</span>
+          <h3><a href="/pal/astegon/">Astegon</a> <small>Astegon</small></h3>
+          <span class="card-score">Score: 0/100</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-stats">
+          <span>⚔️ ATK 125</span>
+          <span>🛡️ DEF 125</span>
+          <span>💨 SPD 70</span>
+          <span>⛏️ Mining Lv 4</span>
+        </div>
+        
+        <div class="card-availability">
+          <strong>Available:</strong>
+          ❌ Early
+          ❌ Mid
+          ✅ Late
+        </div>
+        <a href="/breeding-guide.html" class="card-cta">🧬 Breed this Pal →</a>
+      </div>
+    </article>
+  <article class="pal-detail-card" id="blazamut">
+      <div class="card-header">
+        <span class="card-rank">#2</span>
+        <img src="/images/pals/blazamut.webp" alt="Blazamut" loading="lazy" width="80" height="80">
+        <div>
+          <h3><a href="/pal/blazamut/">Blazamut</a> <small>Blazamut</small></h3>
+          <span class="card-score">Score: 0/100</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-stats">
+          <span>⚔️ ATK 125</span>
+          <span>🛡️ DEF 120</span>
+          <span>💨 SPD 70</span>
+          <span>⛏️ Mining Lv 4</span>
+        </div>
+        
+        <div class="card-availability">
+          <strong>Available:</strong>
+          ❌ Early
+          ❌ Mid
+          ✅ Late
+        </div>
+        <a href="/breeding-guide.html" class="card-cta">🧬 Breed this Pal →</a>
+      </div>
+    </article>
+  <article class="pal-detail-card" id="blazamut_ryu">
+      <div class="card-header">
+        <span class="card-rank">#3</span>
+        <img src="/images/pals/blazamut_ryu.webp" alt="Blazamut Ryu" loading="lazy" width="80" height="80">
+        <div>
+          <h3><a href="/pal/blazamut_ryu/">Blazamut Ryu</a> <small>Blazamut Ryu</small></h3>
+          <span class="card-score">Score: 0/100</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-stats">
+          <span>⚔️ ATK 130</span>
+          <span>🛡️ DEF 125</span>
+          <span>💨 SPD 70</span>
+          <span>⛏️ Mining Lv 4</span>
+        </div>
+        
+        <div class="card-availability">
+          <strong>Available:</strong>
+          ❌ Early
+          ❌ Mid
+          ✅ Late
+        </div>
+        <a href="/breeding-guide.html" class="card-cta">🧬 Breed this Pal →</a>
+      </div>
+    </article>
+  <article class="pal-detail-card" id="knocklem">
+      <div class="card-header">
+        <span class="card-rank">#4</span>
+        <img src="/images/pals/knocklem.webp" alt="Knocklem" loading="lazy" width="80" height="80">
+        <div>
+          <h3><a href="/pal/knocklem/">Knocklem</a> <small>Knocklem</small></h3>
+          <span class="card-score">Score: 0/100</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-stats">
+          <span>⚔️ ATK 110</span>
+          <span>🛡️ DEF 135</span>
+          <span>💨 SPD 70</span>
+          <span>⛏️ Mining Lv 4</span>
+        </div>
+        
+        <div class="card-availability">
+          <strong>Available:</strong>
+          ❌ Early
+          ❌ Mid
+          ✅ Late
+        </div>
+        <a href="/breeding-guide.html" class="card-cta">🧬 Breed this Pal →</a>
+      </div>
+    </article>
+  <article class="pal-detail-card" id="anubis">
+      <div class="card-header">
+        <span class="card-rank">#5</span>
+        <img src="/images/pals/anubis.webp" alt="Anubis" loading="lazy" width="80" height="80">
+        <div>
+          <h3><a href="/pal/anubis/">Anubis</a> <small>Anubis</small></h3>
+          <span class="card-score">Score: 0/100</span>
         </div>
       </div>
       <div class="card-body">
         <div class="card-stats">
           <span>⚔️ ATK 130</span>
           <span>🛡️ DEF 100</span>
-          <span>💨 SPD 80</span>
+          <span>💨 SPD 70</span>
           <span>⛏️ Mining Lv 3</span>
         </div>
-        <div class="card-pros"><h4>Why It's Good:</h4><ul><li>Mining Lv 3 — top-tier ore output</li><li>Handiwork Lv 4 handles refining too</li><li>Nocturnal — works through the night</li><li>Obtainable mid-game via breeding</li></ul></div>
+        
         <div class="card-availability">
           <strong>Available:</strong>
           ❌ Early
           ✅ Mid
+          ❌ Late
+        </div>
+        <a href="/breeding-guide.html" class="card-cta">🧬 Breed this Pal →</a>
+      </div>
+    </article>
+  <article class="pal-detail-card" id="bastigor">
+      <div class="card-header">
+        <span class="card-rank">#6</span>
+        <img src="/images/pals/bastigor.webp" alt="Bastigor" loading="lazy" width="80" height="80">
+        <div>
+          <h3><a href="/pal/bastigor/">Bastigor</a> <small>Bastigor</small></h3>
+          <span class="card-score">Score: 0/100</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-stats">
+          <span>⚔️ ATK 130</span>
+          <span>🛡️ DEF 120</span>
+          <span>💨 SPD 70</span>
+          <span>⛏️ Mining Lv 3</span>
+        </div>
+        
+        <div class="card-availability">
+          <strong>Available:</strong>
+          ❌ Early
+          ❌ Mid
+          ✅ Late
+        </div>
+        <a href="/breeding-guide.html" class="card-cta">🧬 Breed this Pal →</a>
+      </div>
+    </article>
+  <article class="pal-detail-card" id="cryolinx_terra">
+      <div class="card-header">
+        <span class="card-rank">#7</span>
+        <img src="/images/pals/cryolinx_terra.webp" alt="Cryolinx Terra" loading="lazy" width="80" height="80">
+        <div>
+          <h3><a href="/pal/cryolinx_terra/">Cryolinx Terra</a> <small>Cryolinx Terra</small></h3>
+          <span class="card-score">Score: 0/100</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-stats">
+          <span>⚔️ ATK 105</span>
+          <span>🛡️ DEF 110</span>
+          <span>💨 SPD 70</span>
+          <span>⛏️ Mining Lv 3</span>
+        </div>
+        
+        <div class="card-availability">
+          <strong>Available:</strong>
+          ❌ Early
+          ❌ Mid
+          ✅ Late
+        </div>
+        <a href="/breeding-guide.html" class="card-cta">🧬 Breed this Pal →</a>
+      </div>
+    </article>
+  <article class="pal-detail-card" id="digtoise">
+      <div class="card-header">
+        <span class="card-rank">#8</span>
+        <img src="/images/pals/digtoise.webp" alt="Digtoise" loading="lazy" width="80" height="80">
+        <div>
+          <h3><a href="/pal/digtoise/">Digtoise</a> <small>Digtoise</small></h3>
+          <span class="card-score">Score: 0/100</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-stats">
+          <span>⚔️ ATK 95</span>
+          <span>🛡️ DEF 120</span>
+          <span>💨 SPD 70</span>
+          <span>⛏️ Mining Lv 3</span>
+        </div>
+        
+        <div class="card-availability">
+          <strong>Available:</strong>
+          ❌ Early
+          ✅ Mid
+          ❌ Late
+        </div>
+        <a href="/breeding-guide.html" class="card-cta">🧬 Breed this Pal →</a>
+      </div>
+    </article>
+  <article class="pal-detail-card" id="menasting">
+      <div class="card-header">
+        <span class="card-rank">#9</span>
+        <img src="/images/pals/menasting.webp" alt="Menasting" loading="lazy" width="80" height="80">
+        <div>
+          <h3><a href="/pal/menasting/">Menasting</a> <small>Menasting</small></h3>
+          <span class="card-score">Score: 0/100</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-stats">
+          <span>⚔️ ATK 100</span>
+          <span>🛡️ DEF 130</span>
+          <span>💨 SPD 70</span>
+          <span>⛏️ Mining Lv 3</span>
+        </div>
+        
+        <div class="card-availability">
+          <strong>Available:</strong>
+          ❌ Early
+          ❌ Mid
+          ✅ Late
+        </div>
+        <a href="/breeding-guide.html" class="card-cta">🧬 Breed this Pal →</a>
+      </div>
+    </article>
+  <article class="pal-detail-card" id="menasting_terra">
+      <div class="card-header">
+        <span class="card-rank">#10</span>
+        <img src="/images/pals/menasting_terra.webp" alt="Menasting Terra" loading="lazy" width="80" height="80">
+        <div>
+          <h3><a href="/pal/menasting_terra/">Menasting Terra</a> <small>Menasting Terra</small></h3>
+          <span class="card-score">Score: 0/100</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-stats">
+          <span>⚔️ ATK 105</span>
+          <span>🛡️ DEF 130</span>
+          <span>💨 SPD 70</span>
+          <span>⛏️ Mining Lv 3</span>
+        </div>
+        
+        <div class="card-availability">
+          <strong>Available:</strong>
+          ❌ Early
+          ❌ Mid
+          ✅ Late
+        </div>
+        <a href="/breeding-guide.html" class="card-cta">🧬 Breed this Pal →</a>
+      </div>
+    </article>
+  <article class="pal-detail-card" id="palumba">
+      <div class="card-header">
+        <span class="card-rank">#11</span>
+        <img src="/images/pals/palumba.webp" alt="Palumba" loading="lazy" width="80" height="80">
+        <div>
+          <h3><a href="/pal/palumba/">Palumba</a> <small>Palumba</small></h3>
+          <span class="card-score">Score: 0/100</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-stats">
+          <span>⚔️ ATK 110</span>
+          <span>🛡️ DEF 115</span>
+          <span>💨 SPD 70</span>
+          <span>⛏️ Mining Lv 3</span>
+        </div>
+        
+        <div class="card-availability">
+          <strong>Available:</strong>
+          ❌ Early
+          ✅ Mid
+          ❌ Late
+        </div>
+        <a href="/breeding-guide.html" class="card-cta">🧬 Breed this Pal →</a>
+      </div>
+    </article>
+  <article class="pal-detail-card" id="reptyro">
+      <div class="card-header">
+        <span class="card-rank">#12</span>
+        <img src="/images/pals/reptyro.webp" alt="Reptyro" loading="lazy" width="80" height="80">
+        <div>
+          <h3><a href="/pal/reptyro/">Reptyro</a> <small>Reptyro</small></h3>
+          <span class="card-score">Score: 0/100</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-stats">
+          <span>⚔️ ATK 105</span>
+          <span>🛡️ DEF 120</span>
+          <span>💨 SPD 70</span>
+          <span>⛏️ Mining Lv 3</span>
+        </div>
+        
+        <div class="card-availability">
+          <strong>Available:</strong>
+          ❌ Early
+          ❌ Mid
+          ✅ Late
+        </div>
+        <a href="/breeding-guide.html" class="card-cta">🧬 Breed this Pal →</a>
+      </div>
+    </article>
+  <article class="pal-detail-card" id="reptyro_cryst">
+      <div class="card-header">
+        <span class="card-rank">#13</span>
+        <img src="/images/pals/reptyro_cryst.webp" alt="Reptyro Cryst" loading="lazy" width="80" height="80">
+        <div>
+          <h3><a href="/pal/reptyro_cryst/">Reptyro Cryst</a> <small>Reptyro Cryst</small></h3>
+          <span class="card-score">Score: 0/100</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-stats">
+          <span>⚔️ ATK 105</span>
+          <span>🛡️ DEF 130</span>
+          <span>💨 SPD 70</span>
+          <span>⛏️ Mining Lv 3</span>
+        </div>
+        
+        <div class="card-availability">
+          <strong>Available:</strong>
+          ❌ Early
+          ❌ Mid
+          ✅ Late
+        </div>
+        <a href="/breeding-guide.html" class="card-cta">🧬 Breed this Pal →</a>
+      </div>
+    </article>
+  <article class="pal-detail-card" id="warsect_terra">
+      <div class="card-header">
+        <span class="card-rank">#14</span>
+        <img src="/images/pals/warsect_terra.webp" alt="Warsect Terra" loading="lazy" width="80" height="80">
+        <div>
+          <h3><a href="/pal/warsect_terra/">Warsect Terra</a> <small>Warsect Terra</small></h3>
+          <span class="card-score">Score: 0/100</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-stats">
+          <span>⚔️ ATK 105</span>
+          <span>🛡️ DEF 120</span>
+          <span>💨 SPD 70</span>
+          <span>⛏️ Mining Lv 3</span>
+        </div>
+        
+        <div class="card-availability">
+          <strong>Available:</strong>
+          ❌ Early
+          ❌ Mid
+          ✅ Late
+        </div>
+        <a href="/breeding-guide.html" class="card-cta">🧬 Breed this Pal →</a>
+      </div>
+    </article>
+  <article class="pal-detail-card" id="xenogard">
+      <div class="card-header">
+        <span class="card-rank">#15</span>
+        <img src="/images/pals/xenogard.webp" alt="Xenogard" loading="lazy" width="80" height="80">
+        <div>
+          <h3><a href="/pal/xenogard/">Xenogard</a> <small>Xenogard</small></h3>
+          <span class="card-score">Score: 0/100</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-stats">
+          <span>⚔️ ATK 120</span>
+          <span>🛡️ DEF 130</span>
+          <span>💨 SPD 70</span>
+          <span>⛏️ Mining Lv 3</span>
+        </div>
+        
+        <div class="card-availability">
+          <strong>Available:</strong>
+          ❌ Early
+          ✅ Mid
+          ❌ Late
+        </div>
+        <a href="/breeding-guide.html" class="card-cta">🧬 Breed this Pal →</a>
+      </div>
+    </article>
+  <article class="pal-detail-card" id="braloha">
+      <div class="card-header">
+        <span class="card-rank">#16</span>
+        <img src="/images/pals/braloha.webp" alt="Braloha" loading="lazy" width="80" height="80">
+        <div>
+          <h3><a href="/pal/braloha/">Braloha</a> <small>Braloha</small></h3>
+          <span class="card-score">Score: 0/100</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-stats">
+          <span>⚔️ ATK 95</span>
+          <span>🛡️ DEF 120</span>
+          <span>💨 SPD 70</span>
+          <span>⛏️ Mining Lv 2</span>
+        </div>
+        
+        <div class="card-availability">
+          <strong>Available:</strong>
+          ❌ Early
+          ✅ Mid
+          ❌ Late
+        </div>
+        <a href="/breeding-guide.html" class="card-cta">🧬 Breed this Pal →</a>
+      </div>
+    </article>
+  <article class="pal-detail-card" id="dumud">
+      <div class="card-header">
+        <span class="card-rank">#17</span>
+        <img src="/images/pals/dumud.webp" alt="Dumud" loading="lazy" width="80" height="80">
+        <div>
+          <h3><a href="/pal/dumud/">Dumud</a> <small>Dumud</small></h3>
+          <span class="card-score">Score: 0/100</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-stats">
+          <span>⚔️ ATK 70</span>
+          <span>🛡️ DEF 95</span>
+          <span>💨 SPD 70</span>
+          <span>⛏️ Mining Lv 2</span>
+        </div>
+        
+        <div class="card-availability">
+          <strong>Available:</strong>
+          ❌ Early
+          ✅ Mid
+          ❌ Late
+        </div>
+        <a href="/breeding-guide.html" class="card-cta">🧬 Breed this Pal →</a>
+      </div>
+    </article>
+  <article class="pal-detail-card" id="dumud_gild">
+      <div class="card-header">
+        <span class="card-rank">#18</span>
+        <img src="/images/pals/dumud_gild.webp" alt="Dumud Gild" loading="lazy" width="80" height="80">
+        <div>
+          <h3><a href="/pal/dumud_gild/">Dumud Gild</a> <small>Dumud Gild</small></h3>
+          <span class="card-score">Score: 0/100</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-stats">
+          <span>⚔️ ATK 75</span>
+          <span>🛡️ DEF 100</span>
+          <span>💨 SPD 70</span>
+          <span>⛏️ Mining Lv 2</span>
+        </div>
+        
+        <div class="card-availability">
+          <strong>Available:</strong>
+          ❌ Early
+          ✅ Mid
+          ❌ Late
+        </div>
+        <a href="/breeding-guide.html" class="card-cta">🧬 Breed this Pal →</a>
+      </div>
+    </article>
+  <article class="pal-detail-card" id="gorirat_terra">
+      <div class="card-header">
+        <span class="card-rank">#19</span>
+        <img src="/images/pals/gorirat_terra.webp" alt="Gorirat Terra" loading="lazy" width="80" height="80">
+        <div>
+          <h3><a href="/pal/gorirat_terra/">Gorirat Terra</a> <small>Gorirat Terra</small></h3>
+          <span class="card-score">Score: 0/100</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-stats">
+          <span>⚔️ ATK 100</span>
+          <span>🛡️ DEF 90</span>
+          <span>💨 SPD 70</span>
+          <span>⛏️ Mining Lv 2</span>
+        </div>
+        
+        <div class="card-availability">
+          <strong>Available:</strong>
+          ✅ Early
+          ❌ Mid
+          ❌ Late
+        </div>
+        <a href="/breeding-guide.html" class="card-cta">🧬 Breed this Pal →</a>
+      </div>
+    </article>
+  <article class="pal-detail-card" id="mammorest">
+      <div class="card-header">
+        <span class="card-rank">#20</span>
+        <img src="/images/pals/mammorest.webp" alt="Mammorest" loading="lazy" width="80" height="80">
+        <div>
+          <h3><a href="/pal/mammorest/">Mammorest</a> <small>Mammorest</small></h3>
+          <span class="card-score">Score: 0/100</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-stats">
+          <span>⚔️ ATK 85</span>
+          <span>🛡️ DEF 90</span>
+          <span>💨 SPD 70</span>
+          <span>⛏️ Mining Lv 2</span>
+        </div>
+        
+        <div class="card-availability">
+          <strong>Available:</strong>
+          ❌ Early
+          ❌ Mid
           ✅ Late
         </div>
         <a href="/breeding-guide.html" class="card-cta">🧬 Breed this Pal →</a>
@@ -133,12 +821,12 @@
     <h2>Related Tools</h2>
     <div class="tool-links">
       
-      <a href="/best-pals.html" class="tool-card">
-        <span class="tool-icon">🔍</span>
-        <strong>Pal Finder</strong>
-        <span>Filter Pals by stats, work ability, and element</span>
+      <a href="/pals/" class="tool-card">
+        <span class="tool-icon">📚</span>
+        <strong>Pal Database</strong>
+        <span>Search, filter, and compare all 215 Pals</span>
       </a>
-      <a href="/breeding-guide.html" class="tool-card">
+      <a href="/breeding-calculator/" class="tool-card">
         <span class="tool-icon">🧬</span>
         <strong>Breeding Calculator</strong>
         <span>Calculate breeding results for any Pal combination</span>
@@ -157,7 +845,7 @@
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <p>© 2026 PalGuide. Data-driven Palworld companion.</p>
+    <p>© 2026 Palworld Database. Data-driven Palworld companion.</p>
     <div class="footer-links">
       <a href="/privacy.html">Privacy</a>
       <a href="/terms.html">Terms</a>

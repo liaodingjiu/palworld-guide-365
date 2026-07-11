@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 700" font-family="system-ui,-apple-system,sans-serif">
+  <defs>
+    <filter id="sh"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.1"/></filter>
+  </defs>
+
+  <rect width="960" height="700" fill="#fafafa" rx="12"/>
+
+  <!-- Title -->
+  <text x="480" y="38" text-anchor="middle" font-size="22" font-weight="800" fill="#111">Palworld Guides — Full Toolchain</text>
+  <text x="480" y="58" text-anchor="middle" font-size="12" fill="#888">Every tool used to build, deploy, and operate palworldguides.com</text>
+
+  <!-- ============================================================ -->
+  <!-- Phase 0: Content & Data -->
+  <!-- ============================================================ -->
+  <rect x="20" y="80" width="920" height="130" rx="10" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="44" y="106" font-size="13" font-weight="800" fill="#1e40af">1. CONTENT &amp; DATA</text>
+
+  <!-- Obsidian -->
+  <rect x="44" y="118" width="130" height="52" rx="8" fill="#fff" stroke="#dbeafe" filter="url(#sh)"/>
+  <text x="109" y="140" text-anchor="middle" font-size="10" font-weight="700" fill="#1e293b">📝 Obsidian</text>
+  <text x="109" y="156" text-anchor="middle" font-size="9" fill="#64748b">Knowledge vault</text>
+
+  <!-- Claude -->
+  <rect x="188" y="118" width="130" height="52" rx="8" fill="#fff" stroke="#dbeafe" filter="url(#sh)"/>
+  <text x="253" y="140" text-anchor="middle" font-size="10" font-weight="700" fill="#1e293b">🤖 Claude Code</text>
+  <text x="253" y="156" text-anchor="middle" font-size="9" fill="#64748b">AI pair programming</text>
+
+  <!-- JSON Data -->
+  <rect x="332" y="118" width="130" height="52" rx="8" fill="#fff" stroke="#dbeafe" filter="url(#sh)"/>
+  <text x="397" y="140" text-anchor="middle" font-size="10" font-weight="700" fill="#1e293b">📦 JSON/YAML</text>
+  <text x="397" y="156" text-anchor="middle" font-size="9" fill="#64748b">Structured game data</text>
+
+  <!-- Node.js Build -->
+  <rect x="476" y="118" width="130" height="52" rx="8" fill="#fff" stroke="#dbeafe" filter="url(#sh)"/>
+  <text x="541" y="140" text-anchor="middle" font-size="10" font-weight="700" fill="#1e293b">⚙️ Node.js</text>
+  <text x="541" y="156" text-anchor="middle" font-size="9" fill="#64748b">build.js · 0 deps</text>
+
+  <!-- HTML -->
+  <rect x="620" y="118" width="130" height="52" rx="8" fill="#fff" stroke="#dbeafe" filter="url(#sh)"/>
+  <text x="685" y="140" text-anchor="middle" font-size="10" font-weight="700" fill="#1e293b">🌐 HTML5</text>
+  <text x="685" y="156" text-anchor="middle" font-size="9" fill="#64748b">Semantic markup</text>
+
+  <!-- CSS -->
+  <rect x="764" y="118" width="130" height="52" rx="8" fill="#fff" stroke="#dbeafe" filter="url(#sh)"/>
+  <text x="829" y="140" text-anchor="middle" font-size="10" font-weight="700" fill="#1e293b">🎨 CSS Variables</text>
+  <text x="829" y="156" text-anchor="middle" font-size="9" fill="#64748b">Dark mode + responsive</text>
+
+  <!-- ============================================================ -->
+  <!-- Phase 1: Version Control -->
+  <!-- ============================================================ -->
+  <rect x="20" y="225" width="920" height="70" rx="10" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+  <text x="44" y="250" font-size="13" font-weight="800" fill="#166534">2. VERSION CONTROL</text>
+
+  <rect x="44" y="260" width="200" height="28" rx="6" fill="#fff" stroke="#dcfce7" filter="url(#sh)"/>
+  <text x="144" y="278" text-anchor="middle" font-size="10" font-weight="700" fill="#1e293b">🐙 GitHub (git)</text>
+
+  <text x="270" y="278" font-size="18" fill="#86efac">→</text>
+
+  <rect x="295" y="260" width="200" height="28" rx="6" fill="#fff" stroke="#dcfce7" filter="url(#sh)"/>
+  <text x="395" y="278" text-anchor="middle" font-size="10" font-weight="700" fill="#1e293b">🔀 Main branch only</text>
+
+  <text x="520" y="278" font-size="18" fill="#86efac">→</text>
+
+  <rect x="545" y="260" width="200" height="28" rx="6" fill="#fff" stroke="#dcfce7" filter="url(#sh)"/>
+  <text x="645" y="278" text-anchor="middle" font-size="10" font-weight="700" fill="#1e293b">📋 Conventional commits</text>
+
+  <!-- ============================================================ -->
+  <!-- Phase 2: Hosting & Deploy -->
+  <!-- ============================================================ -->
+  <rect x="20" y="310" width="920" height="100" rx="10" fill="#fef3c7" stroke="#fde68a" stroke-width="1"/>
+  <text x="44" y="336" font-size="13" font-weight="800" fill="#92400e">3. HOSTING &amp; DEPLOY</text>
+
+  <rect x="44" y="348" width="250" height="52" rx="8" fill="#fff" stroke="#fef3c7" filter="url(#sh)"/>
+  <text x="169" y="370" text-anchor="middle" font-size="10" font-weight="700" fill="#1e293b">☁️ Cloudflare Pages</text>
+  <text x="169" y="388" text-anchor="middle" font-size="9" fill="#64748b">Auto-deploy on git push</text>
+
+  <rect x="318" y="348" width="250" height="52" rx="8" fill="#fff" stroke="#fef3c7" filter="url(#sh)"/>
+  <text x="443" y="370" text-anchor="middle" font-size="10" font-weight="700" fill="#1e293b">🌍 palworldguides.com</text>
+  <text x="443" y="388" text-anchor="middle" font-size="9" fill="#64748b">Domain + SSL via Cloudflare</text>
+
+  <rect x="592" y="348" width="180" height="52" rx="8" fill="#fff" stroke="#fef3c7" filter="url(#sh)"/>
+  <text x="682" y="370" text-anchor="middle" font-size="10" font-weight="700" fill="#1e293b">🔄 Always HTTPS</text>
+  <text x="682" y="388" text-anchor="middle" font-size="9" fill="#64748b">HTTP → 301 → HTTPS</text>
+
+  <rect x="796" y="348" width="120" height="52" rx="8" fill="#fff" stroke="#fef3c7" filter="url(#sh)"/>
+  <text x="856" y="370" text-anchor="middle" font-size="10" font-weight="700" fill="#1e293b">📐 wrangler</text>
+  <text x="856" y="388" text-anchor="middle" font-size="9" fill="#64748b">build command</text>
+
+  <!-- ============================================================ -->
+  <!-- Phase 3: Analytics -->
+  <!-- ============================================================ -->
+  <rect x="20" y="425" width="920" height="100" rx="10" fill="#f3e8ff" stroke="#d8b4fe" stroke-width="1"/>
+  <text x="44" y="450" font-size="13" font-weight="800" fill="#6b21a8">4. ANALYTICS &amp; SEO</text>
+
+  <rect x="44" y="462" width="200" height="52" rx="8" fill="#fff" stroke="#e9d5ff" filter="url(#sh)"/>
+  <text x="144" y="484" text-anchor="middle" font-size="10" font-weight="700" fill="#1e293b">📊 Google Analytics 4</text>
+  <text x="144" y="500" text-anchor="middle" font-size="9" fill="#64748b">Traffic + page views</text>
+
+  <rect x="268" y="462" width="200" height="52" rx="8" fill="#fff" stroke="#e9d5ff" filter="url(#sh)"/>
+  <text x="368" y="484" text-anchor="middle" font-size="10" font-weight="700" fill="#1e293b">🎥 Microsoft Clarity</text>
+  <text x="368" y="500" text-anchor="middle" font-size="9" fill="#64748b">Heatmaps + recordings</text>
+
+  <rect x="492" y="462" width="200" height="52" rx="8" fill="#fff" stroke="#e9d5ff" filter="url(#sh)"/>
+  <text x="592" y="484" text-anchor="middle" font-size="10" font-weight="700" fill="#1e293b">🔍 Google Search Console</text>
+  <text x="592" y="500" text-anchor="middle" font-size="9" fill="#64748b">Indexing + search queries</text>
+
+  <rect x="716" y="462" width="200" height="52" rx="8" fill="#fff" stroke="#e9d5ff" filter="url(#sh)"/>
+  <text x="816" y="484" text-anchor="middle" font-size="10" font-weight="700" fill="#1e293b">📐 Schema.org JSON-LD</text>
+  <text x="816" y="500" text-anchor="middle" font-size="9" fill="#64748b">Rich results markup</text>
+
+  <!-- ============================================================ -->
+  <!-- Phase 4: SEO Infrastructure -->
+  <!-- ============================================================ -->
+  <rect x="20" y="540" width="920" height="70" rx="10" fill="#fce7f3" stroke="#f9a8d4" stroke-width="1"/>
+  <text x="44" y="566" font-size="13" font-weight="800" fill="#9d174d">5. SEO INFRASTRUCTURE</text>
+
+  <rect x="44" y="576" width="170" height="28" rx="6" fill="#fff" stroke="#fce7f3" filter="url(#sh)"/>
+  <text x="129" y="594" text-anchor="middle" font-size="10" font-weight="700" fill="#1e293b">🗺️ sitemap.xml (21 URLs)</text>
+
+  <rect x="238" y="576" width="140" height="28" rx="6" fill="#fff" stroke="#fce7f3" filter="url(#sh)"/>
+  <text x="308" y="594" text-anchor="middle" font-size="10" font-weight="700" fill="#1e293b">🤖 robots.txt</text>
+
+  <rect x="402" y="576" width="140" height="28" rx="6" fill="#fff" stroke="#fce7f3" filter="url(#sh)"/>
+  <text x="472" y="594" text-anchor="middle" font-size="10" font-weight="700" fill="#1e293b">🔗 canonical URLs</text>
+
+  <rect x="566" y="576" width="160" height="28" rx="6" fill="#fff" stroke="#fce7f3" filter="url(#sh)"/>
+  <text x="646" y="594" text-anchor="middle" font-size="10" font-weight="700" fill="#1e293b">📱 OG / Twitter Cards</text>
+
+  <rect x="750" y="576" width="170" height="28" rx="6" fill="#fff" stroke="#fce7f3" filter="url(#sh)"/>
+  <text x="835" y="594" text-anchor="middle" font-size="10" font-weight="700" fill="#1e293b">🕸️ Internal link spider-web</text>
+
+  <!-- ============================================================ -->
+  <!-- Bottom border -->
+  <!-- ============================================================ -->
+  <line x1="20" y1="635" x2="940" y2="635" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="480" y="662" text-anchor="middle" font-size="11" fill="#94a3b8">13 tools  ·  All free tier  ·  0 server costs  ·  Auto-deploy on every git push</text>
+  <text x="480" y="682" text-anchor="middle" font-size="10" fill="#cbd5e1">Build time: &lt; 1s  ·  Page weight: ~20KB  ·  Lighthouse: 98+</text>
+</svg>

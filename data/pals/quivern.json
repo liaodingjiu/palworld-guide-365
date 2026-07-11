@@ -1,0 +1,98 @@
+{
+  "id": "quivern",
+  "gameId": "palworld",
+  "number": "095",
+  "name": {
+    "zh": "Quivern",
+    "en": "Quivern"
+  },
+  "slug": "quivern",
+  "image": "/images/pals/quivern.webp",
+  "classification": {
+    "elements": [
+      "Dragon"
+    ],
+    "rarity": "Epic",
+    "role": [
+      "Combat"
+    ],
+    "size": "Medium",
+    "isRideable": false,
+    "isFlyable": false
+  },
+  "stats": {
+    "hp": 105,
+    "attack": 100,
+    "defense": 100,
+    "rangedAttack": 0,
+    "speed": 70,
+    "stamina": 100
+  },
+  "workSuitability": {
+    "kindling": 0,
+    "watering": 0,
+    "planting": 0,
+    "generating": 0,
+    "handiwork": 1,
+    "gathering": 2,
+    "lumbering": 0,
+    "mining": 2,
+    "medicine": 0,
+    "cooling": 0,
+    "transporting": 3,
+    "farming": 0
+  },
+  "skills": [
+    {
+      "name": "Dragon Breath",
+      "element": "Dragon",
+      "power": 70,
+      "cooldown": 6,
+      "level": 1
+    },
+    {
+      "name": "Dragon Claw",
+      "element": "Dragon",
+      "power": 95,
+      "cooldown": 10,
+      "level": 12
+    },
+    {
+      "name": "Dragon Meteor",
+      "element": "Dragon",
+      "power": 150,
+      "cooldown": 30,
+      "level": 30
+    }
+  ],
+  "partnerSkill": {
+    "name": "Quivern's Partner Skill",
+    "descriptionEn": "Provides unique utility for Quivern."
+  },
+  "acquisition": {
+    "habitats": [
+      "various"
+    ],
+    "isBreedable": true,
+    "isCatchable": true,
+    "isBossEncounter": false
+  },
+  "breeding": {
+    "breedingPower": 350
+  },
+  "drops": [],
+  "decision": {
+    "bestFor": [
+      "transporting",
+      "gathering",
+      "mining"
+    ],
+    "gameStage": {
+      "early": false,
+      "mid": false,
+      "late": true
+    },
+    "scores": {},
+    "reasons": {}
+  }
+}
