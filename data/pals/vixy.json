@@ -66,8 +66,8 @@
     }
   ],
   "partnerSkill": {
-    "name": "Vixy's Partner Skill",
-    "descriptionEn": "Provides unique utility for Vixy."
+    "name": "Dig Here",
+    "descriptionEn": "When assigned to the Ranch, Vixy digs up Pal Spheres, Arrows, and Gold Coins. Condensing improves the quality of dug items. An essential early-game Ranch Pal for passive resource generation."
   },
   "acquisition": {
     "habitats": [
@@ -83,7 +83,8 @@
   "drops": [],
   "decision": {
     "bestFor": [
-      "combat"
+      "ranch",
+      "resource_generation"
     ],
     "gameStage": {
       "early": true,

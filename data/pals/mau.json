@@ -51,7 +51,7 @@
       "level": 1
     },
     {
-      "name": "Shadow Ball",
+      "name": "Nightmare Ball",
       "element": "Dark",
       "power": 100,
       "cooldown": 14,
@@ -83,7 +83,8 @@
   "drops": [],
   "decision": {
     "bestFor": [
-      "combat"
+      "ranch",
+      "gold_farming"
     ],
     "gameStage": {
       "early": true,
