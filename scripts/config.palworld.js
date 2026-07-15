@@ -73,16 +73,61 @@ module.exports = {
   },
 
   // ─── Template helpers ──────────────────────────────────────
-  buildTitle: (pal, game) =>
-    `${pal.name.en} — ${pal.name.zh} | Palworld Guide ${game.version} | PalGuide`,
+  buildTitle: (pal, game) => {
+    const name = pal.name.en;
+    const elements = pal.classification.elements.join('/');
+    const rarity = pal.classification.rarity;
 
-  buildDescription: (pal, game) =>
-    `${pal.name.en} (${pal.name.zh}) — ${pal.classification.elements.join('/')} Pal. ` +
-    `Mining Lv ${pal.workSuitability.mining}, Handiwork Lv ${pal.workSuitability.handiwork}. ` +
-    `Stats, skills, how to get, breeding combos, and best uses in Palworld ${game.version}.`,
+    // Build a unique descriptor per Pal so every title is naturally different
+    let descriptor = `${elements} Pal`;
 
-  buildKeywords: (pal) =>
-    `${pal.name.en.toLowerCase()}, ${pal.name.zh}, ${pal.classification.elements.join(' ')}, palworld pal, palworld guide`,
+    const topWorks = Object.entries(pal.workSuitability || {})
+      .filter(([, lv]) => lv > 0)
+      .sort(([, a], [, b]) => b - a);
+    const primaryWork = topWorks[0];
+    const primaryWorkLabel = primaryWork
+      ? primaryWork[0].charAt(0).toUpperCase() + primaryWork[0].slice(1)
+      : null;
+
+    if (pal.classification.isFlyable) {
+      descriptor = `${elements} Flying Mount`;
+    } else if (pal.classification.isRideable) {
+      descriptor = `${elements} Mount`;
+    } else if (primaryWork && primaryWork[1] >= 3) {
+      descriptor = `${elements} ${primaryWorkLabel} Pal`;
+    } else if (primaryWork && primaryWork[1] >= 1) {
+      descriptor = `${elements} Pal (${primaryWorkLabel})`;
+    }
+
+    if (rarity === 'Legendary') descriptor = `Legendary ${descriptor}`;
+    else if (rarity === 'Epic') descriptor = `Epic ${descriptor}`;
+
+    return `${name} — ${descriptor} | Stats, Skills & Breeding | PalGuide`;
+  },
+
+  buildDescription: (pal, game) => {
+    const name = pal.name.en;
+    const elements = pal.classification.elements.join('/');
+    const rarity = pal.classification.rarity;
+    const topWorks = Object.entries(pal.workSuitability || {})
+      .filter(([, lv]) => lv > 0)
+      .sort(([, a], [, b]) => b - a)
+      .slice(0, 2);
+    const workStr = topWorks.length > 0
+      ? topWorks.map(([k, lv]) => `${k.charAt(0).toUpperCase() + k.slice(1)} Lv ${lv}`).join(', ')
+      : 'Combat-focused';
+    const rideStr = pal.classification.isFlyable ? 'Flying mount. '
+      : pal.classification.isRideable ? 'Rideable ground mount. ' : '';
+    return `${name} — ${elements} ${rarity} Pal. ${workStr}. ${rideStr}` +
+      `Stats, skills, how to get, breeding combos, and best uses in Palworld ${game.version}.`;
+  },
+
+  buildKeywords: (pal) => {
+    const elements = pal.classification.elements.join(' ');
+    const name = pal.name.en.toLowerCase();
+    const rarity = pal.classification.rarity.toLowerCase();
+    return `${name}, ${name} palworld, ${elements}, palworld ${rarity} pal, palworld pal, palworld guide, ${name} stats, ${name} breeding`;
+  },
 
   // Schema.org
   schemaOrgEntity: (pal, game) => ({

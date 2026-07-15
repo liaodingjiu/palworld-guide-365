@@ -40,76 +40,76 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #1a1a18;
-    --surface: #252522;
-    --border: #3d3d38;
-    --text: #e0dcd0;
-    --text2: #a8a498;
-    --text3: #7a7668;
-    --muted-bg: #2d2d28;
-    --hero-bg1: #1e2a14;
-    --hero-bg2: #2a2012;
-    --green: #7cbf3a;
-    --green-l: #1e2a14;
-    --green-d: #c0dd97;
-    --gold: #d4a13e;
-    --gold-l: #2a2012;
-    --blue: #4a90d9;
-    --blue-l: #1a2432;
-    --blue-d: #a0c8f0;
-    --red: #d94a4a;
-    --red-l: #2a1818;
-    --purple: #7b6fd4;
-    --purple-l: #1e1c32;
-    --nav-bg: #252522;
-    --footer-bg: #111110;
-    --footer-text: #7a7668;
-    --footer-link: #7cbf3a;
-    --topbar-bg: #111110;
-    --topbar-text: #a8a498;
-    --table-hover: #2d2d28;
-    --thead-bg: #2d2d28;
-    --copy-bg: #1e2a14;
-    --copy-hover: #253a16;
-    --toggle-bg: #2d2d28;
-    --toggle-border: #3d3d38;
+    --bg: #0F2436;
+    --surface: #152a3e;
+    --border: rgba(78,205,196,0.15);
+    --text: #ffffff;
+    --text2: #91A4B8;
+    --text3: #6b7d94;
+    --muted-bg: #1a3248;
+    --hero-bg1: #0F2436;
+    --hero-bg2: #0F2436;
+    --green: #4ECDC4;
+    --green-l: rgba(78,205,196,0.1);
+    --green-d: #80d8d2;
+    --gold: #f0a040;
+    --gold-l: rgba(240,160,64,0.1);
+    --blue: #4ECDC4;
+    --blue-l: rgba(78,205,196,0.1);
+    --blue-d: #80d8d2;
+    --red: #ef4444;
+    --red-l: rgba(239,68,68,0.1);
+    --purple: #c084fc;
+    --purple-l: rgba(192,132,252,0.1);
+    --nav-bg: #172E43;
+    --footer-bg: #0a1a2b;
+    --footer-text: #6b7d94;
+    --footer-link: #4ECDC4;
+    --topbar-bg: #0a1a2b;
+    --topbar-text: #91A4B8;
+    --table-hover: #1a3248;
+    --thead-bg: #1a3248;
+    --copy-bg: rgba(78,205,196,0.1);
+    --copy-hover: rgba(78,205,196,0.15);
+    --toggle-bg: #1a3248;
+    --toggle-border: rgba(78,205,196,0.15);
   }
 }
 
 [data-theme="dark"] {
-  --bg: #1a1a18;
-  --surface: #252522;
-  --border: #3d3d38;
-  --text: #e0dcd0;
-  --text2: #a8a498;
-  --text3: #7a7668;
-  --muted-bg: #2d2d28;
-  --hero-bg1: #1e2a14;
-  --hero-bg2: #2a2012;
-  --green: #7cbf3a;
-  --green-l: #1e2a14;
-  --green-d: #c0dd97;
-  --gold: #d4a13e;
-  --gold-l: #2a2012;
-  --blue: #4a90d9;
-  --blue-l: #1a2432;
-  --blue-d: #a0c8f0;
-  --red: #d94a4a;
-  --red-l: #2a1818;
-  --purple: #7b6fd4;
-  --purple-l: #1e1c32;
-  --nav-bg: #252522;
-  --footer-bg: #111110;
-  --footer-text: #7a7668;
-  --footer-link: #7cbf3a;
-  --topbar-bg: #111110;
-  --topbar-text: #a8a498;
-  --table-hover: #2d2d28;
-  --thead-bg: #2d2d28;
-  --copy-bg: #1e2a14;
-  --copy-hover: #253a16;
-  --toggle-bg: #2d2d28;
-  --toggle-border: #3d3d38;
+  --bg: #0F2436;
+  --surface: #152a3e;
+  --border: rgba(78,205,196,0.15);
+  --text: #ffffff;
+  --text2: #91A4B8;
+  --text3: #6b7d94;
+  --muted-bg: #1a3248;
+  --hero-bg1: #0F2436;
+  --hero-bg2: #0F2436;
+  --green: #4ECDC4;
+  --green-l: rgba(78,205,196,0.1);
+  --green-d: #80d8d2;
+  --gold: #f0a040;
+  --gold-l: rgba(240,160,64,0.1);
+  --blue: #4ECDC4;
+  --blue-l: rgba(78,205,196,0.1);
+  --blue-d: #80d8d2;
+  --red: #ef4444;
+  --red-l: rgba(239,68,68,0.1);
+  --purple: #c084fc;
+  --purple-l: rgba(192,132,252,0.1);
+  --nav-bg: #172E43;
+  --footer-bg: #0a1a2b;
+  --footer-text: #6b7d94;
+  --footer-link: #4ECDC4;
+  --topbar-bg: #0a1a2b;
+  --topbar-text: #91A4B8;
+  --table-hover: #1a3248;
+  --thead-bg: #1a3248;
+  --copy-bg: rgba(78,205,196,0.1);
+  --copy-hover: rgba(78,205,196,0.15);
+  --toggle-bg: #1a3248;
+  --toggle-border: rgba(78,205,196,0.15);
 }
 
 [data-theme="light"] {
@@ -177,17 +177,19 @@ nav {
   align-items: center;
 }
 .logo {
-  background: #223f5b;
-  color: #fff;
+  background: var(--gold);
+  color: #0F2436;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
-  padding: 12px 20px;
+  padding: 10px 18px;
+  border-radius: 8px;
   white-space: nowrap;
   flex-shrink: 0;
+  margin: 6px 0 6px 12px;
 }
-.logo:hover { background: #2a4f72; }
-.logo span { color: #4ecdc4; }
+.logo:hover { background: #f4b850; }
+.logo span { color: #0F2436; }
 .nav-right {
   display: flex;
   align-items: center;
@@ -290,10 +292,10 @@ nav {
 .hero {
   text-align: center;
   padding: 48px 20px 40px;
-  background: linear-gradient(135deg, var(--hero-bg1) 0%, var(--hero-bg2) 100%);
-  border-radius: var(--radius);
+  background: var(--surface);
+  border-radius: 12px;
   margin-bottom: 32px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(78,205,196,0.15);
 }
 .hero h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; color: var(--text); }
 .hero p { font-size: 16px; color: var(--text2); max-width: 600px; margin: 0 auto 20px; }
@@ -330,23 +332,23 @@ nav {
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
 .grid-4 { grid-template-columns: repeat(4, 1fr); }
 
-/* Card */
+/* Card — unified: 12px, teal border, hover up +2px */
 .card {
   background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border: 1px solid rgba(78,205,196,0.4);
+  border-radius: 12px;
   padding: 20px;
-  transition: border-color .15s;
+  transition: transform .25s ease, border-color .25s ease;
 }
-.card:hover { border-color: var(--green); }
+.card:hover { border-color: rgba(78,205,196,0.7); transform: translateY(-2px); }
 .card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
 .card p { font-size: 14px; color: var(--text2); }
 
 /* Pal card */
 .pal-card {
   background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border: 1px solid rgba(78,205,196,0.4);
+  border-radius: 12px;
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -619,15 +621,15 @@ details.faq-item > .faq-a {
 .hub-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
 .hub-card {
   background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border: 1px solid rgba(78,205,196,0.4);
+  border-radius: 12px;
   padding: 24px;
   text-decoration: none;
   color: var(--text);
-  transition: border-color .15s, transform .15s;
+  transition: border-color .25s ease, transform .25s ease;
   display: block;
 }
-.hub-card:hover { border-color: var(--green); transform: translateY(-2px); }
+.hub-card:hover { border-color: rgba(78,205,196,0.7); transform: translateY(-2px); }
 .hub-card .hub-icon { font-size: 28px; margin-bottom: 12px; }
 .hub-card h3 { font-size: 17px; font-weight: 600; margin-bottom: 8px; color: var(--text); }
 .hub-card p { font-size: 13px; color: var(--text2); line-height: 1.5; }

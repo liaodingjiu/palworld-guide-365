@@ -200,7 +200,39 @@ function renderFAQPageSchema(faqs) {
   });
 }
 
-function renderPalEntityPage(pal, game) {
+// ─── Find Similar Pals (by element + work suitability) ────────
+function findSimilarPals(targetPal, allPals, limit = 6) {
+  const targetElements = new Set(targetPal.classification.elements);
+  const primaryElement = targetPal.classification.elements[0];
+
+  const topWorks = Object.entries(targetPal.workSuitability || {})
+    .filter(([, lv]) => lv > 0)
+    .sort(([, a], [, b]) => b - a);
+  const topWorkKey = topWorks[0]?.[0];
+
+  const scored = allPals
+    .filter(p => p.id !== targetPal.id)
+    .map(p => {
+      let score = 0;
+      p.classification.elements.forEach(e => { if (targetElements.has(e)) score += 3; });
+      if (p.classification.elements[0] === primaryElement) score += 2;
+      const pTop = Object.entries(p.workSuitability || {})
+        .filter(([, lv]) => lv > 0)
+        .sort(([, a], [, b]) => b - a);
+      if (pTop[0]?.[0] === topWorkKey) score += 2;
+      if (p.classification.rarity === targetPal.classification.rarity) score += 2;
+      if (p.classification.isFlyable === targetPal.classification.isFlyable) score += 1;
+      if (p.classification.isRideable === targetPal.classification.isRideable) score += 1;
+      return { pal: p, score };
+    })
+    .filter(s => s.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit);
+
+  return scored.map(s => s.pal);
+}
+
+function renderPalEntityPage(pal, game, allPals) {
   // Pre-compute FAQ data so it's available for both schema (<head>) and HTML (<body>)
   const { html: faqHTML, faqs: faqData } = renderPalFAQ(pal);
 
@@ -390,11 +422,11 @@ ${renderNav()}
 <main class="pal-entity">
   <header class="pal-hero">
     <div class="pal-hero-image">
-      <img src="${pal.image}" alt="${pal.name.en} — ${pal.name.zh}" loading="lazy" width="400" height="400">
+      <img src="${pal.image}" alt="${pal.name.en} — ${pal.classification.elements.join('/')} ${pal.classification.rarity} Pal" loading="lazy" width="400" height="400">
     </div>
     <div class="pal-hero-info">
       <span class="pal-number">No. ${String(pal.number).padStart(3, '0')}</span>
-      <h1>${pal.name.en} <small>(${pal.name.zh})</small></h1>
+      <h1>${pal.name.en} <small>${pal.classification.elements.join('/')} · ${pal.classification.rarity}</small></h1>
       <div class="pal-tags">
         <span class="rarity-badge">${rarityLabel}</span>
         ${elementTags}
@@ -451,6 +483,29 @@ ${renderNav()}
   ${dropsHTML}
 
   ${bestUsesHTML}
+
+  ${(() => {
+    const similar = findSimilarPals(pal, allPals, 6);
+    if (similar.length === 0) return '';
+    const elementLabel = pal.classification.elements[0];
+    const workLabel = (() => {
+      const top = Object.entries(pal.workSuitability || {}).filter(([,lv]) => lv > 0).sort(([,a], [,b]) => b - a);
+      return top[0] ? top[0][0].charAt(0).toUpperCase() + top[0][0].slice(1) : null;
+    })();
+    const sectionTitle = similar.length >= 3
+      ? `Similar ${elementLabel} Pals`
+      : 'Related Pals';
+    return `<section class="similar-pals">
+    <h2>${sectionTitle}</h2>
+    <p class="section-intro">Pals similar to ${pal.name.en} — shared elements, work roles, and rarity. Click to compare stats and breeding.</p>
+    <div class="similar-pals-grid">
+      ${similar.map(sp => `<a href="/pal/${sp.slug}/" class="similar-pal-card">
+        <span class="sp-name">${sp.name.en}</span>
+        <span class="sp-meta">${sp.classification.elements.join(' / ')} · ${sp.classification.rarity}${sp.classification.isFlyable ? ' · ✈ Flyer' : sp.classification.isRideable ? ' · 🏇 Mount' : ''}</span>
+      </a>`).join('\n      ')}
+    </div>
+  </section>`;
+  })()}
 
   <section class="section" id="faq">
     <h2><span class="icon">❓</span> Frequently Asked Questions — ${pal.name.en}</h2>
@@ -718,7 +773,7 @@ function build() {
   let entityCount = 0;
 
   pals.forEach(pal => {
-    const html = renderPalEntityPage(pal, game);
+    const html = renderPalEntityPage(pal, game, pals);
     const outDir = path.join(OUTPUT_DIR, C.entityUrlPrefix, pal.slug);
     ensureDir(outDir);
     fs.writeFileSync(path.join(outDir, 'index.html'), html);

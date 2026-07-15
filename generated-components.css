@@ -82,6 +82,16 @@
 .score-badge.s-tier { background:var(--gold-l); color:var(--gold); }
 .score-badge.a-tier { background:var(--green-l); color:var(--green); }
 
+/* Similar Pals (internal linking grid) */
+.similar-pals { max-width:900px; margin:2rem auto; padding:1.5rem; background:var(--surface); border-radius:var(--radius); border:1px solid var(--border); }
+.similar-pals h2 { font-size:1.25rem; margin-bottom:.5rem; }
+.similar-pals .section-intro { font-size:.85rem; color:var(--text2); margin-bottom:1rem; }
+.similar-pals-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(180px, 1fr)); gap:8px; }
+.similar-pal-card { display:flex; flex-direction:column; padding:10px 14px; background:var(--muted-bg); border:1px solid var(--border); border-radius:var(--radius-sm); text-decoration:none; transition:border-color .15s, transform .15s; }
+.similar-pal-card:hover { border-color:var(--green); transform:translateY(-1px); }
+.similar-pal-card .sp-name { font-size:.9rem; font-weight:600; color:var(--green); }
+.similar-pal-card .sp-meta { font-size:.75rem; color:var(--text3); margin-top:2px; }
+
 /* Detail Cards */
 .detail-cards { max-width:900px; margin:2rem auto; }
 .pal-detail-card { padding:1.5rem; margin-bottom:1.5rem; background:var(--surface); border-radius:var(--radius); border:1px solid var(--border); }
