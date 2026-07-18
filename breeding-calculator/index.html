@@ -7,18 +7,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<title>Palworld Breeding Calculator — Find Any Combination | Palworld Database</title>
-<meta name="description" content="Palworld Breeding Calculator — select two parent Pals and instantly find the offspring. 19,000+ breeding combinations. Also reverse-search: find all parent combos for any Pal.">
-<meta name="keywords" content="palworld breeding calculator, palworld breeding combos, palworld breeding combinations, palworld fusion, palworld breeding tree">
+<title>Palworld Breeding Calculator 1.0 — 287 Pals, Mutation Breeding | Palworld Database</title>
+<meta name="description" content="Updated for Palworld 1.0 — 287 Pals, mutation breeding, 19,000+ combinations. Select two parents, find offspring instantly. Reverse-search any Pal. Works with all 1.0 content including new Pals and breeding changes.">
+<meta name="keywords" content="palworld breeding calculator, palworld 1.0 breeding calculator, breeding calculator palworld 1.0, palworld breeding combos, palworld breeding combinations, palworld fusion, palworld breeding tree">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://palworldguides.com/breeding-calculator/">
-<meta property="og:title" content="Palworld Breeding Calculator — Find Any Combination | Palworld Database">
-<meta property="og:description" content="Select two parents, find their offspring instantly. Or reverse-search: pick a Pal, see all combos that breed it. 19K+ combinations.">
+<meta property="og:title" content="Palworld Breeding Calculator 1.0 — 287 Pals, Mutation Breeding | Palworld Database">
+<meta property="og:description" content="Updated for Palworld 1.0. Select two parents, find their offspring instantly. Or reverse-search: pick a Pal, see all combos that breed it. 19K+ combinations, mutation breeding supported.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://palworldguides.com/breeding-calculator/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Palworld Breeding Calculator">
-<meta name="twitter:description" content="19K+ breeding combos — find any offspring or reverse-search parent pairs.">
+<meta name="twitter:title" content="Palworld Breeding Calculator 1.0">
+<meta name="twitter:description" content="Updated for 1.0 — 287 Pals, 19K+ breeding combos, mutation breeding. Find any offspring or reverse-search parent pairs.">
 <link rel="stylesheet" href="/shared.css">
 <link rel="stylesheet" href="/pals.css">
 <style>
@@ -183,11 +183,14 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "How does Palworld breeding work?", "acceptedAnswer": { "@type": "Answer", "text": "Each Pal has a hidden breeding power value. When two Pals breed, the game averages their breeding power values and produces the Pal whose breeding power is closest to that average. You need a Breeding Farm (level 19) and Cake to start breeding." } },
+    { "@type": "Question", "name": "How does Palworld breeding work?", "acceptedAnswer": { "@type": "Answer", "text": "Each Pal has a hidden breeding power value (90-1500). When two Pals breed, the game averages their breeding power values and produces the Pal whose breeding power is closest to that average. You need a Breeding Farm (level 19) and Cake to start breeding." } },
+    { "@type": "Question", "name": "Does this breeding calculator work with Palworld 1.0?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. This calculator is fully updated for Palworld 1.0 — all 287 Pals, the new mutation breeding system, and the level 80 cap are reflected in the 19,000+ combinations. The breeding power formula did not change in 1.0; new Pals were simply added to the pool. We verify data against the Palworld Wiki.gg community database." } },
     { "@type": "Question", "name": "Can I breed Legendary Pals?", "acceptedAnswer": { "@type": "Answer", "text": "Most Legendary Pals (Jetragon, Frostallion, Paladius, Necromus) are genderless and cannot be bred — you must catch them in the wild. However, some Legendary variants like Frostallion Noct (Frostallion + Helzephyr) are breeding-exclusive." } },
     { "@type": "Question", "name": "What is breeding power in Palworld?", "acceptedAnswer": { "@type": "Answer", "text": "Breeding power is a hidden numeric value assigned to each Pal (ranging from 90 for Jetragon to 1500 for Chikipi). The child of any breeding pair is determined by averaging the two parents' breeding power values and finding the Pal closest to that average." } },
     { "@type": "Question", "name": "How long does breeding take in Palworld?", "acceptedAnswer": { "@type": "Answer", "text": "The breeding progress bar takes about 5 minutes on default settings. Incubation time varies by egg size: regular eggs about 20 minutes, large eggs about 45 minutes, huge eggs up to 2 hours. You can adjust both timers in world settings." } },
-    { "@type": "Question", "name": "Do I need Cake for every breeding attempt?", "acceptedAnswer": { "@type": "Answer", "text": "One Cake lasts for multiple breeding cycles — it is not consumed after a single egg. However, it will eventually run out. Automate Milk (Mozzarina), Eggs (Chikipi), and Honey (Elizabee) at your Ranch for a steady supply." } }
+    { "@type": "Question", "name": "How do I breed a specific Pal like Anubis or Jetragon?", "acceptedAnswer": { "@type": "Answer", "text": "Use the Reverse Search button (🔍 Find All Combinations for a Pal) — pick your target Pal and the calculator shows every parent pair that produces it. Note: genderless Legendary Pals like Jetragon cannot be bred at all. For breedable Pals, the calculator ranks results by how close the parent average is to the target, so the top result is the most reliable combo." } },
+    { "@type": "Question", "name": "Do I need Cake for every breeding attempt?", "acceptedAnswer": { "@type": "Answer", "text": "One Cake lasts for multiple breeding cycles — it is not consumed after a single egg. However, it will eventually run out. Automate Milk (Mozzarina), Eggs (Chikipi), and Honey (Elizabee) at your Ranch for a steady supply." } },
+    { "@type": "Question", "name": "What changed in Palworld breeding with the 1.0 update?", "acceptedAnswer": { "@type": "Answer", "text": "The 1.0 update added several breeding changes: the Pal roster expanded to 287 species, a mutation breeding system was introduced (offspring can have random bonus stats and rare passive skills), and the catch bonus now caps at 5 per species — so breeding becomes the primary way to get stronger Pals beyond that cap. The core breeding power formula remains the same." } }
   ]
 }
 </script>
@@ -196,7 +199,7 @@
 <body>
 
 <div class="top-bar">
-  📊 Palworld Database — 1.0. Data-driven, always up to date. — <time datetime="2026-07-11">2026-07-11</time>.
+  📊 Palworld Database — 1.0. Data-driven, always up to date. — <time datetime="2026-07-18">2026-07-18</time>.
 </div>
 
 <nav aria-label="Main navigation">
@@ -235,6 +238,11 @@
       <button class="br-btn br-btn-reverse" id="btnReverse" title="Find all parent combos for a target Pal">🔍 Find All Combinations for a Pal</button>
     </div>
   </header>
+
+  <!-- OAB: Opening Answer Block — GEO Module A -->
+  <section class="br-oab" style="max-width:720px;margin:0 auto 20px;padding:16px 20px;background:var(--surface);border:1px solid var(--border);border-radius:10px;font-size:14px;line-height:1.75;color:var(--text2);">
+    <p style="margin:0;"><strong style="color:var(--text);">This calculator is updated for Palworld 1.0</strong> — all 287 Pals, the new mutation breeding system, and the level 80 cap are reflected in the 19,000+ combinations below. Select two parents to see their offspring instantly, or use <strong>Reverse Search</strong> to find every parent pair that produces a specific Pal. If you're looking for the shortest breeding path to a target (like Anubis or Jetragon), use the <strong>Breeding Chain</strong> button after picking your goal. Pals do <em>not</em> evolve in Palworld — breeding is how you get stronger variants.</p>
+  </section>
 
   <!-- Calculator Panel: ♂ + ♀ = Child -->
   <div class="br-calc" id="calcPanel">
@@ -299,8 +307,8 @@
 
   <!-- How it works -->
   <section class="br-top-combos" style="margin-top:12px;">
-    <h2>How Palworld Breeding Works</h2>
-    <p style="font-size:13px;color:var(--text2);line-height:1.7;">Every Pal has a hidden <strong>breeding power</strong> value (90–1500). When two Pals breed, the game <strong>averages their values</strong> and produces the Pal closest to that average. For example: Anubis (570) + Bushi (1120) → 845 → the Pal closest to 845 is the child. You need a <strong>Breeding Farm</strong> (level 19) and <strong>Cake</strong>. One Cake lasts for multiple cycles — automate Milk, Eggs, and Honey at your Ranch for a steady supply.</p>
+    <h2>How Palworld Breeding Works (Updated for 1.0)</h2>
+    <p style="font-size:13px;color:var(--text2);line-height:1.7;">Every Pal has a hidden <strong>breeding power</strong> value (90–1500). When two Pals breed, the game <strong>averages their values</strong> and produces the Pal closest to that average. For example: Anubis (570) + Bushi (1120) → 845 → the Pal closest to 845 is the child. You need a <strong>Breeding Farm</strong> (level 19) and <strong>Cake</strong>. One Cake lasts for multiple cycles — automate Milk, Eggs, and Honey at your Ranch. <strong>New in 1.0:</strong> Mutation breeding can produce Pals with random bonus stats and rare passive skills. The catch bonus caps at 5 per species, making breeding the primary way to min-max beyond that point.</p>
   </section>
 
   <!-- Top 20 Combos -->
@@ -338,19 +346,26 @@
     <h2><span class="icon">❓</span> Frequently Asked Questions</h2>
     <div class="faq-list">
       <details class="faq-item"><summary>How does Palworld breeding work?</summary><div class="faq-a">Each Pal has a hidden <strong>breeding power</strong> value (90–1500). When two Pals breed, the game averages their values and produces the Pal closest to that average. You need a <strong>Breeding Farm</strong> (level 19) and <strong>Cake</strong>.</div></details>
-      <details class="faq-item"><summary>Can I breed Legendary Pals like Jetragon?</summary><div class="faq-a">No. Jetragon, Frostallion, Paladius, and Necromus are <strong>genderless</strong> and cannot be bred. However, variants like <strong>Frostallion Noct</strong> (Frostallion + Helzephyr) CAN be bred.</div></details>
-      <details class="faq-item"><summary>What is the formula for breeding in Palworld?</summary><div class="faq-a">The formula is: <strong>(Parent A breeding power + Parent B breeding power) ÷ 2 → find the Pal with the closest breeding power.</strong> Example: Anubis (570) + Bushi (1120) = 845 → closest Pal is the child.</div></details>
-      <details class="faq-item"><summary>How long does breeding take?</summary><div class="faq-a">Breeding takes about <strong>5 minutes</strong>. Incubation: ~20 min (regular), ~45 min (large), up to <strong>2 hours</strong> (huge). Adjust timers in world/server settings.</div></details>
-      <details class="faq-item"><summary>What items do I need to breed Pals?</summary><div class="faq-a">You need a <strong>Breeding Farm</strong> (level 19) and <strong>Cake</strong> (Flour + Red Berries + Milk + Egg + Honey). Automate Milk (Mozzarina), Eggs (Chikipi), Honey (Elizabee) at your Ranch.</div></details>
+      <details class="faq-item"><summary>Does this calculator work with Palworld 1.0?</summary><div class="faq-a"><strong>Yes.</strong> This calculator is fully updated for Palworld 1.0 — all 287 Pals, the new mutation breeding system, and the level 80 cap are reflected in the combinations. The breeding power formula did not change in 1.0; new Pals were added to the pool. We verify data against the Palworld Wiki.gg community database.</div></details>
+      <details class="faq-item"><summary>Can I breed Legendary Pals like Jetragon?</summary><div class="faq-a">Most Legendary Pals (Jetragon, Frostallion, Paladius, Necromus) are <strong>genderless</strong> and cannot be bred — you must catch them in the wild. However, variants like <strong>Frostallion Noct</strong> (Frostallion + Helzephyr) CAN be bred.</div></details>
+      <details class="faq-item"><summary>What is breeding power?</summary><div class="faq-a">Breeding power is a hidden numeric value (90 for Jetragon to 1500 for Chikipi). The child = the Pal whose breeding power is closest to <strong>(Parent A + Parent B) ÷ 2</strong>.</div></details>
+      <details class="faq-item"><summary>How long does breeding take?</summary><div class="faq-a">Breeding takes about <strong>5 minutes</strong> per cycle. Incubation: ~20 min (regular egg), ~45 min (large), up to <strong>2 hours</strong> (huge). You can adjust both timers in world/server settings.</div></details>
+      <details class="faq-item"><summary>How do I breed a specific Pal like Anubis or Jetragon?</summary><div class="faq-a">Use the <strong>🔍 Find All Combinations for a Pal</strong> button above — pick your target Pal, and the calculator shows every parent pair that produces it. Note: genderless Legendaries (Jetragon, Frostallion, etc.) cannot be bred. For breedable Pals, the top result is the most reliable combo (closest breeding power average).</div></details>
+      <details class="faq-item"><summary>Do I need Cake for every breeding attempt?</summary><div class="faq-a">One Cake lasts for multiple breeding cycles — it's not consumed after a single egg. Automate <strong>Milk</strong> (Mozzarina), <strong>Eggs</strong> (Chikipi), and <strong>Honey</strong> (Beegarde/Elizabee) at your Ranch for a steady supply.</div></details>
+      <details class="faq-item"><summary>What changed in breeding with the 1.0 update?</summary><div class="faq-a">Palworld 1.0 expanded the roster to <strong>287 Pals</strong>, added <strong>mutation breeding</strong> (offspring can have random bonus stats and rare passive skills), and capped the catch bonus at <strong>5 per species</strong>. The core breeding power formula didn't change, but breeding is now the main way to min-max beyond the catch cap.</div></details>
     </div>
   </section>
 
   <!-- Related Tools -->
   <section style="margin-top:24px;">
-    <h2>Related Tools</h2>
+    <h2>Related Tools &amp; Guides</h2>
     <div class="tool-links">
-      <a href="/pals/" class="tool-card"><span class="tool-icon">📚</span><strong>Pal Database</strong><span>Search and filter all 180 Pals</span></a>
+      <a href="/pals/" class="tool-card"><span class="tool-icon">📚</span><strong>Pal Database</strong><span>Search and filter all Pals</span></a>
       <a href="/tier-list/" class="tool-card"><span class="tool-icon">⚔</span><strong>Tier List</strong><span>Best Pals ranked by role</span></a>
+      <a href="/pal/panthalus/" class="tool-card"><span class="tool-icon">🐋</span><strong>Panthalus Guide</strong><span>#203 Water Legendary — how to get it</span></a>
+      <a href="/pal/eidrolon/" class="tool-card"><span class="tool-icon">🐉</span><strong>Eidrolon Guide</strong><span>Dragon/Dark flying mount — breed or catch</span></a>
+      <a href="/hardwood/" class="tool-card"><span class="tool-icon">🪓</span><strong>Hardwood Farming</strong><span>Best locations &amp; tools by game stage</span></a>
+      <a href="/ancient-bone/" class="tool-card"><span class="tool-icon">🦴</span><strong>Ancient Bone Guide</strong><span>Which Pals drop it, how to farm</span></a>
     </div>
   </section>
 </main>

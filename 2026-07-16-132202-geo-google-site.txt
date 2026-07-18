@@ -1,0 +1,482 @@
+╭─── Claude Code v2.1.211 ─────────────────────────────────────────────────────╮
+│                                           │ Tips for getting started         │
+│               Welcome back!               │ Run /init to create a CLAUDE.md… │
+│                                           │ ──────────────────────────────── │
+│                  ▐▛███▜▌                  │ What's new                       │
+│                 ▝▜█████▛▘                 │ Added `--forward-subagent-text`… │
+│                   ▘▘ ▝▝                   │ Fixed permission previews relay… │
+│                                           │ Fixed auto mode overriding a Pr… │
+│    deepseek-v4-pro · API Usage Billing    │ /release-notes for more          │
+│   ~/70-Projects/wangzhan/palworld-guide   │                                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+
+❯ 我们今天开始一个网站优化的GEO 优化,首先你记录一下我在 google 上 site          
+  的地址,并通过 sitmap 找到未收录的页面.我接下来会将 google 收录的地址告诉.     
+
+  Thought for 4s (ctrl+o to expand)
+
+⏺ Let me first explore the project to understand its structure and find the
+  sitemap.
+
+⏺ Explore(Explore project structure)
+  ⎿  Backgrounded agent (↓ to manage · ctrl+o to expand)
+
+  Thought for 1s (ctrl+o to expand)
+
+⏺ While the background agent explores the project structure, let me also do a
+  Google site search to check current indexing status.
+
+⏺ Web Search("site:palworld-guide.com")
+  ⎿  Did 1 search in 5s
+
+⏺ Fetch(https://palworld-guide.com/sitemap.xml)
+  ⎿  Interrupted · What should Claude do instead?
+
+✻ Churned for 9m 44s
+
+⏺ Agent "Explore project structure" finished · 1m 20s
+
+  Thought for 5s (ctrl+o to expand)
+
+⏺ 好的，项目结构已经清楚了。让我用正确的域名搜索 Google 收录情况。
+
+⏺ Web Search("site:palworldguides.com")
+  ⎿  Did 1 search in 5s
+
+  Thought for 2s (ctrl+o to expand)
+
+⏺ WebSearch 工具不是直接查 Google
+  索引的。让我先把项目信息和分析结果记录下来，然后等你提供 Google 收录数据。
+
+  Thought for 3s, recalled 1 memory, wrote 2 memories (ctrl+o to expand)
+
+⏺ 好的，准备工作已经完成。下面是分析总结：
+
+  ---
+  📋 网站概况
+
+  ┌────────────┬────────────────────────────────────┐
+  │    项目    │                详情                │
+  ├────────────┼────────────────────────────────────┤
+  │ 域名       │ palworldguides.com                 │
+  ├────────────┼────────────────────────────────────┤
+  │ 框架       │ 纯静态 HTML，Cloudflare Pages 部署 │
+  ├────────────┼────────────────────────────────────┤
+  │ 页面总数   │ ~261 个 HTML 文件                  │
+  ├────────────┼────────────────────────────────────┤
+  │ Sitemap    │ /sitemap.xml，含 260 个 URL        │
+  ├────────────┼────────────────────────────────────┤
+  │ Robots.txt │ 全允许，已指向 sitemap             │
+  └────────────┴────────────────────────────────────┘
+
+  🔍 Google 收录查询地址
+
+  site:palworldguides.com
+
+  ⚠️ 已发现问题
+
+  Sitemap 遗漏 1 个页面：/best-pals/transporting/ — 文件系统存在但不在 sitemap
+  中。
+
+  ---
+  我已经把这些信息记录到了 [[geo-optimization]] 记忆文件中。现在请把你在 Google
+  上 site:palworldguides.com
+  的结果告诉我（收录了多少条、有哪些页面），我会逐页对比 sitemap，找出未被 
+  Google 收录的页面清单。
+
+✻ Worked for 10m 15s
+
+❯ 这是一个 GEO 优化的方法论,请你认真进行拆解,并形成方案.Dan                     
+  koe:独立站做GEO；流量突破到了105w                                             
+                                                                                
+  油管大神Dan                                                                   
+  Koe说：用Claude做GEO，独立站SEO流量就能破百万——上个月我们试了一下，SEO月流量  
+  从8w涨到了105w，直接翻了13倍...什么是GEO？就是让AI在回答用户问题时自动推荐你  
+  的网站。以前我们搞SEO，不是写文章就是买外链，钱花了不少，流量跟挤牙膏一样。现 
+  在用Claude生成了200篇深度回答，发布在Reddit、Quora、LinkedIn上，每个回答自然  
+  植入网站链接。gemini就会觉得你是“权威来源”，Google排名就飙上去了。怎么做的？  
+  👇1. 用Claude做竞品内容深度拆解找出你品类里Google排名前3的页面 +              
+  Perplexity引用次数最多的3个页面把这6个页面的全文复制下来，喂给ClaudeClaude会  
+  输出一张“竞品双杀拆解表”→ 例：6个页面都有“对比表”和“FAQ”，但都没有“条件结论”  
+  （“如果你X，选A；如果你Y，选B”）→ 这就是你的突破口2.                          
+  用Claude生成AI引用标准的内容模块打开Claude，指令：基于页面内容和Reddit上关于  
+  这个问题的讨论，生成8组FAQ Schema。每个Q是用户真实会问的问题，A是一句话答案。 
+  把这个内容插入到现有页面的合适位置（开篇答案块放最前面，排除声明放中间，对比  
+  表放产品描述后，FAQ放末尾）Google                                             
+  SEO看重内容长度和关键词，GEO看重“可摘取模块”。两者叠加 = 流量飙升3. 用Frase做 
+  语义优化拉高SEO评分把Claude改造完的页面内容，复制到Frase（或SurferSEO）→      
+  把Frase检测出的“缺失关键词”自然融入Claude生成的4个模块中（不要硬塞，每100字加 
+  1-2个）→ 不要为了SEO字数破坏GEO模块的“短段落”特性→                            
+  额外增加的“补充说明”部分放在FAQ模块后面，不影响AI摘取一篇“SEO评分>85 +        
+  GEO模块完整”的双杀页面4.                                                      
+  用Topify追踪品牌在AI里的曝光如果SEO流量涨但AI引用没涨 →                       
+  说明你在做“传统优化”，没做GEO如果AI引用涨但SEO流量没涨 →                      
+  说明你的页面“AI友好”但“SEO不友好”（Frase评分可能偏低）📌dan                   
+  koe一句话提醒：新时代的独立站流量秘诀是同时让Google排名和AI引用都选你         
+
+  Thought for 6s (ctrl+o to expand)
+
+⏺ 这是一套非常清晰的 GEO 方法论。让我先深入拆解这套方法论的核心逻辑，然后针对
+  palworldguides.com 形成具体落地方案。
+
+⏺ Entered plan mode
+  Claude is now exploring and designing an implementation approach.
+
+  Thought for 8s (ctrl+o to expand)
+
+⏺ 先深入了解现有页面内容结构和竞品格局。
+
+⏺ 2 background agents launched (↓ to manage)
+   ├ Analyze page content structure
+   └ Research Palworld guide competitors
+
+  Thought for 13s (ctrl+o to expand)
+
+⏺ 两个分析 agent 正在后台运行。在等待期间，让我先对 Dan Koe 的 GEO
+  方法论做深度拆解：
+
+  ---
+  🔬 Dan Koe GEO 方法论拆解
+
+  核心逻辑链
+
+  传统 SEO:  写文章 → 堆关键词 → 买外链 → Google 排名 ↑
+  GEO 方法:  深度内容 → AI 可摘取模块 → AI 引用你 → Google 认为你是权威 → 排名 ↑
+
+  关键洞察：Google 排名是果，AI 引用是因。 当 Gemini/Perplexity 等 AI
+  引擎频繁引用你的内容时，Google 的算法会将你视为"权威来源"。
+
+  四步法的本质拆解
+
+  ┌──────────┬─────────────────┬─────────────────────────┬─────────────────┐
+  │   步骤   │     做什么      │       为什么有效        │  对应 GEO 原理  │
+  ├──────────┼─────────────────┼─────────────────────────┼─────────────────┤
+  │ 1. 竞品  │ 6 个竞品页面 →  │ 找到"所有人都在说但没人 │ AI 偏好独特增量 │
+  │ 双杀拆解 │ Claude          │ 说透"的内容缺口         │ 信息            │
+  │          │ 找共同缺失      │                         │                 │
+  ├──────────┼─────────────────┼─────────────────────────┼─────────────────┤
+  │ 2.       │ 8 组 FAQ Schema │ 让 AI 能直接"摘"你的答  │ AI 引用时优先选 │
+  │ 生成可摘 │  + 4 类模块     │ 案，无需改写            │ 取结构化短答案  │
+  │ 取模块   │                 │                         │                 │
+  ├──────────┼─────────────────┼─────────────────────────┼─────────────────┤
+  │ 3. Frase │ 补缺失关键词但  │ SEO 和 GEO              │ 同时满足爬虫和  │
+  │          │ 不破坏短段落    │ 双修，不牺牲可读性      │ LLM             │
+  │ 语义优化 │                 │                         │                 │
+  ├──────────┼─────────────────┼─────────────────────────┼─────────────────┤
+  │ 4.       │ 分开监控 SEO    │ 防止单向优化导致另一种  │                 │
+  │ Topify   │ 流量 + AI 引用  │ 流量下降                │ 数据驱动迭代    │
+  │ 追踪     │                 │                         │                 │
+  └──────────┴─────────────────┴─────────────────────────┴─────────────────┘
+
+  四个 GEO 内容模块的定义
+
+  1. 开篇答案块 (Opening Answer Block) — 页面最顶部，一句话直接回答问题。AI
+  抓取时最优先摘取。
+  2. 排除声明 (Exclusion Disclaimer) —
+  页面中间，"谁不适合/什么情况下不要用"。增加内容可信度和覆盖面。
+  3. 条件对比表 (Conditional Comparison) — "如果你 X，选 A；如果你 Y，选
+  B"。这是竞品分析中最常见的缺失模块。
+  4. FAQ Schema (结构化问答) — 页面末尾，8 组 Q&A，标记 FAQ Schema。AI
+  直接摘取作为 featured snippet。
+
+  ---
+  等两个 agent 完成后，我会结合站点实际情况形成完整落地方案。
+  ⎿  Stop says: 🧠 检查一下，有没有值得保存到记忆的内容？
+
+✻ Baked for 45s
+
+⏺ Agent "Analyze page content structure" finished · 2m 25s
+
+  Thought for 3s (ctrl+o to expand)
+⏺ 内容分析已完成，非常详细。等待竞品研究完成后我会整合形成完整方案。
+
+⏺ Explore(Research Palworld guide competitors)
+  ⎿  Backgrounded agent (↓ to manage · ctrl+o to expand)
+
+  Thought for 5s (ctrl+o to expand)
+
+⏺ 竞品研究 agent 还在运行中，等它完成后我就可以整合两份分析，形成完整的 GEO
+  优化方案。
+
+✻ Crunched for 14s
+
+⏺ Agent "Research Palworld guide competitors" finished · 4m 24s
+
+  Thought for 14s (ctrl+o to expand)
+
+⏺ 两份分析都已完成。现在整合形成完整方案。
+
+⏺ Plan(Design GEO implementation plan)
+  ⎿  Backgrounded agent (↓ to manage · ctrl+o to expand)
+
+  Thought for 1s (ctrl+o to expand)
+
+⏺ Plan agent 正在整合所有分析设计落地方案，完成后我会输出最终方案。
+
+  Thought for 1s (ctrl+o to expand)
+
+⏺ 等待 Plan agent 完成...
+
+  Thought for 1s (ctrl+o to expand)
+  ⎿  Message queued for delivery to aaab4bbaae7039856 at its next tool 
+     round.
+
+  Thought for 1s (ctrl+o to expand)
+
+⏺ Task Output aaab4bbaae7039856
+  ⎿  Task is still running…
+
+› Message from Plan (ctrl+o to expand)
+
+⏺ Agent "Research Palworld guide competitors" finished · 3m 43s
+
+  Thought for 56s (ctrl+o to expand)
+
+⏺ 竞品分析 agent 也完成了，数据更加详尽。等待 Plan agent 整合输出最终方案...
+
+⏺ Task Output aaab4bbaae7039856
+  ⎿  Read output (ctrl+o to expand)
+
+⏺ Agent "Design GEO implementation plan" finished · 2m 54s
+
+  Thought for 3s (ctrl+o to expand)
+
+⏺ 所有分析 agent 都已完成。现在将整合后的完整方案写入计划文件。
+
+⏺ Updated plan
+  ⎿  /plan to preview
+
+  Thought for 4s, recalled 1 memory, wrote 1 memory (ctrl+o to expand)
+
+⏺ 方案已完成，现在提交审批。  ⎿  User rejected Claude's plan:
+     ╭─────────────────────────────────────────────────────────────────────────╮
+     │ GEO Optimization Plan for palworldguides.com                            │
+     │                                                                         │
+     │ Context                                                                 │
+     │                                                                         │
+     │ 基于 Dan Koe 的 GEO 方法论（让 AI 引用你的网站 → Google 视你为权威 →    │
+     │ 排名飙升），通过竞品和站点内容深度分析，制定了 palworldguides.com 的    │
+     │ GEO 优化方案。                                                          │
+     │                                                                         │
+     │ 核心洞察： 所有竞品（IGN/Eurogamer/Game8/GameSpot）都有"是什么"的内容， │
+     │ 但都没有条件结论（"如果你 X，选 A；如果你 Y，选                         │
+     │ B"）——这是突破口。同时，没有一个竞品积极使用 FAQPage/HowTo              │
+     │ 结构化数据，Rich Snippet 机会窗口完全敞开。                             │
+     │                                                                         │
+     │ ---                                                                     │
+     │ 竞品双杀拆解表（Dan Koe Step 1）                                        │
+     │                                                                         │
+     │ ┌──────────────┬──────────────────────┬────────────────┬─────────────── │
+     │ ──┐                                                                     │
+     │ │   内容模块   │     所有竞品都有     │ 所有竞品都没有 │  我们的突破口  │
+     │  │                                                                      │
+     │ ├──────────────┼──────────────────────┼────────────────┼─────────────── │
+     │ ──┤                                                                     │
+     │ │ 等级列表     │ ✅                   │                │ 加条件筛选 +   │
+     │  │                                                                      │
+     │ │ (S/A/B/C/D)  │ IGN/Eurogamer/Game8  │                │ per-tier 分析  │
+     │  │                                                                      │
+     │ │              │ 都有                 │                │                │
+     │  │                                                                      │
+     │ ├──────────────┼──────────────────────┼────────────────┼─────────────── │
+     │ ──┤                                                                     │
+     │ │ 步骤指南     │ ✅ 大部分有          │                │ 加 HowTo       │
+     │ Schema │                                                                │
+     │ │              │                      │                │  + 时间线      │
+     │  │                                                                      │
+     │ ├──────────────┼──────────────────────┼────────────────┼─────────────── │
+     │ ──┤                                                                     │
+     │ │ 条件结论     │                      │                │ ⭐             │
+     │  │                                                                      │
+     │ │ ("if X then  │                      │ ❌ 全行业缺失  │ 核心差异化模块 │
+     │  │                                                                      │
+     │ │ A")          │                      │                │                │
+     │  │                                                                      │
+     │ ├──────────────┼──────────────────────┼────────────────┼─────────────── │
+     │ ──┤                                                                     │
+     │ │ TL;DR 摘要块 │                      │ ❌ 极少数有    │ 每页顶部加 OAB │
+     │  │                                                                      │
+     │ ├──────────────┼──────────────────────┼────────────────┼─────────────── │
+     │ ──┤                                                                     │
+     │ │ FAQPage      │                      │ ❌             │ 全部页面加 8   │
+     │ 组 │                                                                    │
+     │ │ Schema       │                      │ 无竞品积极使用 │  FAQ Schema    │
+     │  │                                                                      │
+     │ ├──────────────┼──────────────────────┼────────────────┼─────────────── │
+     │ ──┤                                                                     │
+     │ │ Pros/Cons    │                      │ ❌ 几乎无人用  │ Pal            │
+     │  │                                                                      │
+     │ │ 列表         │                      │                │ 页面加对比矩阵 │
+     │  │                                                                      │
+     │ ├──────────────┼──────────────────────┼────────────────┼─────────────── │
+     │ ──┤                                                                     │
+     │ │ Cheat Sheet  │                      │ ❌             │ Breeding Guide │
+     │  │                                                                      │
+     │ │              │                      │ 几乎无人提供   │ + Best Pals    │
+     │  │                                                                      │
+     │ └──────────────┴──────────────────────┴────────────────┴─────────────── │
+     │ ──┘                                                                     │
+     │                                                                         │
+     │ ---                                                                     │
+     │ 实施计划                                                                │
+     │                                                                         │
+     │ Phase 1 (Week 1-2): 核心页面 GEO 模块 — 最高优先级                      │
+     │                                                                         │
+     │ P1: 215 Pal 实体页面 (scripts/build.js)                                 │
+     │                                                                         │
+     │ 新增函数：                                                              │
+     │ - renderOpeningAnswerBlock(pal) — 一句话定义 + 最佳用途                 │
+     │ - renderConditionalMatrix(pal, similarPals) — "选 {pal} 如果你...；选   │
+     │ {alternative} 如果你..." 对比表                                         │
+     │ - renderValueProposition(pal, similarPals) — "为什么选这个 Pal"         │
+     │ - renderExtendedFAQ(pal, similarPals, allPals) — FAQ 从 5 扩展到 8 项   │
+     │                                                                         │
+     │ 修改函数：                                                              │
+     │ - renderPalEntityPage() — 插入 4 个 GEO 模块                            │
+     │ - renderPalFAQ() — 扩展至 8 项，修复 {{i|Ground}} wiki markup 渲染 bug  │
+     │ - Schema: WebContent → Article type                                     │
+     │                                                                         │
+     │ 文件：scripts/build.js (~200 行新增)，generated-components.css (~40     │
+     │ 行新增)                                                                 │
+     │                                                                         │
+     │ P2: Breeding Guide (breeding-guide.html)                                │
+     │                                                                         │
+     │ - 添加 FAQPage Schema（已有 8 个 HTML FAQ，只需包 JSON-LD）             │
+     │ - 添加 Breeding Cheat Sheet 模块（繁殖公式 + Cake 配方 + 5 个最重要     │
+     │ combo）                                                                 │
+     │ - 添加 Conditional Decision Block（"你想做什么 → 用什么方法 →           │
+     │ 预计时间"）                                                             │
+     │ - 添加可视化时间线模块                                                  │
+     │                                                                         │
+     │ P3: Decision Pages (17 个最佳用途页面) (scripts/build.js +              │
+     │ data/decisions/)                                                        │
+     │                                                                         │
+     │ - 创建 16 个新的 decision JSON（目前只有 mining.json 1 个）             │
+     │ - 移除 combat 页面的 noindex                                            │
+     │ - renderDecisionPage() 新增：                                           │
+     │   - Opening Answer Block（直接回答"XX 最好的 Pal 是谁"）                │
+     │   - Conditional Decision Matrix（5-6 个场景化建议表）                   │
+     │   - Per-Tier Analysis（S/A/B 等级含义说明）                             │
+     │   - 8 项 FAQPage Schema                                                 │
+     │   - BreadcrumbList Schema                                               │
+     │                                                                         │
+     │ P4: 首页 (index.html)                                                   │
+     │                                                                         │
+     │ - FAQ 从 4 扩展到 8 项 + FAQPage Schema                                 │
+     │ - 添加 Definition Block（"什么是 Palworld Guides?"）                    │
+     │ - 增强 Key Numbers 模块                                                 │
+     │                                                                         │
+     │ Phase 2 (Week 3-4): 高价值指南页面                                      │
+     │                                                                         │
+     │ P5: Beginner Guide (beginner-guide.html)                                │
+     │                                                                         │
+     │ - TL;DR 清单（7-10 条核心要点，放在 H1 下方）                           │
+     │ - 装备升级清单表格                                                      │
+     │ - 时间线模块（前 30 分钟 → 2 小时 → 10 小时 → Day 2）                   │
+     │                                                                         │
+     │ P6: Best Pals Hub (best-pals.html)                                      │
+     │                                                                         │
+     │ - Top Pick Callout（每个分类 #1 Pal + 一句话理由）                      │
+     │ - Base Work 表格添加 JS 筛选（目前只有 Combat 有）                      │
+     │ - 每个等级条目添加 Pros/Cons                                            │
+     │                                                                         │
+     │ P7: Tier List (tier-list/index.html)                                    │
+     │                                                                         │
+     │ - 添加 BreadcrumbList Schema                                            │
+     │ - Top 10 Spotlight 模块                                                 │
+     │ - Per-Tier 分析文字                                                     │
+     │ - Methodoogy Section（解释评分算法）                                    │
+     │ - FAQ 从 2 扩展到 8 项                                                  │
+     │                                                                         │
+     │ Phase 3 (Week 5-6): 补齐长尾                                            │
+     │                                                                         │
+     │ - Pals Index: ItemList 从 20 扩展到全部 215 Pal + FAQ                   │
+     │ - Section Index Pages: 全部添加 FAQPage                                 │
+     │ - Hand-written guide pages: 补 FAQPage Schema                           │
+     │ - Sitemap: 添加 /best-pals/transporting/                                │
+     │                                                                         │
+     │ ---                                                                     │
+     │ 四个 GEO 内容模块标准（应用于所有页面）                                 │
+     │                                                                         │
+     │ Module A: Opening Answer Block (OAB)                                    │
+     │                                                                         │
+     │ 3-5 句话的 TL;DR，放在 H1 下方。短段落，直接语言。AI                    │
+     │ 爬虫最优先摘取这个区域。                                                │
+     │                                                                         │
+     │ Module B: Conditional Decision Matrix                                   │
+     │                                                                         │
+     │ 场景 → 推荐 → 理由 的三列表格。这是突破口——没有一个竞品提供条件化建议。 │
+     │                                                                         │
+     │ Module C: Key Takeaways / TL;DR Checklist                               │
+     │                                                                         │
+     │ 5-7 条核心要点。LLM 和 Perplexity 偏好列表格式进行引用。                │
+     │                                                                         │
+     │ Module D: FAQ Block                                                     │
+     │                                                                         │
+     │ 每页 8 组 FAQPage Schema 标记的问答。Dan Koe 标准是恰好 8 组。          │
+     │                                                                         │
+     │ ---                                                                     │
+     │ 分发策略（Dan Koe Step 2 的一部分）                                     │
+     │                                                                         │
+     │ ┌───────────────┬──────────────────────┬────────────────┬────────────── │
+     │ ───┐                                                                    │
+     │ │     平台      │       内容类型       │      频率      │      目标     │
+     │   │                                                                     │
+     │ ├───────────────┼──────────────────────┼────────────────┼────────────── │
+     │ ───┤                                                                    │
+     │ │ Reddit        │ 数据分析洞察帖 +     │ 1帖/周 +       │ 50+ upvotes,  │
+     │   │                                                                     │
+     │ │ (r/Palworld)  │ 实用评论回复         │ 15分钟/天评论  │ 品牌曝光      │
+     │   │                                                                     │
+     │ ├───────────────┼──────────────────────┼────────────────┼────────────── │
+     │ ───┤                                                                    │
+     │ │ LinkedIn      │ "How We Built It"    │ 2帖/月         │ 500+          │
+     │   │                                                                     │
+     │ │               │ 技术帖 + 数据故事    │                │               │
+     │ impressions/帖  │                                                       │
+     │ ├───────────────┼──────────────────────┼────────────────┼────────────── │
+     │ ───┤                                                                    │
+     │ │ Quora/论坛    │ 回答 Palworld        │ 5条/周         │ 长尾流量      │
+     │   │                                                                     │
+     │ │               │ 问题，自然植入链接   │                │               │
+     │   │                                                                     │
+     │ └───────────────┴──────────────────────┴────────────────┴────────────── │
+     │ ───┘                                                                    │
+     │                                                                         │
+     │ 内容管道： 发页面 → 提取数据洞察 → Reddit 帖 → LinkedIn 数据故事 →      │
+     │ 全部链回原页面                                                          │
+     │                                                                         │
+     │ ---                                                                     │
+     │ 追踪指标（Dan Koe Step 4）                                              │
+     │                                                                         │
+     │ 双监控：SEO 流量 + AI 引用                                              │
+     │                                                                         │
+     │ ┌─────────────────────────┬────────────────────────┬─────────────────┐  │
+     │ │          指标           │          工具          │  Month 3 目标   │  │
+     │ ├─────────────────────────┼────────────────────────┼─────────────────┤  │
+     │ │ Organic clicks          │ GSC                    │ 500+/天         │  │
+     │ ├─────────────────────────┼────────────────────────┼─────────────────┤  │
+     │ │ FAQ Rich Snippets       │ GSC                    │ 30+ 页面        │  │
+     │ ├─────────────────────────┼────────────────────────┼─────────────────┤  │
+     │ │ HowTo Rich Snippets     │ GSC                    │ 2+ 页面         │  │
+     │ ├─────────────────────────┼────────────────────────┼─────────────────┤  │
+     │ │ Perplexity citations    │ 手动检查 20 个目标查询 │ 5+ 查询中被引用 │  │
+     │ ├─────────────────────────┼────────────────────────┼─────────────────┤  │
+     │ │ Reddit referral traffic │ GA                     │ 20+ visitors/天 │  │
+     │ ├─────────────────────────┼────────────────────────┼─────────────────┤  │
+     │ │ Pages indexed           │ GSC                    │ 100% (280+)     │  │
+     │ └─────────────────────────┴────────────────────────┴─────────────────┘  │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Verification                                                            │
+     │                                                                         │
+     │ 1. node scripts/build.js 运行构建，验证所有页面生成无报错               │
+     │ 2. 抽查 5 个 Pal 页面 + 3 个 Decision 页面，确认 GEO 模块正确渲染       │
+     │ 3. Rich Results Test (https://search.google.com/test/rich-results) 验证 │
+     │ FAQPage/HowTo Schema 有效                                               │
+     │ 4. wrangler pages dev 本地预览，确认样式和交互正常                      │
+     │ 5. Google Search Console 提交更新后的 sitemap，监控索引状态             │
+     ╰─────────────────────────────────────────────────────────────────────────╯
+
+✻ Cooked for 47m 26s
