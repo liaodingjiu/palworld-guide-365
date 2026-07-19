@@ -1,1 +1,0 @@
-/Users/judy/.claude/skills/ajiu-ai-reverse-content.md

@@ -1,1 +1,0 @@
-/Users/judy/.claude/skills/ajiu-content-pipeline.md
