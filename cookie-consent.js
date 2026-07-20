@@ -38,7 +38,7 @@
     banner.className = 'cookie-banner visible';
     banner.id = 'cookieBanner';
     banner.innerHTML = '<div class="cookie-inner">' +
-      '<p>We use cookies to analyze traffic and serve personalized ads. By accepting, you agree to our <a href="privacy.html">Privacy Policy</a>.</p>' +
+      '<p>We use cookies to analyze traffic and serve personalized ads. By accepting, you agree to our <a href="/privacy.html">Privacy Policy</a>.</p>' +
       '<div class="cookie-btns">' +
         '<button class="cookie-decline" id="cookieDecline">Decline</button>' +
         '<button class="cookie-accept" id="cookieAccept">Accept</button>' +
